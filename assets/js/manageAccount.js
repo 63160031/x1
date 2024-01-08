@@ -79,13 +79,13 @@ $(() => {
             newStatus = 1
         }
         Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
+            title: 'sure?',
+            text: "you want to update your status?!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            confirmButtonText: 'Yes'
         }).then((result) => {
             if (result.isConfirmed) {
                 var url = API_URL + "Manage_Account/upstatus";
@@ -100,7 +100,7 @@ $(() => {
                     success: function (response) {
                         if (response == true) {
                             Swal.fire(
-                                'Deleted!',
+                                'UPDATE!',
                                 'Your file has been deleted.',
                                 'success'
                             ).then(() => {
