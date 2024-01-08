@@ -5,7 +5,7 @@
                     <!-- Account -->
                     <div class="card-body d-flex justify-content-center">
                       <div class="d-flex align-items-start align-items-sm-center gap-4">
-                      <img src="http://192.168.161.207/tbkk_shopfloor/asset/img_emp/${}.jpg" 
+                      <img src="http://192.168.161.207/tbkk_shopfloor/asset/img_emp/<?php echo $this->session->userdata('userName');?>.jpg"
                           alt="user-avatar"
                           class="d-block rounded"
                           height="100"
