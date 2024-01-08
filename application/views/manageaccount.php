@@ -2,6 +2,7 @@
 <div class="card">
   <h5 class="card-header">MANAGEACCOUNT</h5>
   <div class="table-responsive">
+    
     <table class="table card-table" id="tblManageAccount">
       <thead>
         <tr>
