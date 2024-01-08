@@ -39,11 +39,17 @@
                           <div class="flex-grow-1">
                             <span class="fw-semibold d-block">
                             <?php  echo $this->session->userdata('firstname');?>
-                  </span>
+                          </span>
                             <small class="text-muted"><?php  echo $this->session->userdata('perMissionGroupName');?></small>
                           </div>
                         </div>
+                        </a>
+                        <li>
+                        <a class="dropdown-item" href="../EditAccount/editaccount">
+                        <i class="bx bx-cog me-2"></i>
+                        <span class="align-middle">Edit profile</span>
                       </a>
+                      </li>
                     </li>
                       <div class="dropdown-divider"></div>
                     </li>
