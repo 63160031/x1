@@ -1,14 +1,11 @@
 <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Account Settings /</span> Account</h4>
-
+<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Account Settings /</span> Account</h4>
                   <div class="card mb-4">
                   <h5 class="card-header text-center">Profile Details</h5>
-
                     <!-- Account -->
                     <div class="card-body d-flex justify-content-center">
                       <div class="d-flex align-items-start align-items-sm-center gap-4">
-                        <img
-                          src="<?php echo base_url() ?>/assets/img/avatars/sek.jpg"
+                      <img src="http://192.168.161.207/tbkk_shopfloor/asset/img_emp/${}.jpg" 
                           alt="user-avatar"
                           class="d-block rounded"
                           height="100"
