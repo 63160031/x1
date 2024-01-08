@@ -101,15 +101,15 @@ $(() => {
                         if (response == true) {
                             Swal.fire(
                                 'UPDATE!',
-                                'Your file has been deleted.',
+                                'The update is complete..',
                                 'success'
                             ).then(() => {
                                 shDataTable()
                             })
                         } else if (response == false) {
                             Swal.fire(
-                                'Deleted!',
-                                'Your file has been deleted.',
+                                'UPDATE!!FAIL!!',
+                                'The update failed..',
                                 'Error'
                             )
                         }

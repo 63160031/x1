@@ -3841,12 +3841,14 @@ textarea.form-control-lg {
   position: relative;
   display: flex;
   flex-direction: column;
+  max-width: 4000px; /* หรือขนาดที่คุณต้องการ */
   min-width: 0;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
   border: 0 solid #d9dee3;
   border-radius: 0.5rem;
+  overflow: hidden; /* ป้องกัน scrollbar */
 }
 .card > hr {
   margin-right: 0;
