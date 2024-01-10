@@ -41,11 +41,11 @@
                   </a>
                 </li>
                 <li class="menu-item">
-              <a href="app-ecommerce-order-details.html" class="menu-link">
+              <a href="http://127.0.0.1/SysIMS/MainMenu/mainmenu" class="menu-link">
                 <div class="text-truncate" data-i18n="Order Details">Manage Main Menu</div>
               </a>
               <li class="menu-item">
-              <a href="app-ecommerce-order-details.html" class="menu-link">
+              <a href="http://127.0.0.1/SysIMS/ManageAccount/mngAccount" class="menu-link">
                 <div class="text-truncate" data-i18n="Order Details">Manage Sub Menu</div>
               </a>
               <li class="menu-item">

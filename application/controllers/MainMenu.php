@@ -1,35 +1,39 @@
 <?php
-defined('BASEPATH') or exit('No direct script access allowed');
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-class MainMenu extends CI_Controller
-{
-    private $another_css;
-    private $another_js;
+class MainMenu extends CI_Controller {
+
+	private $another_css;
+    public $another_js;
     private $data;
-    public function __construct()
-    {
-        parent::__construct();
-        $this->load->helper('url');
-        $this->load->library('parser');
+
+	public function __construct()
+	{
+		parent::__construct();
+
+		$this->load->helper('url');
+		$this->load->library('parser');
         $this->load->library('session');
 
-        $this->data["base_url"] = base_url();
+		
+		$this->data["base_url"] = base_url();
 
-        $result['base_url'] = base_url();
-        $result['site_url'] = site_url();
-
+		$result['base_url'] = base_url();
+		$result['site_url'] = site_url();
 
         $this->data = $result;
-        $this->header = $result;
-        $this->slide_bar = $result;
-        $this->footer = $result;
+		$this->top_navbar_data = $result;
+		$this->left_sidebar_data = $result;
+		$this->footer_data = $result;
 
 
+		if (!$this->session->userdata('userId')) {
+            redirect(base_url() . 'Login/login');
 
+        }
+	}
 
-    }
-
-    protected function render_view($path)
+	protected function render_view($path)
     {
         $this->data['another_css'] = $this->another_css;
         $this->data['another_js'] = $this->another_js;
@@ -39,9 +43,15 @@ class MainMenu extends CI_Controller
         $this->data['page_content'] = $this->parser->parse($path, $this->data, TRUE);
         $this->parser->parse('page/pagecontent', $this->data);
     }
-    public function mainmenu()
-    {
-        $this->another_js = "<script src='" . base_url() . "assets/js/mainMenu.js'></script>";
+	
+	public function mainmenu() {
         $this->render_view('mainmenu');
+
+    }
+	public function callApiUpdateStatus()
+    {
+        $result = $this->curPostRequest('Manage_mainmenu/upstatus', array('data' => serialize($_POST) ,'session' =>serialize( $this->session->userdata('userName'))));
+        echo json_encode($result);
+
     }
 }

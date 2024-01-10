@@ -39,7 +39,6 @@ class SubMenu extends CI_Controller
     }
     public function subMenu()
     {
-        $this->another_js = "<script src='" . base_url() . "assets/js/mngSubmenu.js'></script>";
         $this->render_view('submenu');
     }
 
@@ -92,6 +91,7 @@ class SubMenu extends CI_Controller
         curl_close($curl);
     
         return $is_array ? json_decode($result, $associative) : $result;
+        
     }
 
 }

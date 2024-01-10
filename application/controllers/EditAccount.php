@@ -51,7 +51,6 @@ class EditAccount extends CI_Controller {
     }
 	
 	public function editAccount() {
-
         $this->render_view('editaccount');
 
     }
