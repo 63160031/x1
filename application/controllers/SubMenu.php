@@ -39,6 +39,7 @@ class SubMenu extends CI_Controller
     }
     public function subMenu()
     {
+        $this->another_js = "<script src='" . base_url() . "assets/js/submenu.js'></script>";
         $this->render_view('submenu');
     }
 

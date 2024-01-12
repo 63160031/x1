@@ -34,6 +34,7 @@ class EditAccount extends CI_Controller {
 
 
 		if (!$this->session->userdata('userId')) {
+            $this->another_js = "<script src='" . base_url() . "assets/js/editAccount.js'></script>";
             redirect(base_url() . 'Login/login');
 
         }
@@ -58,7 +59,7 @@ class EditAccount extends CI_Controller {
     
     public function callApiShowedit()
     {
-        $result = $this->curPostRequest('Manage_account/show_upd_User', array('data' => serialize( array( 'id' => $this->session->userdata('userIdttttttttt')))));
+        $result = $this->curPostRequest('EditProfile/editpro', array('data' => serialize( array( 'id' => $this->session->userdata('userId')))));
         echo json_encode($result);
     }
 

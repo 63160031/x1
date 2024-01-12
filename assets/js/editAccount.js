@@ -7,7 +7,7 @@ $(document).ready(async function() {
     }
 
     await $.ajax({
-        url: base_url('EditProfile/callApiShowedit'),
+        url: base_url('EditAccount/callApiShowedit'),
         success: function (response) {
             response = JSON.parse(response);
             emp_data = response;
@@ -111,7 +111,7 @@ $(document).ready(async function() {
                     })
                     
                     $.ajax({
-                        url: base_url("ManageAccount/callApiUpdateAccount"),
+                        url: base_url('EditProfile/callApiShowedit'),
                         type: 'POST',
                         data: {
                             arrDataEdit: arrDataEdit
