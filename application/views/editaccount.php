@@ -57,28 +57,12 @@
                               type="text"
                               id="email"
                               name="email"
-                              value="Call--@example.com"
+                              value="Call@no.com"
                               placeholder="john.doe@example.com"
                               readonly
                             />
                             <br>
                             </div>
-                        <div class="mb-3 col-md-6">
-                          <label for="lastName" class="form-label">LASTUPDATE</label>
-                          <input class="form-control" type="text" name="lastName" id="lastName" value="Mercy" readonly />
-                        </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="email" class="form-label">PH</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id="email"
-                              name="email"
-                              value="Call--@example.com"
-                              placeholder="john.doe@example.com"
-                              readonly
-                            />
-                            <br>
                         <div class="mt-2">
                           <button type="submit" class="btn btn-primary me-2">Save</button> 
                           <button type="reset" class="btn btn-outline-secondary">Cancel</button>

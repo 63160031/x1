@@ -6,7 +6,7 @@
         $(document).ready(function () {
 
             // URL of the API
-            var apiUrl = 'Manage_mainmanu/show_main_menu';
+            var apiUrl = 'Manage_mainmenu/show_main_menu';
             // Perform Ajax request
             $.ajax({
                 url: API_URL + apiUrl,
@@ -24,10 +24,10 @@
                   <td><i></i> <strong>${i + 1}</strong></td>
                   <td><i></i> <strong>${data[i].smm_name}</strong></td>
                   <td>
-                  <i class='bx bx-dock-top' ></i>
+                  <i class='bx bx-${data[i].smm_icon}' ></i>
                     <p class="icon-name text-capitalize text-truncate mb-0"></p>
                   </td>
-                  <td><i></i>${data[i].smm_order}</td>
+                  <td><i></i>${data[i].smm_order_no}</td>
                   <td class="">${data[i].smm_updated_date}</td>
                   <td class="">${data[i].smm_updated_by}</td>
                   <td>
@@ -65,7 +65,7 @@
     //-------------------------- Updaye flg status ----------------------------------
 
     $(document).on('click', '.btnStatus', function () {
-        const saId = $(this).data('sa-id');
+        const smmId = $(this).data('sa-id');
         var newStatus = $(this).closest('td').find('.btnStatus').val()
 
         if (newStatus == 1) {
@@ -88,7 +88,7 @@
                     url: base_url('MainMenu/callApiUpdateStatus?url=') + url,
                     type: 'POST',
                     data: {
-                        saId: saId,
+                        smmId: smmId,
                         newStatus: newStatus,
                     },
                     dataType: 'json',
@@ -120,7 +120,7 @@
         })
 
     });
-    function updateStatus(saId, newStatus) {
+    function updateStatus(smmId, newStatus) {
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
                 confirmButton: 'btn btn-success',
@@ -145,7 +145,7 @@
         // Convert newStatus to 0 or 1
         const statusValue = newStatus ? 1 : 0;
 
-        const encodedSaId = encodeURIComponent(saId);
+        const encodedSaId = encodeURIComponent(smmId);
         const encodedStatusValue = encodeURIComponent(statusValue);
 
 

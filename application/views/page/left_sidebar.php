@@ -45,11 +45,11 @@
                 <div class="text-truncate" data-i18n="Order Details">Manage Main Menu</div>
               </a>
               <li class="menu-item">
-              <a href="http://127.0.0.1/SysIMS/ManageAccount/mngAccount" class="menu-link">
+              <a href="http://127.0.0.1/SysIMS/-/-" class="menu-link">
                 <div class="text-truncate" data-i18n="Order Details">Manage Sub Menu</div>
               </a>
               <li class="menu-item">
-              <a href="app-ecommerce-order-details.html" class="menu-link">
+              <a href="http://127.0.0.1/SysIMS/PermisionGroup/permisGroup" class="menu-link">
                 <div class="text-truncate" data-i18n="Order Details">Manage Permission Group</div>
               </a>
               <a href="app-ecommerce-order-details.html" class="menu-link">

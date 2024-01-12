@@ -218,10 +218,10 @@
     <!-- Main JS -->
     <script src="<?php echo base_url() ?>/assets/assets/js/main.js"></script>
 	<script src="<?php echo base_url() ?>/assets/js/logout.js"></script>
-	<!-- <script src="<?php echo base_url() ?>/assets/js/manageAccount.js"></script> -->
+
 
 	
-	<script src="<?php echo base_url() ?>/assets/js/mainMenu.js"></script>
+
 	<!-- <script src="<?php echo base_url() ?>/assets/js/submenu.js"></script> -->
 
     <!-- Page JS -->

@@ -28,15 +28,15 @@
               </thead>
               <tbody class="table-border-bottom-0" id="tbody">
                 <tr>
-                  <td><i></i> <strong>1</strong></td>
-                  <td><i></i> <strong>---</strong></td>
+                  <td><i></i> <strong></strong></td>
+                  <td><i></i> <strong></strong></td>
                   <td>
                   <i class='bx bx-dock-top' ></i>
                     <p class="icon-name text-capitalize text-truncate mb-0"></p>
                   </td>
                   <td><i></i>---</td>
-                  <td class="">------</td>
-                  <td class="">------</td>
+                  <td class=""></td>
+                  <td class=""></td>
                   <td><button class="badge bg-label-success me-1">Enable</button></td>
                   <td class="">
                     </li>
