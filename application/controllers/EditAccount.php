@@ -15,15 +15,13 @@ class EditAccount extends CI_Controller {
 		$this->load->library('parser');
         $this->load->library('session');
         
-        // $this->load->model('Dashboard_model', 'Dashboard');
+
 		
 		$this->data["base_url"] = base_url();
 
 		$result['base_url'] = base_url();
 		$result['site_url'] = site_url();
-		// $data['csrf_token_name'] = $this->security->get_csrf_token_name();
-		// $data['csrf_cookie_name'] = $this->config->item('csrf_cookie_name');
-
+	
 
 		
 
@@ -57,12 +55,20 @@ class EditAccount extends CI_Controller {
     }
 
     
-	public function callApiUpdateStatus()
+    public function callApiShowedit()
+{
+    $result = $this->curPostRequest('Edit_Account/show_Edit_Ac', array('session' => serialize($this->session->userdata('userId'))));
+
+    echo json_encode($result);
+}
+
+public function callApiUpdateAccount()
     {
-        $result = $this->curPostRequest('EditProfile/upstatus', array('data' => serialize($_POST) ,'session' =>serialize( $this->session->userdata('userId'))));
+        $result = $this->curPostRequest('Edit_Account/update_user', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
         echo json_encode($result);
 
     }
+
 
 
     function curPostRequest($enpoint, $param_data, $is_array = true, $associative = false){
