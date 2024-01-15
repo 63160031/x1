@@ -45,7 +45,7 @@
                 <div class="text-truncate" data-i18n="Order Details">Manage Main Menu</div>
               </a>
               <li class="menu-item">
-              <a href="http://127.0.0.1/SysIMS/SubMenu/subMenu" class="menu-link">
+              <a href="http://127.0.0.1/SysIMS/SubMenu/submenu" class="menu-link">
                 <div class="text-truncate" data-i18n="Order Details">Manage Sub Menu</div>
               </a>
               <li class="menu-item">
@@ -53,7 +53,7 @@
                 <div class="text-truncate" data-i18n="Order Details">Manage Permission Group</div>
               </a>
               <a href="app-ecommerce-order-details.html" class="menu-link">
-                <div class="text-truncate" data-i18n="Order Details">Manage Permission</div>
+                <div class="text-truncate" data-i18n="Order Details">Manage Permission Details</div>
               </a>
             </li>
           </ul>

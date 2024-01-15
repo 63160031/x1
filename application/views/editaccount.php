@@ -17,57 +17,70 @@
                     <hr class="my-0" />
                     <div class="card-body">
                     <form id="formAccountSettings" method="POST" onsubmit="return false">
-                      <div class="row">
-                        <div class="mb-3 col-md-6">
-                          <label for="firstName" class="form-label">First Name</label>
-                          <input
-                            class="form-control"
-                            type="text"
-                            id="firstName"
-                            name="firstName"
-                            value="MO"
-                            autofocus
-                            readonly =""
-                          />
-                        </div>
-                        <div class="mb-3 col-md-6">
-                          <label for="lastName" class="form-label">Last Name</label>
-                          <input class="form-control" type="text" name="lastName" id="lastName" value="Mercy" readonly />
-                        </div>
-                        <div class="mb-3 col-md-6">
-                          <label for="firstName" class="form-label">EMPCODE</label>
-                          <input
-                            class="form-control"
-                            type="text"
-                            id="firstName"
-                            name="firstName"
-                            value="MO"
-                            autofocus
-                            readonly =""
-                          />
-                        </div>
-                        <div class="mb-3 col-md-6">
-                          <label for="lastName" class="form-label">PH</label>
-                          <input class="form-control" type="text" name="lastName" id="lastName" value="Mercy" readonly />
-                        </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="email" class="form-label">E-mail</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id="email"
-                              name="email"
-                              value="Call@no.com"
-                              placeholder="john.doe@example.com"
-                              readonly
-                            />
-                            <br>
-                            </div>
-                        <div class="mt-2">
-                          <button type="submit" class="btn btn-primary me-2">Save</button> 
-                          <button type="reset" class="btn btn-outline-secondary">Cancel</button>
-                        </div>
-                      </form>
+    <div class="row">
+        <div class="mb-3 col-md-6">
+            <label for="edtEmpCode" class="form-label">Employee Code</label>
+            <input
+                class="form-control"
+                type="text"
+                id="edtEmpCode"
+                name="employeeCode"
+                value=""
+                readonly=""
+
+            />
+        </div>
+        <div class="mb-3 col-md-6">
+            <label for="edtMpc" class="form-label">MPC ID</label>
+            <input
+                class="form-control"
+                type="text"
+                id="edtMpc"
+                name="mpcId"
+                value=""
+                readonly=""
+                
+            />
+        </div>
+        <!-- Add the following fields -->
+        <div class="mb-3 col-md-6">
+            <label for="edtfName" class="form-label">First Name</label>
+            <input
+                class="form-control"
+                type="text"
+                id="edtfName"
+                name="firstName"
+                value=""
+              
+            />
+        </div>
+        <div class="mb-3 col-md-6">
+            <label for="edtlName" class="form-label">Last Name</label>
+            <input
+                class="form-control"
+                type="text"
+                id="edtlName"
+                name="lastName"
+                value=""
+               
+            />
+        </div>
+        <div class="mb-3 col-md-6">
+            <label for="edtEmail" class="form-label">Email</label>
+            <input
+                class="form-control"
+                type="email"
+                id="edtEmail"
+                name="email"
+                value=""
+              
+            />
+        </div>
+        <button type="button" id="btnSaveEdit" class="btn btn-primary">Save</button>
+            <button type="button" id="btnCancelEdit" class="btn btn-secondary">Cancel</button>
+       </div>
+</form>
+
                     </div>
                   </div>
                 </div>

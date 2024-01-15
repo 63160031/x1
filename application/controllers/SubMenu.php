@@ -4,30 +4,36 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class SubMenu extends CI_Controller
 {
     private $another_css;
-    private $another_js;
+    public $another_js;
     private $data;
-    public function __construct()
-    {
-        parent::__construct();
-        $this->load->helper('url');
-        $this->load->library('parser');
+
+	public function __construct()
+	{
+		parent::__construct();
+
+		$this->load->helper('url');
+		$this->load->library('parser');
         $this->load->library('session');
 
-        $this->data["base_url"] = base_url();
+		
+		$this->data["base_url"] = base_url();
 
-        $result['base_url'] = base_url();
-        $result['site_url'] = site_url();
-
+		$result['base_url'] = base_url();
+		$result['site_url'] = site_url();
 
         $this->data = $result;
-        $this->header = $result;
-        $this->slide_bar = $result;
-        $this->footer = $result;
+		$this->top_navbar_data = $result;
+		$this->left_sidebar_data = $result;
+		$this->footer_data = $result;
 
 
-    }
+		if (!$this->session->userdata('userId')) {
+            redirect(base_url() . 'Login/login');
 
-    protected function render_view($path)
+        }
+	}
+
+	protected function render_view($path)
     {
         $this->data['another_css'] = $this->another_css;
         $this->data['another_js'] = $this->another_js;
@@ -39,7 +45,7 @@ class SubMenu extends CI_Controller
     }
     public function subMenu()
     {
-        $this->another_js = "<script src='" . base_url() . "assets/js/submenu.js'></script>";
+        $this->another_js = "<script src='" . base_url() . "assets/js/manageSubmenu.js'></script>";
         $this->render_view('submenu');
     }
 
@@ -57,11 +63,58 @@ class SubMenu extends CI_Controller
         }
         echo json_encode($data);
     }
+
+
+
+
+    public function callApiShowData()
+    {
+        $result = $this->curPostRequest('Manage_submenu/show_submenu', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
+        echo json_encode($result);
+
+    }
+    public function callApiUpdateStatus()
+    {
+        $result = $this->curPostRequest('Manage_submenu/update_flg', array('data' => serialize($_POST) ,'session' =>serialize( $this->session->userdata('userName'))));
+        echo json_encode($result);
+
+    }
+    public function callApiPermis()
+    {
+        $result = $this->curPostRequest('Login/show_menu', array('data' => serialize($this->session->userdata('perMissionGroup'))));
+        echo json_encode($result);
+    }
+    public function callApiDetail()
+    {
+        $result = $this->curPostRequest('Manage_submenu/show_submenu', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
+        echo json_encode($result);
+
+    }
+    public function callApiAddSubMenu()
+    {
+        $result = $this->curPostRequest('Manage_submenu/insert_sub_menu', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
+        echo json_encode($result);
+
+    }
+    public function callApiShowEdit()
+    {
+        $result = $this->curPostRequest('Manage_submenu/upd_show_sub_menu', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
+        echo json_encode($result);
+
+    }
+    public function callApiSaveEdit()
+    {
+        $result = $this->curPostRequest('Manage_submenu/edit_sub_menu', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
+        echo json_encode($result);
+
+    }
+    
+    
     
 
     function curPostRequest($enpoint, $param_data, $is_array = true, $associative = false){
         /* Endpoint */
-        $url = 'http://172.21.64.176/apiCarbonManage/' . $enpoint;
+        $url = 'http://127.0.0.1/api/' . $enpoint;
     
         /* eCurl */
         $curl = curl_init($url);
@@ -92,7 +145,6 @@ class SubMenu extends CI_Controller
         curl_close($curl);
     
         return $is_array ? json_decode($result, $associative) : $result;
-        
     }
 
 }

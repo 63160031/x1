@@ -34,7 +34,6 @@ class EditAccount extends CI_Controller {
 
 
 		if (!$this->session->userdata('userId')) {
-            $this->another_js = "<script src='" . base_url() . "assets/js/editAccount.js'></script>";
             redirect(base_url() . 'Login/login');
 
         }
@@ -52,15 +51,17 @@ class EditAccount extends CI_Controller {
     }
 	
 	public function editAccount() {
+        $this->another_js = "<script src='" . base_url() . "assets/js/editAccount.js'></script>";
         $this->render_view('editaccount');
 
     }
 
     
-    public function callApiShowedit()
+	public function callApiUpdateStatus()
     {
-        $result = $this->curPostRequest('EditProfile/editpro', array('data' => serialize( array( 'id' => $this->session->userdata('userId')))));
+        $result = $this->curPostRequest('EditProfile/upstatus', array('data' => serialize($_POST) ,'session' =>serialize( $this->session->userdata('userId'))));
         echo json_encode($result);
+
     }
 
 

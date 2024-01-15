@@ -217,6 +217,12 @@ button.list-group-item-primary.active {
   border-color: #000000;
   transform: translateY(-1px);
 }
+.btn-ET {
+  color: #fff;
+  background-color: #52d35a;
+  border-color: #64dd70;
+  box-shadow: 0px 0rem 0.5rem 0 rgba(2, 240, 2, 0.57);
+}
 .btn-check:focus + .btn-primary, .btn-primary:focus, .btn-primary.focus {
   color: #fff;
   background-color: #5f61e6;

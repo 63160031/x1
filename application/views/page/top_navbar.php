@@ -45,7 +45,7 @@
                         </div>
                         </a>
                         <li>
-                        <a class="dropdown-item" href="../EditAccount/editaccount">
+                        <a class="dropdown-item" href="http://127.0.0.1/SysIMS/EditAccount/editaccount">
                         <i class="bx bx-cog me-2"></i>
                         <span class="align-middle">Edit profile</span>
                       </a>

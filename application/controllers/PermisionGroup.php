@@ -45,7 +45,7 @@ class PermisionGroup extends CI_Controller {
     }
 	
 	public function permisGroup() {
-        $this->another_js = "<script src='" . base_url() . "assets/js/mngPermisGroup.js'></script>";
+        $this->another_js = "<script src='" . base_url() . "assets/js/managePermisGroup.js'></script>";
         $this->render_view('managepermision_group');
 
     }

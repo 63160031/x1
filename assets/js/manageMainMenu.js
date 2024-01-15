@@ -2,7 +2,7 @@
     shDataTable()
     function shDataTable() {
 
-
+// *************************************** Table mainmanu ***********************************************// 
         $(document).ready(function () {
 
             // URL of the API
@@ -61,8 +61,8 @@
             });
         });
     }
-
-    //-------------------------- Updaye flg status ----------------------------------
+    // *************************************** Updaye flg status ***********************************************// 
+    
 
     $(document).on('click', '.btnStatus', function () {
         const smmId = $(this).data('sa-id');
@@ -148,14 +148,8 @@
         const encodedSaId = encodeURIComponent(smmId);
         const encodedStatusValue = encodeURIComponent(statusValue);
 
-
-        // Make an AJAX request to update the status on the server
-
     }
-
-    //{/* <td><span class="badge bg-label-${data[i].sa_status_flg == 1 ? 'success' : 'danger'} me-1">${data[i].sa_status_flg == 1 ? 'Enable' : 'Disable'}</span></td> */}
-
-    //-------------------------- Add Main Menu ----------------------------------
+    // *************************************** Add Main Menu ***********************************************// 
     $(document).on('click', '#btnSaveAdd', function () {
         var arrDataAdd = []
         var MainMenuName = $('#inpMainMenuName').val()
@@ -235,7 +229,7 @@
         }
 
     })
-    //-------------------------- Show Main Menu ----------------------------------
+// *************************************** Show Main Menu ***********************************************// 
     var data_main
     var mainId
     $(document).on('click', '.tblDelBtn', function () {

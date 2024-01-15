@@ -14,7 +14,7 @@ $(() => {
     shDataTable()
     function shDataTable() {
 
-
+  // **************************************************************************************// 
         $(document).ready(function () {
 
             // URL of the API
@@ -165,6 +165,4 @@ $(() => {
         // Make an AJAX request to update the status on the server
 
     }
-
-    //{/* <td><span class="badge bg-label-${data[i].sa_status_flg == 1 ? 'success' : 'danger'} me-1">${data[i].sa_status_flg == 1 ? 'Enable' : 'Disable'}</span></td> */}
 })

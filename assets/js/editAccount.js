@@ -5,21 +5,27 @@ $(document).ready(async function() {
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailPattern.test(email);
     }
-
-    await $.ajax({
-        url: base_url('EditAccount/callApiShowedit'),
-        success: function (response) {
-            response = JSON.parse(response);
-            emp_data = response;
-            for (let index in response) {
-                $('#edtEmpcode').val(response[index].emp_code);
-                $('#edtfName').val(response[index].firstname);
-                $('#edtlName').val(response[index].lastname);
-                $('#edtEmail').val(response[index].email);
+    $.ajax({
+        url: base_url('EditAccount/callApiUpdateStatus'),
+        type: 'POST',
+        dataType: 'json',
+        success: (response) => {
+            if (response && response.length > 0) {
+                const userData = response[0];
+                $('#edtEmpCode').val(userData.sa_emp_code);
+                $('#edtfName').val(userData.sa_firstname);
+                $('#edtlName').val(userData.sa_lastname);
+                $('#edtEmail').val(userData.sa_email);
+                $('#edtMpc').val(userData.mpc_id);
+            } else {
+                console.error("Unexpected or empty response format:", response);
             }
-            $('#edtPassword').val('')
+        },
+        error: (xhr, status, error) => {
+            console.error("Error:", status, error);
         }
     });
+    
     
 
     $('#btnSaveEdit').click(function() {
@@ -28,6 +34,7 @@ $(document).ready(async function() {
         var fName = $('#edtfName').val()
         var lName = $('#edtlName').val()
         var Email = $('#edtEmail').val()
+        var Ph = $('#edtMpc').val()
 
 
         if((emp_data[0].emp_password == password || password == '') && $('#edtfName').val() == emp_data[0].firstname && $('#edtlName').val() == emp_data[0].lastname && $('#edtEmail').val() == emp_data[0].email ){
@@ -38,7 +45,7 @@ $(document).ready(async function() {
                 timer: 2500,
             }).then(() => {
                 $.ajax({
-                    url: base_url('EditProfile/callApiShowedit'),
+                    url: base_url('EditAccount/callApiShowedit'),
                     success: function (response) {
                         response = JSON.parse(response);
                         emp_data = response;
@@ -47,6 +54,7 @@ $(document).ready(async function() {
                             $('#edtfName').val(response[index].firstname);
                             $('#edtlName').val(response[index].lastname);
                             $('#edtEmail').val(response[index].email);
+                            $('#edtMpc').val(response[index].ph);
                         }
                         $('#edtPassword').val('')
                     }
@@ -111,7 +119,7 @@ $(document).ready(async function() {
                     })
                     
                     $.ajax({
-                        url: base_url('EditProfile/callApiShowedit'),
+                        url: base_url('EditAccount/callApiShowedit'),
                         type: 'POST',
                         data: {
                             arrDataEdit: arrDataEdit
@@ -127,7 +135,7 @@ $(document).ready(async function() {
                                 }).then(() => {
                                     // window.location.href = base_url("EditProfile/editProfile")
                                     $.ajax({
-                                        url: base_url('EditProfile/callApiShowedit'),
+                                        url: base_url('EditAccount/callApiShowedit'),
                                         success: function (response) {
                                             response = JSON.parse(response);
                                             emp_data = response;
@@ -150,7 +158,7 @@ $(document).ready(async function() {
                                 }).then(() => {
                                     // window.location.href = base_url("EditProfile/editProfile")
                                     $.ajax({
-                                        url: base_url('EditProfile/callApiShowedit'),
+                                        url: base_url('EditAccount/callApiShowedit'),
                                         success: function (response) {
                                             response = JSON.parse(response);
                                             emp_data = response;
@@ -180,7 +188,4 @@ $(document).ready(async function() {
     })
 })
 
-// function show_edit_DrpDw() {
-//     $('#edtPermission').val(emp_data[0].permis_id).trigger("change")
-//     $('#edtPlant').val(emp_data[0].plant).trigger("change")
-// }
+
