@@ -12,7 +12,7 @@
 
         <div class="card">
           
-            <h5 class="card-header">Account</h5>
+            <h5 class="card-header">Manage Account</h5>
             <div class="card-body">
                 <div class="table-responsive text-nowrap">
                     <!-- Removed scrollBody -->

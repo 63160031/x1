@@ -36,8 +36,6 @@ $('#btnSaveEdit').on('click', function () {
     var FirstName = $('#edtfName').val();
     var LastName = $('#edtlName').val();
     var Email = $('#edtEmail').val();
-
-    
     if (
         ( emp_data.sa_emp_password == EmpPassword || EmpPassword == '') &&
         emp_data.sa_fristname == FirstName &&
@@ -85,7 +83,6 @@ $('#btnSaveEdit').on('click', function () {
             text: 'Please enter in English only.',
         })
     } else {
-
         Swal.fire({
             title: 'Are you sure?',
             text: "Do you want to add Account",
@@ -103,15 +100,13 @@ $('#btnSaveEdit').on('click', function () {
                 formData.append('EmpFirstName', FirstName);
                 formData.append('EmpLastName', LastName);
                 formData.append('EmpEmail', Email);
-
-                
                 $.ajax({
                     url: base_url('EditAccount/callApiUpdateAccount'),
                     type: 'POST',
                     data: formData,
                     processData: false,
-contentType: false,
-cache: false,
+                    contentType: false,
+                    cache: false,
                     dataType: 'json',
                     success: function(res) {
                         if (res.result == 1) {
@@ -128,8 +123,7 @@ cache: false,
                                 icon: 'success',
                                 title: 'Success!',
                                 html: 'The information has not changed.',
-                            }).then(() => {
-                                
+                            }).then(() => {                             
                             });
                         } else {
                             Swal.fire({
@@ -146,7 +140,3 @@ cache: false,
 });
 
 
-// function show_edit_DrpDw() {
-//     $('#edtPermission').val(emp_data[0].permis_id).trigger("change")
-//     $('#edtPlant').val(emp_data[0].plant).trigger("change")
-// }

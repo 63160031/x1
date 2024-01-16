@@ -7,9 +7,6 @@
 let menu, animate;
 
 (function () {
-  // Initialize menu
-  //-----------------
-
   let layoutMenuEl = document.querySelectorAll('#layout-menu');
   layoutMenuEl.forEach(function (element) {
     menu = new Menu(element, {

@@ -19,27 +19,4 @@ $(document).ready(function () {
         }
     })
 })
-}
-// *******************************************************************************
-// *
-
-// (function () {
-//     var lastMove = Date.now();
-
-//     document.onmousemove = function () {
-//         lastMove = Date.now();
-//     }
-
-//     setInterval(function () {
-//         var diff = Date.now() - lastMove;
-//         if (diff > 600000) {
-//             $.ajax({
-//                 url: base_url('Login/logout'),
-//                 success: (response) => {
-//                         window.location.href = 'http://127.0.0.1/SysIMS/Login/login';
-//                 }
-//             })
-//         }
-//     }, 600000);
-// }())
-);
+});

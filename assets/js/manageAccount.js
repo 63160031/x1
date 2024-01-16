@@ -1,4 +1,4 @@
-$(() => {
+    $(() => {
     $('#mdlAdd').on('hidden.bs.modal', function () {
         $('#errMegadd').css('display', 'none');
         $('#errAddempcode').css('display', 'none');

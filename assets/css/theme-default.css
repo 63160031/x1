@@ -204,12 +204,23 @@ button.list-group-item-primary.active {
 .table-primary .btn-icon {
   color: #435971;
 }
-
+.btn-py {
+  color: #fff;
+  background-color: #25e93c;
+  border-color: #62a045;
+  box-shadow: 0px 0rem 0.5rem 0 rgba(147, 230, 154, 0.57);
+}
+.btn-py:hover {
+  color: #fff;
+  background-color: #000000;
+  border-color: #000000;
+  transform: translateY(-1px);
+}
 .btn-primary {
   color: #fff;
-  background-color: #b43b26;
-  border-color: #ffcfc6;
-  box-shadow: 0px 0rem 0.5rem 0 rgb(255 105 116 / 57%);
+  background-color: #27c06e;
+  border-color: #61cb43;
+  box-shadow: 0px 0rem 0.5rem 0 rgba(81, 211, 118, 0.57);
 }
 .btn-primary:hover {
   color: #fff;
@@ -757,10 +768,10 @@ html:not(.layout-menu-collapsed) .bg-menu-theme .menu-inner .menu-item .menu-lin
   background-color: rgba(67, 89, 113, 0.04);
 }
 .bg-menu-theme .menu-inner .menu-sub > .menu-item.active .menu-icon {
-  color: #696cff;
+  color: #000000;
 }
 .bg-menu-theme .menu-inner > .menu-item.active > .menu-link {
-  color: #696cff;
+  color: #000000;
   background-color: rgba(105, 108, 255, 0.16) !important;
 }
 .bg-menu-theme .menu-inner > .menu-item.active:before {
