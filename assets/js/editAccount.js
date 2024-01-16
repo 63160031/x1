@@ -10,7 +10,7 @@ $(document).ready(async function() {
                 emp_data = response[0];
                 $('#empCode').val(emp_data.sa_emp_code);
                 // $('#edtPass').val(emp_data.sa_emp_password);
-                $('#edtfName').val(emp_data.sa_fristname);
+                $('#edtfName').val(emp_data.sa_firstname);
                 $('#edtlName').val(emp_data.sa_lastname);
                 $('#edtEmail').val(emp_data.sa_email);
             } else {

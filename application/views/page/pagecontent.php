@@ -19,7 +19,7 @@
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="<?php echo base_url() ?>/assets/assets/img/logo/inventory.png" />
+    <link rel="icon" type="image/x-icon" href="<?php echo base_url() ?>/assets/img/logo/inventory.png" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,26 +30,26 @@
     />
 
     <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>/assets/assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="<?php echo base_url() ?>/assets/vendor/fonts/boxicons.css" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>/assets/assets/vendor/css/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="<?php echo base_url() ?>/assets/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="<?php echo base_url() ?>/assets/assets/css/demo.css" />
+    <link rel="stylesheet" href="<?php echo base_url() ?>/assets/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="<?php echo base_url() ?>/assets/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="<?php echo base_url() ?>/assets/css/demo.css" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>/assets/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="<?php echo base_url() ?>/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
-    <link rel="stylesheet" href="<?php echo base_url() ?>/assets/assets/vendor/libs/apex-charts/apex-charts.css" />
+    <link rel="stylesheet" href="<?php echo base_url() ?>/assets/vendor/libs/apex-charts/apex-charts.css" />
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
     <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script src="<?php echo base_url() ?>/assets/assets/vendor/js/helpers.js"></script>
+    <script src="<?php echo base_url() ?>/assets/vendor/js/helpers.js"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="<?php echo base_url() ?>/assets/assets/js/config.js"></script>
+    <script src="<?php echo base_url() ?>/assets/js/config.js"></script>
 
 	
   </head>
@@ -201,31 +201,27 @@
 </script>
 <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="<?php echo base_url() ?>/assets/assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="<?php echo base_url() ?>/assets/assets/vendor/libs/popper/popper.js"></script>
-    <script src="<?php echo base_url() ?>/assets/assets/vendor/js/bootstrap.js"></script>
-    <script src="<?php echo base_url() ?>/assets/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="<?php echo base_url() ?>/assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="<?php echo base_url() ?>/assets/vendor/libs/popper/popper.js"></script>
+    <script src="<?php echo base_url() ?>/assets/vendor/js/bootstrap.js"></script>
+    <script src="<?php echo base_url() ?>/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 
-    <script src="<?php echo base_url() ?>/assets/assets/vendor/js/menu.js"></script>
+    <script src="<?php echo base_url() ?>/assets/vendor/js/menu.js"></script>
     <!-- endbuild -->
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
    <!-- Vendors JS -->
-    <script src="<?php echo base_url() ?>/assets/assets/vendor/libs/apex-charts/apexcharts.js"></script>
+    <script src="<?php echo base_url() ?>/assets/vendor/libs/apex-charts/apexcharts.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	
 
     <!-- Main JS -->
-    <script src="<?php echo base_url() ?>/assets/assets/js/main.js"></script>
+    <script src="<?php echo base_url() ?>/assets/js/main.js"></script>
 	<script src="<?php echo base_url() ?>/assets/js/logout.js"></script>
 
 
-	
-
-	<!-- <script src="<?php echo base_url() ?>/assets/js/submenu.js"></script> -->
-
     <!-- Page JS -->
-    <script src="<?php echo base_url() ?>/assets/assets/js/dashboards-analytics.js"></script>
+    <script src="<?php echo base_url() ?>/assets/js/dashboards-analytics.js"></script>
 
 
     <!-- Place this tag in your head or just before your close body tag. -->

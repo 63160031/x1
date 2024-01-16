@@ -1,9 +1,9 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class MainMenu extends CI_Controller {
-
-	private $another_css;
+class MainMenu extends CI_Controller
+{
+    private $another_css;
     public $another_js;
     private $data;
 
@@ -43,12 +43,12 @@ class MainMenu extends CI_Controller {
         $this->data['page_content'] = $this->parser->parse($path, $this->data, TRUE);
         $this->parser->parse('page/pagecontent', $this->data);
     }
-	
-	public function mainmenu() {
-		$this->another_js = "<script src='" . base_url() . "assets/js/manageMainMenu.js'></script>";
+    public function mainmenu()
+    {
+        $this->another_js = "<script src='" . base_url() . "assets/js/manageMainMenu.js'></script>";
         $this->render_view('mainmenu');
-
     }
+
     public function callApi()
     {
         $url = $_GET["url"];
@@ -64,13 +64,34 @@ class MainMenu extends CI_Controller {
         echo json_encode($data);
     }
     
-	public function callApiUpdateStatus()
+    public function callApiAddMainMenu()
     {
-        $result = $this->curPostRequest('Manage_mainmenu/upstatus', array('data' => serialize($_POST) ,'session' =>serialize( $this->session->userdata('userName'))));
+        $result = $this->curPostRequest('Manage_mainmenu/insert_main_menu', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
         echo json_encode($result);
 
     }
-	function curPostRequest($enpoint, $param_data, $is_array = true, $associative = false){
+    public function callApiShowEdit()
+    {
+        $result = $this->curPostRequest('Manage_mainmenu/show_upd_main_menu', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
+        echo json_encode($result);
+
+    }
+    public function callApiSaveEdit()
+    {
+        $result = $this->curPostRequest('Manage_mainmenu/edit_main_menu', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
+        echo json_encode($result);
+
+    }
+    public function callApiUpdateStatus()
+    {
+        $result = $this->curPostRequest('Manage_mainmenu/upd_status_main_menu', array('data' => serialize($_POST) ,'session' =>serialize( $this->session->userdata('userName'))));
+        echo json_encode($result);
+
+    }
+
+    
+
+    function curPostRequest($enpoint, $param_data, $is_array = true, $associative = false){
         /* Endpoint */
         $url = 'http://127.0.0.1/api/' . $enpoint;
     
@@ -105,6 +126,4 @@ class MainMenu extends CI_Controller {
         return $is_array ? json_decode($result, $associative) : $result;
     }
 
-
-	
 }
