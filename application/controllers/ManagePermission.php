@@ -1,9 +1,9 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class PermisionGroup extends CI_Controller {
-
-	private $another_css;
+class ManagePermission extends CI_Controller
+{
+    private $another_css;
     public $another_js;
     private $data;
 
@@ -43,11 +43,10 @@ class PermisionGroup extends CI_Controller {
         $this->data['page_content'] = $this->parser->parse($path, $this->data, TRUE);
         $this->parser->parse('page/pagecontent', $this->data);
     }
-	
-	public function permisGroup() {
-        $this->another_js = "<script src='" . base_url() . "assets/js/managePermisGroup.js'></script>";
-        $this->render_view('managepermission_group');
-
+    public function mngPermis()
+    {
+        $this->another_js = "<script src='" . base_url() . "assets/js/managePermisDetail.js'></script>";
+        $this->render_view('manage_permission_detail');
     }
 
     public function callApi()
@@ -64,30 +63,47 @@ class PermisionGroup extends CI_Controller {
         }
         echo json_encode($data);
     }
-	public function callApiAddPermisGroup()
+
+
+
+
+    public function callApiShowData()
     {
-        
-        $result = $this->curPostRequest('Manage_permis_group/insert_permis_group', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
+        $result = $this->curPostRequest('Manage_permis_detail/show_group', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
         echo json_encode($result);
 
     }
-    public function callApiSaveEdit()
+
+    public function callApiShowTable()
     {
-        $result = $this->curPostRequest('Manage_permis_group/update_mpg_name', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
+        $result = $this->curPostRequest('Manage_permis_detail/show_tb', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
         echo json_encode($result);
 
     }
+
     public function callApiUpdateStatus()
     {
-        $result = $this->curPostRequest('Manage_permis_group/update_flg', array('data' => serialize($_POST) ,'session' =>serialize( $this->session->userdata('userName'))));
+        $result = $this->curPostRequest('Manage_permis_detail/update_flg', array('data' => serialize($_POST) ,'session' =>serialize( $this->session->userdata('userName'))));
         echo json_encode($result);
 
     }
-    public function test()
+    public function callApiShowdrop_main()
     {
-           echo $this->session->userdata('userName');
-            // $this->session->set_userdata('perMissionGroup', $login->permis_id);
+        $result = $this->curPostRequest('Manage_permis_detail/drop_main', array('data' => serialize($_POST) ,'session' =>serialize( $this->session->userdata('userName'))));
+        echo json_encode($result);
+
     }
+
+    public function callApiAddPermiss()
+    {
+        $result = $this->curPostRequest('Manage_permis_detail/insert_permiss', array('data' => serialize($_POST) ,'session' =>serialize( $this->session->userdata('userName'))));
+        echo json_encode($result);
+
+    }
+    
+    
+    
+
     function curPostRequest($enpoint, $param_data, $is_array = true, $associative = false){
         /* Endpoint */
         $url = 'http://127.0.0.1/api/' . $enpoint;
@@ -122,4 +138,5 @@ class PermisionGroup extends CI_Controller {
     
         return $is_array ? json_decode($result, $associative) : $result;
     }
+
 }

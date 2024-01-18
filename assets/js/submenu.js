@@ -71,3 +71,33 @@ $(document).ready(function () {
     }, {});
   }
 });
+
+
+
+
+
+var permis = []
+var plant = []
+var url = API_URL + "Api_Controller/show_Menu";
+$.ajax({
+    url: base_url('Login/callApiDropDown?url=' + url),
+    type: 'POST',
+    dataType: 'Json',
+    success: (response) => {
+        // console.log(response);
+        permis = response.permis
+        plant = response.plant
+        for (let i = 0; i < permis.length; i++) {
+            const data = permis[i];
+            // console.log(data);
+            $('.selPermission').append(`<option value="${data.spg_id}">${data.spg_name}</option>`)
+        }
+        for (let i = 0; i < plant.length; i++) {
+            const data = plant[i];
+            // console.log(data);
+            $('.selPlant').append(`<option value="${data.mpc_id}">${data.mpc_name}</option>`)
+        }
+    }
+});
+
+

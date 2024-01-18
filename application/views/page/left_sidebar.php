@@ -21,17 +21,17 @@
 
       <ul class="menu-inner py-1" id="sideBar_menu">
         <!-- Dashboard -->
-        <li class="menu-item active">
+        <!-- <li class="menu-item active">
           <a href="http://127.0.0.1/SysIMS/Dashboard/dashboard" class="menu-link">
             <i class="menu-icon tf-icons bx bx-home-circle"></i>
             <div data-i18n="Analytics">Dashboard</div>
           </a>
-        </li>
+        </li> -->
 
         <!-- Layouts -->
 
 
-        <li class="menu-item">
+        <!-- <li class="menu-item">
           <a href="javascript:void(0);" class="menu-link menu-toggle">
             <i class="menu-icon tf-icons bx bx-dock-top"></i>
             <div data-i18n="Account Settings">Administrator</div>
@@ -54,12 +54,12 @@
               <a href="http://127.0.0.1/SysIMS/PermisionGroup/permisGroup" class="menu-link">
                 <div class="text-truncate" data-i18n="Order Details">Manage Permission Group</div>
               </a>
-              <a href="app-ecommerce-order-details.html" class="menu-link">
+              <a href="http://127.0.0.1/SysIMS/ManagePermission/mngPermis" class="menu-link">
                 <div class="text-truncate" data-i18n="Order Details">Manage Permission Details</div>
               </a>
             </li>
           </ul>
-        </li>
+        </li> -->
 
 
 

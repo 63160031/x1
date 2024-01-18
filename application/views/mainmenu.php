@@ -1,4 +1,3 @@
-<!-- Content wrapper -->
 <div class="content-wrapper">
   <!-- Content -->
 
@@ -15,11 +14,10 @@
           <div class="col-md-6 col-sm-10 col-5">
             <div class="row ">
               <div class="col-lg-3">
-                <span>Main Menu</span><span class="red-text">*</span>
               </div>
               <div class="col">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                  <input class="mdl-textfield__input" type="text" id="inpMainMenuName" oninput="InputAdd(this)">
+                  <input class="form-control" placeholder="ADD MAINMENU" aria-label="ADD MAINMENU" type="text" id="inpMainMenuName" oninput="InputAdd(this)">
 
                 </div>
               </div>
@@ -28,10 +26,9 @@
           <div class="col-md-5 col-sm-2 col-5">
             <div class="row container">
               <div class="col-lg-5 p-t-20">
-                <span>Main Menu Icon</span><span class="red-text">*</span>
               </div>
               <div class="col-lg-6" style="display: grid; grid-template-columns: auto auto;">
-                <input class="mdl-textfield__input" type="text" id="inpMainMenuIcon" oninput="InputAdd(this)">
+                <input class="form-control"placeholder="ICON" aria-label="ICON" type="text" id="inpMainMenuIcon" oninput="InputAdd(this)">
                 <span style="margin-left: -30px;" data-bs-toggle="modal" data-bs-target="#mdlIcon">
                   <i class='bx bx-filter'></i>
                 </span>
@@ -69,6 +66,7 @@
       </div>
     </div>
     <!--/ Bordered Table -->
+
 
 
     <!-- Button trigger modal -->
@@ -131,14 +129,11 @@
                   </div>
                 </div>
               </div>
-
-
-              <!-- เพิ่มไอคอนเพิ่มเติมตามต้องการ -->
             </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="btnSaveEdit">Save changes</button>
+            <!-- <button type="button" class="btn btn-primary" id="btnSaveEdit">Save changes</button> -->
           </div>
         </div>
       </div>
