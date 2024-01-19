@@ -4,7 +4,7 @@
 
   <div class="container-xxl flex-grow-1 container-p-y">
     <!-- Bordered Table -->
-    <h5 class="fw-bold py-3 mb-4" align="right"><span class="text-muted fw-light">Administrator /</span> Manage Sub Menu</h5>
+    <h5 class="fw-bold py-3 mb-4" ><span class="text-muted fw-light">Administrator /</span> Manage Sub Menu</h5>
     <div class="row py-1">
       <div class="col-1">
       Premission Group
@@ -63,7 +63,6 @@
                                     <div class="col-12 col-sm-12 justify-content-start">
                                         <div id="errMegadd" style="color: red; display: none;">Please enter in English only.</div>
                                     </div>
-      <h5 class="card-header">SYS_Account</h5>
       <div class="card-body">
         <div class="table-responsive text-nowrap">
           <div class="card-datatable table-responsive pt-0">

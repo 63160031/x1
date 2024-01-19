@@ -26,6 +26,11 @@ class Login extends CI_Controller
 
 
 
+    public function callApiLoginexp()
+    {
+        
+
+    }
 
     public function callApiLogin()
     {
@@ -64,6 +69,9 @@ class Login extends CI_Controller
         }
         echo json_encode($result);
     }
+  
+
+    
 
     function curPostRequest($enpoint, $param_data, $is_array = true, $associative = false)
     {
