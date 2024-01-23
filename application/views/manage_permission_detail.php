@@ -66,7 +66,7 @@
       <div class="card-body">
         <div class="table-responsive text-nowrap">
           <div class="card-datatable table-responsive pt-0">
-            <table class="datatables-basic table table-striped table-bordered table-hover table-checkable order-column border-top w-100" id="tblPermis">
+          <table class="datatables-basic table table-striped table-bordered table-hover table-checkable order-column border-top w-100" id="tblPermis">
               <thead>
                 <tr>
                   <th>No.</th>
@@ -130,9 +130,9 @@
                 </select>
               </div>
             </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="btnSaveEdit">Save changes</button>
+            <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="btnSaveEdit">Save changes</button>
           </div>
         </div>
       </div>

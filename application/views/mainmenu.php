@@ -4,67 +4,63 @@
   <div class="container-xxl flex-grow-1 container-p-y">
     <!-- Bordered Table -->
     <h5 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Administrator /</span> Manage Account</h5>
-
     <div class="card">
-
-
-      <div class="card-body">
-        <div class="row py-2 mt-2">
-          <span class="fs-5 fw-bold text-primary-emphasis">Register Main Menu</span>
-          <div class="col-md-6 col-sm-10 col-5">
-            <div class="row ">
-              <div class="col-lg-3">
-              </div>
-              <div class="col">
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                  <input class="form-control" placeholder="ADD MAINMENU" aria-label="ADD MAINMENU" type="text" id="inpMainMenuName" oninput="InputAdd(this)">
-
-                </div>
-              </div>
+  <div class="card-body">
+    <div class="row py-2 mt-2">
+      <span class="fs-5 fw-bold text-primary-emphasis">Register Main Menu</span>
+      <div class="col-md-6 col-sm-10 col-5">
+        <div class="row">
+          <div class="col-lg-3"></div>
+          <div class="col">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+              <input class="form-control" placeholder="ADD MAINMENU" aria-label="ADD MAINMENU" type="text" id="inpMainMenuName" oninput="InputAdd(this)">
             </div>
-          </div>
-          <div class="col-md-5 col-sm-2 col-5">
-            <div class="row container">
-              <div class="col-lg-5 p-t-20">
-              </div>
-              <div class="col-lg-6" style="display: grid; grid-template-columns: auto auto;">
-                <input class="form-control"placeholder="ICON" aria-label="ICON" type="text" id="inpMainMenuIcon" oninput="InputAdd(this)">
-                <span style="margin-left: -30px;" data-bs-toggle="modal" data-bs-target="#mdlIcon">
-                  <i class='bx bx-filter'></i>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md col-sm-2 col-2 p-t-20">
-            <button type="button" class="btn btn-circle btn-primary" id="btnSaveAdd">Submit</button>
-          </div>
-          <div class="col justify-content-start ms-1">
-            <div id="errMegadd" style="color: red; display: none;">Please enter in English only.</div>
-          </div>
-        </div>
-
-        <div class="table-responsive text-nowrap">
-          <div class="card-datatable table-responsive pt-0">
-            <table class="order-column" id="tblMainMenu">
-              <thead>
-                <tr>
-                  <th>No.</th>
-                  <th>Main Menu Name</th>
-                  <th>Main Menu Icon</th>
-                  <th>Order No.</th>
-                  <th>Update Date</th>
-                  <th>Update By</th>
-                  <th>Status</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody class="table-border-bottom-0" id="tbody">
-              </tbody>
-            </table>
           </div>
         </div>
       </div>
+      <div class="col-md-5 col-sm-2 col-7">
+        <div class="row container">
+          <div class="col-lg-5 p-t-20"></div>
+          <div class="col-lg-6" style="display: grid; grid-template-columns: auto auto;">
+            <input class="form-control" placeholder="ICON" aria-label="ICON" type="text" id="inpMainMenuIcon" oninput="InputAdd(this)">
+            <span style="margin-left: -30px;" data-bs-toggle="modal" data-bs-target="#mdlIcon">
+              <i class='bx bx-filter'></i>
+            </span>
+          </div>
+          <div class="col-md-12 col-sm-3 col-5 text-end">
+            <button type="button" class="btn btn-circle btn-primary btn-sm" id="btnSaveAdd">Submit</button>
+          </div>
+        </div>
+      </div>
+      <div class="col justify-content-start ms-1">
+        <div id="errMegadd" style="color: red; display: none;">Please enter in English only.</div>
+      </div>
     </div>
+
+    <div class="table-responsive text-nowrap">
+      <div class="card-datatable table-responsive pt-0">
+        <table class="order-column table" id="tblMainMenu">
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Main Menu Name</th>
+              <th>Main Menu Icon</th>
+              <th>Order No.</th>
+              <th>Update Date</th>
+              <th>Update By</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody class="table-border-bottom-0" id="tbody">
+            <!-- ถ้าคุณต้องการเพิ่มแถวข้อมูลตารางในนี้ สามารถทำได้ -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
     <!--/ Bordered Table -->
 
 
