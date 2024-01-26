@@ -5,7 +5,7 @@
 
   <div class="container-xxl flex-grow-1 container-p-y">
     <!-- Bordered Table -->
-    <h5 class="fw-bold py-3 mb-4" align="right"><span class="text-muted fw-light">Administrator /</span>App. Manage Sub Menu</h5>
+    <h5 class="fw-bold py-3 mb-4" align="left"><span class="text-muted fw-light">Administrator /</span>App Manage Sub Menu</h5>
     <div class="row py-1">
       <div class="col-1">
         Premission Group
@@ -20,16 +20,12 @@
       </div>
     </div>
     <br>
-
-
     <div class="card" style="display: none;" id="content">
       <div class="card-body">
         <div class="row py-2 mt-2">
           <div>
             <span class="fs-5 fw-bold text-primary-emphasis">Add Permission</span>
             <div class="row ">
-
-
               <div class="mb-3 col-md-5">
                 <span>Menu Group Name</span><span class="red-text">*</span>
                 <div class="col-lg">
@@ -40,24 +36,12 @@
                   </div>
                 </div>
               </div>
-
-
-             
-
-
               <div class="col-md-2 col-md-2-main col-md-2-add">
                 <button type="button" class="btn btn-circle btn-primary btn-edt-add" id="btnSaveAddPer">Add</button>
-
               </div>
-
             </div>
           </div>
-
-
-
-
           <h5 class="card-header">Permission_Detail</h5>
-
           <div class="table-responsive text-nowrap">
             <div class="card-datatable table-responsive pt-0">
               <table class="datatables-basic table table-striped table-bordered table-hover table-checkable order-column border-top w-100" id="tblPermis">
@@ -72,15 +56,14 @@
                   </tr>
                 </thead>
                 <tbody class="table-border-bottom-0" id="tbody">
-                 
-            </tbody>
-            </table>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>
 </div>
 </div>

@@ -32,9 +32,6 @@
                     <div id="errMegadd" style="color: red; display: none;">Please enter in English only.</div>
                   </div>
                 </div>
-
-
-
                 <div class="card-body">
                   <div class="table-responsive text-nowrap">
                     <div class="card-datatable table-responsive pt-0">

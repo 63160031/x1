@@ -43,12 +43,9 @@
               <thead>
                 <tr>
                   <th>No.</th>
-                  <th>Main Menu Name</th>
-                  <th>Main Menu Icon</th>
-                  <th>Order No.</th>
-                  <th>Update Date</th>
-                  <th>Update By</th>
-                  <th>Status</th>
+                  <th>ITEM no</th>
+                  <th>PART no</th>
+                  <th>STATUS</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -97,7 +94,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="btnSaveEdit">Save changes</button>
+            <button type="button" class="btn btn-primary" id="btnSave">Save changes</button>
           </div>
         </div>
       </div>

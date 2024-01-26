@@ -144,7 +144,6 @@ $(() => {
                   </td>
                   </tr>
                   `;
-                   
                 }
                 $('#tblManageAccount').dataTable().fnDestroy()
 	                    $("#tbody")

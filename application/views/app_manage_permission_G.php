@@ -1,17 +1,17 @@
 <!-- Content wrapper -->
 <div class="content-wrapper">
   <!-- Content -->
-
+r
   <div class="container-xxl flex-grow-1 container-p-y">
     <!-- Bordered Table -->
-    <h5 class="fw-bold py-3 mb-4" align="right"><span class="text-muted fw-light">Administrator /</span>App. Manage Permission Group</h5>
+    <h5 class="fw-bold py-3 mb-4" align="left"><span class="text-muted fw-light">Administrator /</span>App Manage Permission Group</h5>
 
     <div class="card">      
       <div class="card-body">
       <div class="row py-2 mt-2">
 
 
-        <span class="fs-5 fw-bold text-primary-emphasis">Add Permission group . App</span>
+        <span class="fs-5 fw-bold text-primary-emphasis">Add Permission group</span>
             <div class="row">
             <div class="mb-3 col-md-5">
             <span>Permission Group Name</span><span class="red-text">*</span>
