@@ -236,10 +236,8 @@
 				}
 
 
-
 				function isThaiLanguage(text) {
-					// ตรวจสอบว่า text เป็น null หรือไม่
-					if (text === null) {
+					if (typeof text !== 'string') {
 						return false;
 					}
 					// ตรวจสอบว่า text เป็นช่องว่างหรือไม่
