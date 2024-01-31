@@ -26,7 +26,7 @@
                   </div>
 
                   <div class="col-md-3 justify-content-end">
-                    <button type="button" class="btn btn-circle btn-primary" id="btnSaveAdd" style="margin-top: -5px; margin-left: -450px;">Submit</button>
+                    <button type="button" class="btn btn-circle btn-primary" id="btnSaveAdd" style="margin-top: -32px;margin-left: -440px;">Submit</button>
                   </div>
                   <div class="col-md-3 justify-content-start ms-1">
                     <div id="errMegadd" style="color: red; display: none;">Please enter in English only.</div>
@@ -35,7 +35,7 @@
                 <div class="card-body">
                   <div class="table-responsive text-nowrap">
                     <div class="card-datatable table-responsive pt-0">
-                      <table class="order-column" id="tblPermisGP">
+                      <table class="table card-table table-striped table-bordered table-hover table-checkable order-column w-100" id="tblPermisGP">
                         <thead>
                           <tr>
                             <th>No.</th>

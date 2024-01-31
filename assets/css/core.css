@@ -45,8 +45,8 @@
   --bs-body-font-size: 0.9375rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.53;
-  --bs-body-color: #172739;
-  --bs-body-bg: #cdcdcd;
+  --bs-body-color: #697a8d;
+  --bs-body-bg: #f5f5f9;
 }
 
 *,
@@ -293,11 +293,6 @@ svg {
 table {
   caption-side: bottom;
   border-collapse: collapse;
-}
-.logo-img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover; /* หรือเลือกค่าต่าง ๆ ตามความต้องการของคุณ (contain, cover, fill, none, scale-down) */
 }
 
 caption {
@@ -720,7 +715,8 @@ progress {
 
 .col-1 {
   flex: 0 0 auto;
-  width: 8.33333333%;
+  width: auto;
+  margin: 8px 0px 0px 0px;
 }
 
 .col-2 {
@@ -1098,6 +1094,7 @@ progress {
 @media (min-width: 768px) {
   .col-md {
     flex: 1 0 0%;
+    margin: 40px 0px 0px 0px;
   }
 
   .row-cols-md-auto > * {
@@ -1149,20 +1146,31 @@ progress {
     flex: 0 0 auto;
     width: 16.66666667%;
   }
+  .col-md-2-add {
+    margin: 22px 0px 0px 0px;
+  }
 
   .col-md-3 {
     flex: 0 0 auto;
     width: 25%;
+    margin: 17px 20px 30px 0px;
+  }
+  .col-md-3-main {
+    margin: 40px 0px 0px 0px;
   }
 
   .col-md-4 {
     flex: 0 0 auto;
     width: 33.33333333%;
   }
+  .col-md-1888 {
+    margin: 15.888888px 0px 0px 0px;
+  }
 
   .col-md-5 {
     flex: 0 0 auto;
     width: 41.66666667%;
+    margin-top: 1rem !important;
   }
 
   .col-md-6 {
@@ -1173,6 +1181,7 @@ progress {
   .col-md-7 {
     flex: 0 0 auto;
     width: 58.33333333%;
+    margin: 10px 0px 0px 0px;
   }
 
   .col-md-8 {
@@ -1365,7 +1374,8 @@ progress {
 
   .col-lg-3 {
     flex: 0 0 auto;
-    width: 25%;
+    width: 35%;
+    margin: 0px -20px 10px 10px;
   }
 
   .col-lg-4 {
@@ -1376,6 +1386,8 @@ progress {
   .col-lg-5 {
     flex: 0 0 auto;
     width: 41.66666667%;
+    margin: 0px -60px 10px 10px;
+
   }
 
   .col-lg-6 {
@@ -2193,9 +2205,9 @@ progress {
   background-clip: padding-box;
   border: 1px solid #d9dee3;
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border-radius: 30.375rem;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 0.375rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -2764,14 +2776,14 @@ textarea.form-control-lg {
   display: inline-block;
   font-weight: 400;
   line-height: 1.53;
-  color: #697a8d;
+  color: #ffffff;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  background-color: transparent;
+  -moz-user-select: none;
+  user-select: none;
+  background-color: #adaec0;
   border: 1px solid transparent;
   padding: 0.4375rem 1.25rem;
   font-size: 0.9375rem;
@@ -2784,7 +2796,7 @@ textarea.form-control-lg {
   }
 }
 .btn:hover {
-  color: #0a9d1b;
+  color: #75797db5;
 }
 .btn-check:focus + .btn, .btn:focus {
   outline: 0;
@@ -3701,7 +3713,7 @@ textarea.form-control-lg {
     border-left: 0;
     transition: none;
     transform: none;
-  }f
+  }
   .navbar-expand-xxl .offcanvas-top,
 .navbar-expand-xxl .offcanvas-bottom {
     height: auto;
@@ -3841,14 +3853,12 @@ textarea.form-control-lg {
   position: relative;
   display: flex;
   flex-direction: column;
-  max-width: 4000px; /* หรือขนาดที่คุณต้องการ */
   min-width: 0;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
   border: 0 solid #d9dee3;
   border-radius: 0.5rem;
-  overflow: hidden; /* ป้องกัน scrollbar */
 }
 .card > hr {
   margin-right: 0;
@@ -4609,7 +4619,7 @@ textarea.form-control-lg {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1050;
+  z-index: 1060;
   display: none;
   width: 100%;
   height: 100%;
@@ -4674,7 +4684,7 @@ textarea.form-control-lg {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1040;
+  z-index: 1059;
   width: 100vw;
   height: 100vh;
   background-color: #435971;
@@ -6339,26 +6349,27 @@ label.btn {
 }
 
 .btn-outline-secondary {
-  color: #ffffff;
-  border-color: #ff0000;
-  background: #ff0000;
+  color: #8592a3;
+  border-color: #8592a3;
+  background: transparent;
 }
 .btn-outline-secondary:hover {
   color: #fff;
-  background-color: #fc0019;
-  border-color: #f4041c;
-  box-shadow: 0 0.125rem 0.25rem 0 rgba(255, 0, 30, 0.4);
+  background-color: #788393;
+  border-color: #788393;
+  box-shadow: 0 0.125rem 0.25rem 0 rgba(133, 146, 163, 0.4);
+  transform: translateY(-1px);
 }
 .btn-check:focus + .btn-outline-secondary, .btn-outline-secondary:focus {
   color: #fff;
-  background-color: #ff0000;
-  border-color: #f33b3b;
+  background-color: #788393;
+  border-color: #788393;
   box-shadow: none;
   transform: translateY(0);
 }
 .btn-check:checked + .btn-outline-secondary, .btn-check:active + .btn-outline-secondary, .btn-outline-secondary:active, .btn-outline-secondary.active, .btn-outline-secondary.dropdown-toggle.show {
   color: #fff;
-  background-color: #8b7171;
+  background-color: #717c8b;
   border-color: #717c8b;
 }
 .btn-check:checked + .btn-outline-secondary:focus, .btn-check:active + .btn-outline-secondary:focus, .btn-outline-secondary:active:focus, .btn-outline-secondary.active:focus, .btn-outline-secondary.dropdown-toggle.show:focus {
@@ -7437,6 +7448,11 @@ button:focus {
 
 .page-link.btn-primary {
   box-shadow: none !important;
+}
+.btn-edt-add {
+  flex: 0 0 auto;
+  width: 41.66666667%;
+  margin-top: 1rem !important;
 }
 
 .pagination-lg .page-link,
@@ -13387,6 +13403,9 @@ button.list-group-item-gray.active {
   .pb-xxl-5 {
     padding-bottom: 3rem !important;
   }
+  .red-text {
+    color: red;
+  }
 }
 @media (min-width: 1200px) {
   .fs-1 {
@@ -15652,6 +15671,8 @@ html:not(.layout-footer-fixed) .content-wrapper {
   line-height: 1;
   min-height: 1px;
   align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .app-brand-link {

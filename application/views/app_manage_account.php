@@ -9,7 +9,8 @@
 
     <div class="card">
       <div class="d-flex justify-content-end mt-2 pr-2">
-        <button type="button" class="btn btn-circle btn-primary" id="callmodelAdd" data-bs-toggle="modal" data-bs-target="#mdlAdd">Add Account <i class="fa fa-plus"></i></button>
+        <button type="button" class="btn btn-circle btn-primary" id="callmodelAdd" data-bs-toggle="modal" data-bs-target="#mdlAdd" style="
+    margin-right: 27px; margin-top: 14px;">Add Account <i class="fa fa-plus"></i></button>
       </div>
       <h5 class="card-header">App Manage Account</h5>
       <div class="card-body">

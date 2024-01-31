@@ -1,4 +1,4 @@
-<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Administrator /</span> Manage Account </h4>
+<h5 class="fw-bold py-4 mb-4" style="margin-left: 25px;"><span class="text-muted fw-light">Administrator /</span> Manage Account </h5>
 <style>
     /* ตัวอย่าง CSS ที่ใช้กับ DataTable */
     .dataTables_scrollBody {
@@ -15,11 +15,11 @@
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <h5 class="card-header">Manage Account</h5>
+                <h6 class="card-header">Manage Account</h6>
                 <div class="card-body">
                     <div class="table-responsive text-nowrap">
                         <div class="card-datatable table-responsive pt-0">
-                            <table class="order-column table" id="tblManageAccount">
+                            <table class="table card-table table-striped table-bordered table-hover table-checkable order-column w-100 table" id="tblManageAccount">
                                 <thead>
                                     <tr>
                                         <th>No.</th>

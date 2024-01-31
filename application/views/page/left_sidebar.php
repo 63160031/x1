@@ -1,17 +1,13 @@
 <!-- Layout wrapper -->
 <div class="layout-wrapper layout-content-navbar">
   <div class="layout-container">
+    
     <!-- Menu -->
 
     <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
       <div class="app-brand demo">
         <a href="index.html" class="app-brand-link">
-
-          <span class="app-brand-text demo menu-text fw-bolder ms-2">
-            <h5>Inventory Management<h5>
-          </span>
-        </a>
-
+        <img src="<?php echo base_url() ?>/assets/img/logo/Lo1.png" alt="Your Image" class="app-brand-image" width="125" height="70" /></a>
         <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
           <i class="bx bx-chevron-left bx-sm align-middle"></i>
         </a>

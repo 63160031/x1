@@ -31,6 +31,8 @@ class Dashboard extends CI_Controller {
 		$this->top_navbar_data = $result;
 		$this->left_sidebar_data = $result;
 		$this->footer_data = $result;
+
+		
 		if (!$this->session->userdata('userId')) {
             redirect(base_url() . 'Login/login');
 

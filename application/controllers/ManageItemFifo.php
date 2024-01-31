@@ -51,28 +51,17 @@ class ManageItemFifo extends CI_Controller {
     }
     public function callApiAddAccount()
     {
-        $result = $this->curPostRequest('Manage_account/ins_User', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
-        echo json_encode($result);
-
-    }
-    public function callApiEditAccount()
-    {
-        $result = $this->curPostRequest('Manage_account/show_upd_User', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
-        echo json_encode($result);
-
-    }
-    public function callApiUpdateAccount()
-    {
-        $result = $this->curPostRequest('Manage_account/upd_User', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
+        $result = $this->curPostRequest('Manage_item_fifo/show_tablel', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
         echo json_encode($result);
 
     }
     public function callApiUpdateStatus()
     {
-        $result = $this->curPostRequest('Manage_account/upstatus', array('data' => serialize($_POST) ,'session' =>serialize( $this->session->userdata('userName'))));
+        $result = $this->curPostRequest('Manage_item_fifo/upstatus', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
         echo json_encode($result);
 
     }
+
 
     public function callApi()
     {

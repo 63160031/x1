@@ -195,6 +195,10 @@
 					return Pattern.test(text);
 				}
 
+				////////////// edit itemno ///////////////
+				function chkAdditem(empcode) {
+   				 return /^[0-9]+$/.test(empcode);
+					}
 
 				////////////// edit account ///////////////
 				function InputEdit(inputElement) {

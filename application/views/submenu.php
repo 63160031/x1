@@ -58,7 +58,7 @@
                           <div class="card-body">
                             <div class="table-responsive text-nowrap">
                               <div class="card-datatable table-responsive pt-0">
-                                <table class="order-column" id="tblSubMenu">
+                                <table class="table card-table table-striped table-bordered table-hover table-checkable order-column w-100" id="tblSubMenu">
                                   <thead>
                                     <tr>
                                       <th>No.</th>

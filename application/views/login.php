@@ -1,75 +1,104 @@
 <style>
-  @charset "UTF-8";
+  @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:700');
 
-  .authentication-wrapper {
-    display: flex;
-    flex-basis: 100%;
-    min-height: 100vh;
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 1px;
+  }
+
+  section {
     width: 100%;
-  }
-
-  .authentication-wrapper .authentication-inner {
-    width: 100%;
-  }
-
-  .authentication-wrapper.authentication-basic {
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  .authentication-wrapper.authentication-cover {
-    align-items: flex-start;
-  }
-
-  .authentication-wrapper.authentication-cover .authentication-inner {
     height: 100vh;
+    background-image: linear-gradient(rgb(37 65 217 / 61%), rgb(8 7 18)), url(../assets/img/backgrounds/BG2.jpg);
+    background-size: cover;
+    background-position: center;
   }
 
-  .authentication-wrapper.authentication-basic .authentication-inner {
-    max-width: 400px;
-    position: relative;
-  }
-
-  .authentication-wrapper.authentication-basic .authentication-inner:after {
-    width: 243px;
-    height: 240px;
-    content: " ";
+  .container {
     position: absolute;
-    bottom: -68px;
-    left: -46px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 340px;
+    text-align: center;
   }
 
-  .authentication-wrapper.authentication-basic .authentication-inner .card {
-    z-index: 1;
+  .login-form {
+    position: relative;
+    box-sizing: border-box;
+    padding: 60px 30px;
+    transition: 0.5s;
   }
 
-  .authentication-wrapper.authentication-basic .authentication-inner .card .app-brand {
-    margin-bottom: 2.5rem;
+  .login-form:hover {
+    background-color: rgb(243 233 243 / 25%);
+    box-shadow: 0 0 20px rgb(89 84 96 / 25%);
   }
 
-  .authentication-wrapper .auth-input-wrapper .auth-input {
-    max-width: 50px;
-    padding-left: 0.4rem;
-    padding-right: 0.4rem;
-    font-size: 150%;
+  .login-form h1 {
+    margin: 0 0 20px;
+    color: white;
+    font-size: 30px;
+    text-transform: uppercase;
   }
 
-  @media (max-width: 575.98px) {
-    .authentication-wrapper .auth-input-wrapper .auth-input {
-      font-size: 1.125rem;
-    }
+  .login-form input {
+    display: block;
+    width: 25%;
+    padding: 10px 23px;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+    border-radius: 11px;
+    outline: none;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #ffffff;
+    text-transform: uppercase;
+    border: none;
+    background-color: rgb(0 0 0 / 92%);
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-left: 500px;
+}
+  
+  .login-btn input {
+    display: block;
+    width: 15%;
+    padding: 8px 23px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    border-radius: 82px;
+    outline: none;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #ffffff;
+    text-transform: uppercase;
+    border: none;
+    background-color: rgb(0 0 0 / 92%);
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-left: 565px;
+  }
+  .login-form input::placeholder {
+    color: white;
   }
 
-  .light-style .authentication-wrapper .authentication-bg {
-    background-color: #fff;
+  .login-form input[type="submit"] {
+    color: white;
+    background-color: #fe1a19;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
   }
 
-  .logo-img {
-    width: 300px;
-    height: 300px;
-    object-fit: contain;
-    /* หรือเลือกค่าต่าง ๆ ตามความต้องการของคุณ (contain, cover, fill, none, scale-down) */
+  .login-form input[type="submit"]:hover {
+    background-color: #d93d3d;
+  }
+
+  .login-form a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
   }
 </style>
 <!DOCTYPE html>
@@ -116,48 +145,31 @@
 
 <body>
   <!-- Content -->
-
-  <div class="container-xxl">
-    <div class="authentication-wrapper authentication-basic container-p-y">
-      <div class="authentication-inner">
-        <!-- Register -->
-        <div class="card">
-          <div class="card-body">
-            <!-- Logo -->
-            <div class="app-brand justify-content-center">
-              <img src="<?php echo base_url() ?>/assets/img/logo/Lo1.png" class="card-img-top logo-img" alt="Logo">
-              </a>
-            </div>
-            <!-- /Logo -->
-
-            <p class="mb-4"></p>
-
-            <form id="formAuthentication" class="mb-3" method="POST">
-              <div class="mb-3">
-                <label for="email" class="form-label">ID</label>
-                <input type="text" class="form-control" placeholder="Enter your Employee Id" autofocus id="username" />
-              </div>
-              <div class="mb-3 form-password-toggle">
-                <div class="d-flex justify-content-between">
-                  <label class="form-label" for="password">Password</label>
-                </div>
-                <div class="input-group input-group-merge">
-                  <input type="password" class="form-control" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" id="password" />
-                  <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
-                </div>
-              </div>
-              <div class="mb-3">
-                <button class="btn btn-primary d-grid w-100" type="submit" id="btnLogin">Log in</button>
-              </div>
-            </form>
-          </div>
+  <section>
+    <div class="container">
+      <div class="login-form">
+        <div class="app-brand justify-content-center">
+          <img src="<?php echo base_url() ?>/assets/img/logo/Lo1.png" class="card-img-top logo-img" alt="Logo" style="width: 250px; height: 150px; magin-top: 40px; margin-left: 10 px;  ">
         </div>
-        <!-- /Register -->
+        <br>
+        <form>
+          <input type="text" name="username" placeholder="EMPLOYEE CODE" id="username">
+          <input type="password" name="password" placeholder="PASSWORD" id="password">
+          
+        </form>
+        <div class="login-btn">
+        <input type="submit" name="" value="Login" id="btnLogin">
+        </div>
+        
+        <div class="mb-2 mb-md-0 fw-bold" style="font-size: 8px;">
+          <a>© 2024 TBK Technology (Thailand) Company Limited. All rights reserved.<a>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- / Content -->
+
 
 
   <!-- Core JS -->

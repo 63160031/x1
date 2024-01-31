@@ -58,7 +58,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md col-sm-2 col-2 p-t-20">
-                                        <button type="button" class="btn btn-circle btn-primary" id="btnSaveAddPer">Add</button>
+                                        <button type="button" class="btn btn-circle btn-primary" id="btnSaveAddPer" style="margin-top: -33px;margin-left: -3px;">Add</button>
                                     </div>
                                     <div class="col-12 col-sm-12 justify-content-start">
                                         <div id="errMegadd" style="color: red; display: none;">Please enter in English only.</div>

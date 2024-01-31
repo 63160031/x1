@@ -64,21 +64,23 @@ function shDataTable() {
                 for (let i = 0; i < data.length; i++) {
                     html += `
                     <tr>
-            <td class="text-center"><strong>${i + 1}</strong></td>
-            <td class="text-center"><strong>${data[i].sma_name}</strong></td>
-            <td class="text-center">${data[i].spda_updated_date}</td>
-            <td class="text-center">${data[i].spda_updated_by}</td>
-            <td class="text-center">
-            <button class="btnStatus btn badge bg-label-${data[i].spda_status_flg == 1 ? 'success' : 'danger'} me-1" id="flgStatus" data-sa-id="${data[i].spga_id}" value="${data[i].spda_status_flg}">
-            ${data[i].spda_status_flg == 1 ? 'Enable' : 'Disable'}
-            </button>
-            </td>
-            <td class="text-center">
-            <a href="" class="tblEditBtn btn btn-sm btn-icon item-edit" data-bs-toggle="modal" data-bs-target="#mdlEdit" id="btnEdit" data-id="${data[i].spga_id}">
-            <i class="bx bxs-edit"></i>
-            </a>
+                <td class="text-center"><strong>${i + 1}</strong></td>
+                <td class="text-center"><strong>${data[i].sma_name}</strong></td>
+                <td class="text-center">${data[i].spda_updated_date}</td>
+                <td class="text-center">${data[i].spda_updated_by}</td>
+                <td class="text-center">
+                    <button class="btnStatus btn badge bg-label-${data[i].spda_status_flg == 1 ? 'success' : 'danger'} me-1" id="flgStatus" data-sa-id="${data[i].spda_id}" value="${data[i].spda_status_flg}">
+                    ${data[i].spda_status_flg == 1 ? 'Enable' : 'Disable'}
+                    </button>
                 </td>
-                    </tr>`;
+                <td class="text-center">
+                    <a href="" class="tblEditBtn btn btn-sm btn-icon item-edit" data-bs-toggle="modal" data-bs-target="#mdlEdit" id="btnEdit" data-id="${data[i].spda_id}">
+                    <i class="bx bxs-edit"></i>
+                    </a>
+                </td>
+                </tr>
+
+                  `;
                 }
                 $('#tblPermis').dataTable().fnDestroy();
                 $("#tbody")
@@ -127,7 +129,7 @@ function MenuDropdown() {
                 const menu = response[i];
                 dropdown.append(`<option value="${menu.sma_id}">${menu.sma_name}</option>`);
             }
-            
+
         },
         error: (err) => {
             console.log(err);

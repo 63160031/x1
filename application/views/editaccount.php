@@ -8,7 +8,7 @@
     <!-- Account -->
     <div class="card-body d-flex justify-content-center">
       <div class="d-flex align-items-start align-items-sm-center gap-4">
-        <img src="http://192.168.161.207/tbkk_shopfloor/asset/img_emp/<?php echo $this->session->userdata('userName'); ?>.jpg" alt="user-avatar" class="d-block rounded" height="100" width="100" id="uploadedAvatar" />
+        <img src="<?php echo base_url() ?>/assets/img/pf/PF.webp"  alt="user-avatar" class="d-block rounded" height="100" width="100" id="uploadedAvatar" />
       </div>
     </div>
     <hr class="my-0" />
@@ -36,7 +36,7 @@
             <label for="edtEmail" class="form-label">E-mail</label>
             <input class="form-control" type="text" id="edtEmail" name="edtEmail" value="" />
           </div>
-
+            
           <div class="mt-2">
             <button type="submit" class="btn btn-ET me-2" id="btnSaveEdit"> Save </button>
             <button type="reset" class="btn btn-outline-secondary">Cancel</button>
