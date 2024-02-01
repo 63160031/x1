@@ -21,7 +21,7 @@
           </div>
           <div class="mb-3 col-md-6">
             <label for="edtPass" class="form-label">Password</label>
-            <input type="password" class="form-control" id="edtPass" name="edtPass" value="" />
+            <input type="password" class="form-control" id="edtPass" name="edtPass" value="" placeholder=" •••••••• " />
           </div>
 
           <div class="mb-3 col-md-6">

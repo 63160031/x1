@@ -37,7 +37,7 @@
                             
                             <td><div class="d-flex justify-content-start align-items-center">
                             <div class="avatar-wrapper"><div class="avatar me-2">
-                            <img src="http://192.168.161.207/tbkk_shopfloor/asset/img_emp/${data[i].sa_emp_code}.jpg" alt="Avatar" class="rounded-circle">
+                            <img src="<?php echo base_url() ?>/assets/img/pf/PF.webp" alt class="w-px-40 h-auto rounded-circle" />
                             </div>
                             </div>
                             <div class="d-flex flex-column">

@@ -68,13 +68,13 @@
           <div class="row g-2">
             <div class="col mb-3">
               <label class="form-label">Item no.</label>
-              <input type="text" id="inpItemNo" class="form-control" placeholder="" oninput="InputAddpersonal(this)">
+              <input type="text" id="inpItemNo" class="form-control" placeholder="" >
             </div>
           </div>
           <div class="row g-2">
             <div class="col mb-3">
               <label class="form-label">Item name.</label>
-              <input type="text" id="inpItemName" class="form-control" placeholder="" oninput="InputAddpersonal(this)">
+              <input type="text" id="inpItemName" class="form-control" placeholder="">
             </div>
           </div>
           <div class="row g-2">
@@ -92,11 +92,6 @@
         </form>
       </div>
       <div class="modal-footer">
-        <div class="container col justify-content-start">
-          <div id="errMegadd" style="display: none; color: red;">Please enter in English only.</div>
-          <div id="errAddempcode" style="display: none; color: red;">Please enter Employee Code as (a-z ,A-Z ,0-9) only.</div>
-          <div id="errAddpersonal" style="display: none; color: red;">Please enter Firstname or Lastname as (a-z ,A-Z) only.</div>
-        </div>
         <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal" id="btnBack">Back</button>
         <button type="button" class="btn btn-primary" id="btnSaveAdd">Save</button>
       </div>
@@ -105,6 +100,51 @@
 </div>
 
 <!-- End Modal Add-->
+<!-- Modal Edit-->
+<div class="modal fade" id="mdlEdit" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">edit Item</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="" id="add">
+          <div class="row g-2">
+            <div class="col mb-3">
+              <label class="form-label">Item no.</label>
+              <input type="text" id="edtItemno" class="form-control" placeholder="" >
+            </div>
+          </div>
+          <div class="row g-2">
+            <div class="col mb-3">
+              <label class="form-label">Item name.</label>
+              <input type="text" id="edtItemname" class="form-control" placeholder="">
+            </div>
+          </div>
+          <div class="row g-2">
+            <div class="col mb-3">
+            <input type="checkbox" id="edtItemfifo" name="FIFO" value="1">
+              <label for="ckFifo">FIFO </label><br>
+            </div>
+          </div>
+          <div class="row g-2">
+            <div class="col mb-3">
+            <input type="checkbox" id="edtItemckd" name="CKN" value="1">
+              <label for="ckCKN">CKD</label><br>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal" id="btnBack">Back</button>
+        <button type="button" class="btn btn-primary" id="btnSaveEdit">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End Edit Modal -->
     <!--/ Bordered Table -->
 
 

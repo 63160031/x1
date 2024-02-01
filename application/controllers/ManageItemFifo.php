@@ -59,8 +59,20 @@ class ManageItemFifo extends CI_Controller {
     {
         $result = $this->curPostRequest('Manage_item_fifo/upstatus', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
         echo json_encode($result);
+    }
+    public function callApiAddItem()
+    {
+        $result = $this->curPostRequest('Manage_item_fifo/insert_additem', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
+        echo json_encode($result);
 
     }
+    public function callApieditII()
+    {
+        $result = $this->curPostRequest('Manage_item_fifo/edit_main_menu', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
+        echo json_encode($result);
+
+    }
+
 
 
     public function callApi()
