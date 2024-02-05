@@ -136,7 +136,7 @@ function SubmenuDropdown() {
     // เรียก API
     $.ajax({
         method: "get",
-        url: "http://127.0.0.1/api/Manage_permis_detail/drop_sub",
+        url: "http://127.0.0.1/api/Manage_permis_detail/drop_main",
         dataType: 'json',
         success: (response) => {
             console.log(response); // ดูข้อมูลที่ได้รับจาก API ใน Console Log

@@ -9,7 +9,7 @@
 
     <div class="card">
     <div class="container">
-    <button type="button" class="btn btn-circle btn-primary" id="btnAddMenuApp" data-bs-toggle="modal"
+    <button type="button" class="btnMM" id="btnAddMenuApp" data-bs-toggle="modal"
             data-bs-target="#mdlAdd">Add Menu <i class="fa fa-plus"></i></button>
     </div>
       <div class="card-body">

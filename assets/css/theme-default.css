@@ -824,7 +824,7 @@ a:hover {
 
 .bg-menu-theme .menu-item.open:not(.menu-item-closing)>.menu-toggle,
 .bg-menu-theme .menu-item.active>.menu-link {
-  color: #000000;
+  color: #656565;
 }
 
 .bg-menu-theme .menu-item.active>.menu-link:not(.menu-toggle) {
@@ -933,9 +933,8 @@ html:not(.layout-menu-collapsed) .bg-menu-theme .menu-inner .menu-item .menu-lin
 
 .bg-menu-theme .menu-sub>.menu-item.active>.menu-link:not(.menu-toggle):before {
   background-color: 0058ff !important;
-  background-color: #ff000080 !important;
-
-  border: 3px solid #c27070 !important;
+  background-color: #ff0000de !important;
+  border: 3px solid #c6c6c6 !important;
 }
 
 .app-brand .layout-menu-toggle {

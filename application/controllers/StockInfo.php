@@ -65,12 +65,12 @@ class StockInfo extends CI_Controller
         echo json_encode($result);
 
     }
-    // public function callApiUpdateStatus()
-    // {
-    //     $result = $this->curPostRequest('Manage_submenu/update_flg', array('data' => serialize($_POST) ,'session' =>serialize( $this->session->userdata('userName'))));
-    //     echo json_encode($result);
+    public function callApiLocation()
+    {
+        $result = $this->curPostRequest('Stock_info/show_DDlocation', array('data' => serialize($_POST) ,'session' =>serialize( $this->session->userdata('userName'))));
+        echo json_encode($result);
 
-    // }
+    }
     
     function curPostRequest($enpoint, $param_data, $is_array = true, $associative = false){
         /* Endpoint */
