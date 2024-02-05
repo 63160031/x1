@@ -11,95 +11,78 @@
   section {
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgb(37 65 217 / 61%), rgb(8 7 18)), url(../assets/img/backgrounds/BG2.jpg);
+    background-image: linear-gradient(#231d3f87, rgb(8 7 18)), url(../assets/img/backgrounds/BG2.jpg);
     background-size: cover;
     background-position: center;
   }
 
   .container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 340px;
-    text-align: center;
-  }
-
-  .login-form {
-    position: relative;
-    box-sizing: border-box;
-    padding: 60px 30px;
-    transition: 0.5s;
-  }
-
-  .login-form:hover {
-    background-color: rgb(243 233 243 / 25%);
-    box-shadow: 0 0 20px rgb(89 84 96 / 25%);
-  }
-
-  .login-form h1 {
-    margin: 0 0 20px;
-    color: white;
-    font-size: 30px;
-    text-transform: uppercase;
-  }
-
-  .login-form input {
-    display: block;
-    width: 25%;
-    padding: 10px 23px;
-    box-sizing: border-box;
-    margin-bottom: 8px;
-    border-radius: 11px;
-    outline: none;
-    font-size: 10px;
-    letter-spacing: 1px;
-    color: #ffffff;
-    text-transform: uppercase;
-    border: none;
-    background-color: rgb(0 0 0 / 92%);
-    font-family: 'Roboto Condensed', sans-serif;
-    margin-left: 500px;
+  position: absolute;
+  top: 50%;
+  left: 47.5%;
+  transform: translate(-50%, -50%);
+  width: 340px;
+  text-align: center;
 }
-  
-  .login-btn input {
-    display: block;
-    width: 15%;
-    padding: 8px 23px;
-    box-sizing: border-box;
-    margin-bottom: 20px;
-    border-radius: 82px;
-    outline: none;
-    font-size: 14px;
-    letter-spacing: 1px;
-    color: #ffffff;
-    text-transform: uppercase;
-    border: none;
-    background-color: rgb(0 0 0 / 92%);
-    font-family: 'Roboto Condensed', sans-serif;
-    margin-left: 565px;
-  }
-  .login-form input::placeholder {
-    color: white;
-  }
 
-  .login-form input[type="submit"] {
-    color: white;
-    background-color: #fe1a19;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-  }
+.login-form {
+  position: relative;
+  box-sizing: border-box;
+  padding: 60px 30px;
+  transition: 0.5s;
+}
 
-  .login-form input[type="submit"]:hover {
-    background-color: #d93d3d;
-  }
+.login-form:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
 
-  .login-form a {
-    text-decoration: none;
-    color: white;
-    text-transform: uppercase;
-  }
+.login-form h1 {
+  margin: 0 0 20px;
+  color: white;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.login-form input {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  border-radius: 25px;
+  outline: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  background-color: rgb(0 0 0);
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.login-form input::placeholder {
+  color: white;
+}
+
+.login-form input[type="submit"] {
+  color: white;
+  background-color: #ff0000d9;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.login-form input[type="submit"]:hover {
+  background-color: #b13b3bd9;
+}
+
+.login-form a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+}
+
 </style>
 <!DOCTYPE html>
 <html lang="en" class="light-style customizer-hide" dir="ltr" data-theme="theme-default" data-assets-path="<?php echo base_url() ?>/assets/assets/" data-template="vertical-menu-template-free">
@@ -126,9 +109,9 @@
   <link rel="stylesheet" href="<?php echo base_url() ?>/assets/vendor/fonts/boxicons.css" />
 
   <!-- Core CSS -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>/assets/css/core.css" class="template-customizer-core-css" />
+  <!-- <link rel="stylesheet" href="<?php echo base_url() ?>/assets/css/core.css" class="template-customizer-core-css" />
   <link rel="stylesheet" href="<?php echo base_url() ?>/assets/css/theme-default.css" class="template-customizer-theme-css" />
-  <link rel="stylesheet" href="<?php echo base_url() ?>/assets/css/demo.css" />
+  <link rel="stylesheet" href="<?php echo base_url() ?>/assets/css/demo.css" /> -->
 
   <!-- Vendors CSS -->
   <link rel="stylesheet" href="<?php echo base_url() ?>/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />

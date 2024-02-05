@@ -1,7 +1,7 @@
 <!-- Content wrapper -->
 <div class="content-wrapper">
   <!-- Content -->
-r
+
   <div class="container-xxl flex-grow-1 container-p-y">
     <!-- Bordered Table -->
     <h5 class="fw-bold py-3 mb-4" align="left"><span class="text-muted fw-light">Administrator /</span>App Manage Permission Group</h5>

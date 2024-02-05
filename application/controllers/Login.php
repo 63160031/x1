@@ -35,12 +35,15 @@ class Login extends CI_Controller
     public function callApiLogin()
     {
 
-        $result = $this->curPostRequest('Api_Controller/chk_login', array('data' => serialize($_POST)));
+
+        $result = $this->curPostRequest('Api_Controller/exp_login', array('data' => serialize($_POST)));
+
         $login =  $result;
         if (isset($login) && $login->result == 1) {
             $this->session->set_userdata('userId', $login->emp_id);
             $this->session->set_userdata('userName', $login->emp_code);
             $this->session->set_userdata('firstname', $login->emp_name);
+            $this->session->set_userdata('lastname', $login->emp_lastname);
             $this->session->set_userdata('perMissionGroup', $login->permis_id);
             $this->session->set_userdata('perMissionGroupName', $login->permis_group);
             $this->session->set_userdata('log_login', $login->log_login);

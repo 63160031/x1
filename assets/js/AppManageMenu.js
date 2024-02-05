@@ -264,7 +264,7 @@ $(() => {
             var MenuName = $('#edtMenuName').val();
             var MenuPic = $('#edtMenuPic').val();
             var MenuPart = $('#edtMenuPart').val();
-            var MenuBtn = $('#edtMenuBtn').val();
+            var MenuBtn = $('#edtMenuBtn').val();phart
 
             if (
                 data_acc.sma_name == MenuName &&

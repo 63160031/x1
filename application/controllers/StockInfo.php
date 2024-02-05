@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class SubMenu extends CI_Controller
+class StockInfo extends CI_Controller
 {
     private $another_css;
     public $another_js;
@@ -10,17 +10,12 @@ class SubMenu extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-
 		$this->load->helper('url');
 		$this->load->library('parser');
         $this->load->library('session');
-
-		
 		$this->data["base_url"] = base_url();
-
 		$result['base_url'] = base_url();
 		$result['site_url'] = site_url();
-
         $this->data = $result;
 		$this->top_navbar_data = $result;
 		$this->left_sidebar_data = $result;
@@ -43,10 +38,10 @@ class SubMenu extends CI_Controller
         $this->data['page_content'] = $this->parser->parse($path, $this->data, TRUE);
         $this->parser->parse('page/pagecontent', $this->data);
     }
-    public function subMenu()
+    public function STOCK()
     {
-        $this->another_js = "<script src='" . base_url() . "assets/js/manageSubmenu.js'></script>";
-        $this->render_view('submenu');
+        $this->another_js = "<script src='" . base_url() . "assets/js/stockinfo.js'></script>";
+        $this->render_view('stockinfo');
     }
 
     public function callApi()
@@ -64,54 +59,19 @@ class SubMenu extends CI_Controller
         echo json_encode($data);
     }
 
-
-
-
     public function callApiShowData()
     {
-        $result = $this->curPostRequest('Manage_submenu/show_submenu', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
+        $result = $this->curPostRequest('Stock_info/show_tablelstock', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
         echo json_encode($result);
 
     }
-    public function callApiUpdateStatus()
-    {
-        $result = $this->curPostRequest('Manage_submenu/update_flg', array('data' => serialize($_POST) ,'session' =>serialize( $this->session->userdata('userName'))));
-        echo json_encode($result);
+    // public function callApiUpdateStatus()
+    // {
+    //     $result = $this->curPostRequest('Manage_submenu/update_flg', array('data' => serialize($_POST) ,'session' =>serialize( $this->session->userdata('userName'))));
+    //     echo json_encode($result);
 
-    }
-    public function callApiPermis()
-    {
-        $result = $this->curPostRequest('Login/show_menu', array('data' => serialize($this->session->userdata('perMissionGroup'))));
-        echo json_encode($result);
-    }
-    public function callApiDetail()
-    {
-        $result = $this->curPostRequest('Manage_submenu/show_submenu', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
-        echo json_encode($result);
-
-    }
-    public function callApiAddSubMenu()
-    {
-        $result = $this->curPostRequest('Manage_submenu/insert_sub_menu', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
-        echo json_encode($result);
-
-    }
-    public function callApiShowEdit()
-    {
-        $result = $this->curPostRequest('Manage_submenu/upd_show_sub_menu', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
-        echo json_encode($result);
-
-    }
-    public function callApiSaveEdit()
-    {
-        $result = $this->curPostRequest('Manage_submenu/edit_sub_menu', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
-        echo json_encode($result);
-
-    }
+    // }
     
-    
-    
-
     function curPostRequest($enpoint, $param_data, $is_array = true, $associative = false){
         /* Endpoint */
         $url = 'http://127.0.0.1/api/' . $enpoint;

@@ -12,21 +12,21 @@
             <div class="row">
               <div class="col-lg-3"></div>
               <div class="col">
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                <!-- <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
                   <input class="form-control" placeholder="ADD MAINMENU" aria-label="ADD MAINMENU" type="text" id="inpMainMenuName" oninput="InputAdd(this)">
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
           <div class="col-md-5 col-sm-2 col-7">
             <div class="row container">
               <div class="col-lg-5 p-t-20"></div>
-              <div class="col-lg-6" style="display: grid; grid-template-columns: auto auto;">
+              <!-- <div class="col-lg-6" style="display: grid; grid-template-columns: auto auto;">
                 <input class="form-control" placeholder="ICON" aria-label="ICON" type="text" id="inpMainMenuIcon" oninput="InputAdd(this)">
                 <span style="margin-left: -30px;" data-bs-toggle="modal" data-bs-target="#mdlIcon">
                   <i class='bx bx-filter'></i>
                 </span>
-              </div>
+              </div> -->
               <div class="col-md-12 col-sm-3 col-5 text-end">
                 <button type="button" class="btn btn-circle btn-primary btn-sm" id="btnSaveAdd">Submit</button>
               </div>
@@ -43,11 +43,8 @@
               <thead>
                 <tr>
                   <th>No.</th>
-                  <th>Main Menu Name</th>
-                  <th>Main Menu Icon</th>
-                  <th>Order No.</th>
-                  <th>Update Date</th>
-                  <th>Update By</th>
+                  <th>item no</th>
+                  <th>part no</th>
                   <th>Status</th>
                   <th>Action</th>
                 </tr>
