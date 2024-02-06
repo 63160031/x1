@@ -31,7 +31,6 @@
                       <th>item no</th>
                       <th>item name</th>
                       <th>location</th>
-                      <th>Status</th>
                       <th>DETAIL</th>
                     </tr>
                   </thead>

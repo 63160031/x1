@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class ManagePermission extends CI_Controller
+class Transactioninfo extends CI_Controller
 {
     private $another_css;
     public $another_js;
@@ -43,10 +43,10 @@ class ManagePermission extends CI_Controller
         $this->data['page_content'] = $this->parser->parse($path, $this->data, TRUE);
         $this->parser->parse('page/pagecontent', $this->data);
     }
-    public function mngPermis()
+    public function transaction()
     {
-        $this->another_js = "<script src='" . base_url() . "assets/js/managePermisDetail.js'></script>";
-        $this->render_view('manage_permission_detail');
+        $this->another_js = "<script src='" . base_url() . "assets/js/transaction.js'></script>";
+        $this->render_view('transactioninfo');
     }
 
     public function callApi()
@@ -64,51 +64,9 @@ class ManagePermission extends CI_Controller
         echo json_encode($data);
     }
 
-
-
-
-    public function callApiShowData()
+    public function callApiDate()
     {
-        $result = $this->curPostRequest('Manage_permis_detail/show_group', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
-        echo json_encode($result);
-
-    }
-
-    public function callApiShowTable()
-    {
-        $result = $this->curPostRequest('Manage_permis_detail/show_tb', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
-        echo json_encode($result);
-
-    }
-
-    public function callApiUpdateStatus()
-    {
-        $result = $this->curPostRequest('Manage_permis_detail/update_flg', array('data' => serialize($_POST) ,'session' =>serialize( $this->session->userdata('userName'))));
-        echo json_encode($result);
-
-    }
-    public function callApiShowdrop_main()
-    {
-        $result = $this->curPostRequest('Manage_permis_detail/drop_main', array('data' => serialize($_POST) ,'session' =>serialize( $this->session->userdata('userName'))));
-        echo json_encode($result);
-
-    }
-    public function callApiShowdrop_sub()
-    {
-        $result = $this->curPostRequest('Manage_permis_detail/drop_sub', array('data' => serialize($_POST) ,'session' =>serialize( $this->session->userdata('userName'))));
-        echo json_encode($result);
-
-    }
-
-    public function callApiAddPermiss()
-    {
-        $result = $this->curPostRequest('Manage_permis_detail/insert_permiss', array('data' => serialize($_POST) ,'session' =>serialize( $this->session->userdata('userName'))));
-        echo json_encode($result);
-
-    }
-    public function callApieditPermiss()
-    {
-        $result = $this->curPostRequest('Manage_permis_detail/edit_main_menu', array('data' => serialize($_POST) ,'session' =>serialize( $this->session->userdata('userName'))));
+        $result = $this->curPostRequest('Transaction_info/show_Transaction_date', array('data' => serialize($_POST)));
         echo json_encode($result);
 
     }

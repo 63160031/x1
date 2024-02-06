@@ -120,7 +120,7 @@ function MainmenuDropdown() {
                 const menu = response[i];
                 dropdown.append(`<option value="${menu.smm_id}">${menu.smm_name}</option>`);
             }
-            
+
         },
         error: (err) => {
             console.log(err);
@@ -131,12 +131,12 @@ function MainmenuDropdown() {
 
 
 function SubmenuDropdown() {
-    var dropdown = $('.selSubMenuName');
+    var dropdown = $('.edtSubEdit');
 
     // เรียก API
     $.ajax({
         method: "get",
-        url: "http://127.0.0.1/api/Manage_permis_detail/drop_main",
+        url: "http://127.0.0.1/api/Manage_permis_detail/drop_sub",
         dataType: 'json',
         success: (response) => {
             console.log(response); // ดูข้อมูลที่ได้รับจาก API ใน Console Log
@@ -159,28 +159,28 @@ function SubmenuDropdown() {
 
 var dropdown = $('.edtMainmenu');
 
-    // เรียก API
-    $.ajax({
-        method: "get",
-        url: "http://127.0.0.1/api/Manage_permis_detail/drop_main",
-        dataType: 'json',
-        success: (response) => {
-            console.log(response); // ดูข้อมูลที่ได้รับจาก API ใน Console Log
+// เรียก API
+$.ajax({
+    method: "get",
+    url: "http://127.0.0.1/api/Manage_permis_detail/drop_main",
+    dataType: 'json',
+    success: (response) => {
+        console.log(response); // ดูข้อมูลที่ได้รับจาก API ใน Console Log
 
-            // ล้างค่าเดิมทั้งหมดใน dropdown ก่อน
+        // ล้างค่าเดิมทั้งหมดใน dropdown ก่อน
 
 
-            // วนลูปเพื่อเพิ่ม options เข้าไปใน dropdown
-            for (let i = 0; i < response.length; i++) {
-                const menu = response[i];
-                dropdown.append(`<option value="${menu.smm_id}">${menu.smm_name}</option>`);
-            }
-            
-        },
-        error: (err) => {
-            console.log(err);
-        },
-    });
+        // วนลูปเพื่อเพิ่ม options เข้าไปใน dropdown
+        for (let i = 0; i < response.length; i++) {
+            const menu = response[i];
+            dropdown.append(`<option value="${menu.smm_id}">${menu.smm_name}</option>`);
+        }
+
+    },
+    error: (err) => {
+        console.log(err);
+    },
+});
 
 //-------------------------- Update flg status ----------------------------------
 
@@ -264,7 +264,7 @@ $(document).ready(function () {
                 title: 'Oops...',
                 text: 'Please choose SubMenu',
             })
-        }  else {
+        } else {
             Swal.fire({
                 title: 'Are you sure?',
                 text: "Do you want to add Permission",
@@ -281,16 +281,16 @@ $(document).ready(function () {
                     formData.append('MenuGroup', MenuGroup);
                     formData.append('SubMenu', SubMenu);
 
-                    
+
                     $.ajax({
                         url: base_url('ManagePermission/callApiAddPermiss'),
                         type: 'POST',
                         data: formData,
                         processData: false,
- contentType: false,
-    cache: false,
+                        contentType: false,
+                        cache: false,
                         dataType: 'json',
-                        success: function(res) {
+                        success: function (res) {
                             if (res.result == 1) {
                                 Swal.fire({
                                     icon: 'success',
@@ -300,16 +300,16 @@ $(document).ready(function () {
                                 }).then(() => {
                                     // $('#btnBack').trigger('click');
                                     shDataTable()
-                                    
+
                                 });
                             } else if (res.result == 9) {
                                 Swal.fire({
-            
+
                                     icon: 'warning',
                                     title: 'Ooops...',
                                     html: 'This permission already exists.',
                                 }).then(() => {
-                                    
+
                                 });
                             } else {
                                 Swal.fire({
@@ -327,39 +327,36 @@ $(document).ready(function () {
 });
 
 
-    //-------------------------- Update Account ----------------------------------
-    var data_mmn;
-    var mmnId;
+//-------------------------- Update Account ----------------------------------
+var data_mmn;
+var mmnId;
 
-    $(document).on('click', '.tblEditBtn', function () {
+$(document).on('click', '#btnSaveEdit', function () {
 
 
-let id = $(this).attr('data-id');
-mmnId = id
-var url = API_URL + "Manage_permis_detail/show_show_edit";
-$.ajax({
-    // url: base_url('ManageAccount/callApiEditAccount'),
-    url: API_URL + "Manage_permis_detail/show_show_edit",
-    type: 'POST',
-    data: {
-        id: id,
-    },
-    dataType: 'json',
-    success: (response) => {
+    let id = $(this).attr('data-id');
+    mmnId = id
+    var url = API_URL + "Manage_permis_detail/edit_main_menu";
+    $.ajax({
+        // url: base_url('ManageAccount/callApiEditAccount'),
+        url: API_URL + "Manage_permis_detail/edit_main_menu",
+        type: 'POST',
+        data: {
+            id: id,
+        },
+        dataType: 'json',
+        success: (response) => {
 
-       
-        data_mmn = response.data
-       
-        // accId = response
-        // for (let i = 0; i < response.length; i++) {
-        //     const data = response[i];
-        
+
+            data_mmn = response.data
+
             $('#edtMainmenu').val(response.data.smm_name)
-           
+
             $('#edtSubEdit').val(response.data.ssm_name)
 
 
-        // }
-    }
-});
-});
+            // }
+        }
+    });
+
+})

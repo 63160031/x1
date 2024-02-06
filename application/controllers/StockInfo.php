@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class StockInfo extends CI_Controller
+class StockInfo extends CI_Controller 
 {
     private $another_css;
     public $another_js;
@@ -70,6 +70,11 @@ class StockInfo extends CI_Controller
         $result = $this->curPostRequest('Stock_info/show_DDlocation', array('data' => serialize($_POST) ,'session' =>serialize( $this->session->userdata('userName'))));
         echo json_encode($result);
 
+    }
+    public function callApiUpdateStatus()
+    {
+        $result = $this->curPostRequest('Stock_info/upstatus', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
+        echo json_encode($result);
     }
     
     function curPostRequest($enpoint, $param_data, $is_array = true, $associative = false){

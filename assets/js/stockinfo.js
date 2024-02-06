@@ -17,9 +17,6 @@ $(() => {
                     <td><i></i>${data[i].item_no}</td>
                     <td><i></i>${data[i].itf_item_name}</td>
                     <td><i></i>${data[i].itc_location}</td>
-                    <td><button class="btnStatus btn badge bg-label-${data[i].itc_status_flg == 1 ? 'success' : 'danger'}
-                     me-1" id="flgStatus" data-sa-id="${data[i].itc_id
-                        }" value="${data[i].itc_status_flg}">${data[i].itc_status_flg == 1 ? 'Enable' : 'Disable'}</button></td> 
                     <td class=""></li></ul></div><a href="" class="tblEditBtn btn btn-sm btn-icon item-edit" data-bs-toggle="modal" data-bs-target="#mdlDetail" id="btnDetail" data-id="${data[i].itc_id}"><i class="bx bxs-detail"></i></a></td>
                 </tr>`;
                 }
@@ -57,10 +54,7 @@ $(() => {
                         <td><i></i>${data[i].item_no}</td>
                         <td><i></i>${data[i].itf_item_name}</td>
                         <td><i></i>${data[i].itc_location}</td>
-                        <td><button class="btnStatus btn badge bg-label-${data[i].itc_status_flg == 1 ? 'success' : 'danger'}
-                         me-1" id="flgStatus" data-sa-id="${data[i].itc_id
-                            }" value="${data[i].itc_status_flg}">${data[i].itc_status_flg == 1 ? 'Enable' : 'Disable'}</button></td> 
-                        <td class=""></li></ul></div><a href="" class="tblEditBtn btn btn-sm btn-icon item-edit" data-bs-toggle="modal" data-bs-target="#mdlEdit" id="btnEdit" data-id="${data[i].itc_id}"><i class="bx bxs-detail"></i></a></td>
+                        <td class=""></li></ul></div><a href="" class="tblEditBtn btn btn-sm btn-icon item-edit" data-bs-toggle="modal" data-bs-target="#mdlDetail" id="btnDetail" data-id="${data[i].itc_id}"><i class="bx bxs-detail"></i></a></td>
                     </tr>`;
                     }
                 }
@@ -119,9 +113,9 @@ $(() => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                var url = API_URL + "Manage_item_fifo/upstatus";
+                var url = API_URL + "upstatus/update_flg";
                 $.ajax({
-                    url: base_url('ManageItemFifo/callApiUpdateStatus?url=') + url,
+                    url: base_url('StockInfo/callApiUpdateStatus?url=') + url,
                     type: 'POST',
                     data: {
                         smId: smId,
@@ -160,40 +154,6 @@ $(() => {
 
     });
 });
-
-
-// //-------------------------- Update Account ----------------------------------
-// var item;
-// var Iditem;
-// var $checkboxFifo = $('#edtItemfifo');
-// var $checkboxCkd = $('#edtItemckd');
-
-// $(document).on('click', '.tblEditBtn', function () {
-
-
-//     let id = $(this).attr('data-id');
-//     Iditem = id
-//     var url = API_URL + "Manage_item_fifo/show_edit_menu";
-//     $.ajax({
-//         url: API_URL + "Manage_item_fifo/show_edit_menu",
-//         type: 'POST',
-//         data: {
-//             id: id,
-//         },
-//         dataType: 'json',
-//         success: (response) => {
-//             item = response.data;
-
-//             $('#edtItemno').val(response.data.itf_item_no);
-//             $('#edtItemname').val(response.data.itf_item_name);
-
-//             // Set checkbox states based on the response data
-//             $checkboxFifo.prop('checked', response.data.itf_fifo_flg == '1');
-//             $checkboxCkd.prop('checked', response.data.itf_ckd_flg == '1');
-//         }
-//     });
-// });
-
 
 // //-------------------------- Dorpdown ----------------------------------
 

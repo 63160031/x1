@@ -258,13 +258,13 @@ $(() => {
                     title: 'Oops...',
                     text: 'Please choose Plant',
                 })
-            } else if (!chkAddEmpcode(EmpCode)) {
+            } else if ((EmpCode)) {
                 Swal.fire({
                     icon: 'warning',
                     title: 'Oops...',
-                    text: 'Please enter Employee Code as (a-z ,A-Z ,0-9) only.',
+                    text: 'Please enter Employee Code as (a-z ,A-Z ,0-91) only.',
                 })
-            } else if (!chkAddpersonal(Name)) {
+            } else if (!(Name)) {
                 Swal.fire({
                     icon: 'warning',
                     title: 'Oops...',
@@ -426,7 +426,7 @@ $(() => {
                     title: 'Oops...',
                     text: 'Please enter Employee Code as (a-z ,A-Z ,0-9) only.',
                 })
-            } else if (!chkAddpersonal(Name)) {
+            } else if ((Name)) {
                 Swal.fire({
                     icon: 'warning',
                     title: 'Oops...',
