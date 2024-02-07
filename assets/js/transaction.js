@@ -14,21 +14,15 @@ function showDataTable(startDate, endDate) {
         success: function (data) {
             let html = "";
             for (let i = 0; i < data.length; i++) {
-                // Convert plan_date to "dd/mm/yy" format
-                const planDate = data[i].plan_date;
-                // const autualDate = data[i].autual_date;
-                const formattedPlanDate = formatDate(planDate);
-                // const formattedAUTUALDate = formatDate(autualDate);
-
                 html += `<tr>
                     <td><i></i> <strong>${i + 1}</strong></td>
                     <td><i></i>${data[i].item_no}</td>
                     <td><i></i>${data[i].itf_item_name}</td>
-                    <td><i></i>${data[i].itc_qty}</td>
-                    <td><i></i>${data[i].itc_location}</td>
-                    <td><i></i>${formattedPlanDate}</td>
-                    <td><button class="btnStatus btn badge bg-label-${data[i].itc_status_flg == 1 ? 'success' : 'danger'}
-                    me-1" id="flgStatus" data-sa-id="${data[i].itc_id}" value="${data[i].itc_status_flg}">${data[i].itc_status_flg == 1 ? 'Stock in' : data[i].itc_status_flg == 2 ? 'Stock out' : 'Pending'}</button></td>
+                    <td><i></i>${data[i].is_qty}</td>
+                    <td><i></i>${data[i].is_location}</td>
+                    <td><i></i>${data[i].is_created_date}</td>
+                    <td><button class="btnStatus btn badge bg-label-${data[i].is_status_flg == 1 ? 'success' : 'danger'}
+                    me-1" id="flgStatus" data-sa-id="${data[i].is_id}" value="${data[i].is_status_flg}">${data[i].is_status_flg == 1 ? 'Stock in' : data[i].is_status_flg == 2 ? 'Stock out' : 'Pending'}</button></td>
                 </tr>`;
             }
             $('#tblTransaction').dataTable().fnDestroy();
@@ -45,16 +39,6 @@ function showDataTable(startDate, endDate) {
             console.error('Error:', error);
         }
     });
-}
-
-function formatDate(planDate) {
-    // Extract day, month, and year from the "yyyymmdd" format
-    const day = planDate.substring(6, 8);
-    const month = planDate.substring(4, 6);
-    const year = planDate.substring(0, 4);
-
-    // Format date as "dd/mm/yy"
-    return `${day}/${month}/${year}`;
 }
 
 // //-------------------------- Begin-end ----------------------------------
@@ -84,18 +68,15 @@ $(document).on('click', '#tblTransBtn', function () {
             success: (data) => {
                 let html = "";
                 for (let i = 0; i < data.length; i++) {
-                    // Convert plan_date to "dd/mm/yy" format
-                    const planDate = data[i].plan_date;
-                    const formattedPlanDate = formatDate(planDate);
                     html += `<tr>
                         <td><i></i> <strong>${i + 1}</strong></td>
                         <td><i></i>${data[i].item_no}</td>
                         <td><i></i>${data[i].itf_item_name}</td>
-                        <td><i></i>${data[i].itc_qty}</td>
-                        <td><i></i>${data[i].itc_location}</td>
-                        <td><i></i>${formattedPlanDate}</td>
-                        <td><button class="btnStatus btn badge bg-label-${data[i].itc_status_flg == 1 ? 'success' : 'danger'}
-                        me-1" id="flgStatus" data-sa-id="${data[i].itc_id}" value="${data[i].itc_status_flg}">${data[i].itc_status_flg == 1 ? 'Stock in' : data[i].itc_status_flg == 2 ? 'Stock out' : 'Pending'}</button></td>
+                        <td><i></i>${data[i].is_qty}</td>
+                        <td><i></i>${data[i].is_location}</td>
+                        <td><i></i>${data[i].is_created_date}</td>
+                        <td><button class="btnStatus btn badge bg-label-${data[i].is_status_flg == 1 ? 'success' : 'danger'}
+                        me-1" id="flgStatus" data-sa-id="${data[i].is_id}" value="${data[i].is_status_flg}">${data[i].is_status_flg == 1 ? 'Stock in' : data[i].is_status_flg == 2 ? 'Stock out' : 'Pending'}</button></td>
                     </tr>`;
                 }
                 $("#tbody")

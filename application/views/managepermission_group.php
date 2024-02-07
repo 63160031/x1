@@ -38,12 +38,12 @@
                       <table class="table card-table table-striped table-bordered table-hover table-checkable order-column w-100" id="tblPermisGP">
                         <thead>
                           <tr>
-                            <th>No.</th>
-                            <th>Permission Group Name</th>
-                            <th>Update Date</th>
-                            <th>Update By</th>
-                            <th>Status</th>
-                            <th>Action</th>
+                           <th class="text-center">No.</th>
+                           <th class="text-center">Permission Group Name</th>
+                           <th class="text-center">Update Date</th>
+                           <th class="text-center">Update By</th>
+                           <th class="text-center">Status</th>
+                           <th class="text-center">Action</th>
                           </tr>
                         </thead>
                         <tbody class="table-border-bottom-0" id="tbody">

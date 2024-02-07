@@ -62,7 +62,7 @@
             <input  id="dtlpartNo"  class="form-control" readonly type="text">
           </div>
           <div class="col-4">
-            <label for="date" class="form-label">Date</label>
+            <label for="date" class="form-label">pDate</label>
             <input  id="dtldate"  class="form-control" readonly type="text">
           </div>
           <div class="col-4">

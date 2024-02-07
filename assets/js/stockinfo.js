@@ -16,8 +16,8 @@ $(() => {
                     <td><i></i> <strong>${i + 1}</strong></td>
                     <td><i></i>${data[i].item_no}</td>
                     <td><i></i>${data[i].itf_item_name}</td>
-                    <td><i></i>${data[i].itc_location}</td>
-                    <td class=""></li></ul></div><a href="" class="tblEditBtn btn btn-sm btn-icon item-edit" data-bs-toggle="modal" data-bs-target="#mdlDetail" id="btnDetail" data-id="${data[i].itc_id}"><i class="bx bxs-detail"></i></a></td>
+                    <td><i></i>${data[i].is_location}</td>
+                    <td class=""></li></ul></div><a href="" class="tblEditBtn btn btn-sm btn-icon item-edit" data-bs-toggle="modal" data-bs-target="#mdlDetail" id="btnDetail" data-id="${data[i].is_id}"><i class="bx bxs-detail"></i></a></td>
                 </tr>`;
                 }
                 $('#tblMainMenu').dataTable().fnDestroy();
@@ -48,13 +48,13 @@ $(() => {
                 let html = "";
                 for (let i = 0; i < data.length; i++) {
                     // Check if the location matches the selected one
-                    if (data[i].itc_location === selectedLocation) {
+                    if (data[i].is_location === selectedLocation) {
                         html += `<tr>
                         <td><i></i> <strong>${i + 1}</strong></td>
                         <td><i></i>${data[i].item_no}</td>
                         <td><i></i>${data[i].itf_item_name}</td>
-                        <td><i></i>${data[i].itc_location}</td>
-                        <td class=""></li></ul></div><a href="" class="tblEditBtn btn btn-sm btn-icon item-edit" data-bs-toggle="modal" data-bs-target="#mdlDetail" id="btnDetail" data-id="${data[i].itc_id}"><i class="bx bxs-detail"></i></a></td>
+                        <td><i></i>${data[i].is_location}</td>
+                        <td class=""></li></ul></div><a href="" class="tblEditBtn btn btn-sm btn-icon item-edit" data-bs-toggle="modal" data-bs-target="#mdlDetail" id="btnDetail" data-id="${data[i].is_id}"><i class="bx bxs-detail"></i></a></td>
                     </tr>`;
                     }
                 }
@@ -172,9 +172,9 @@ $(document).ready(function () {
                     const item = response[i];
 
                     // Check if the location is not already added
-                    if (!addedLocations[item.itc_location]) {
-                        dropdown.append(`<option value="${item.itc_location}">${item.itc_location}</option>`);
-                        addedLocations[item.itc_location] = true; // Mark as added
+                    if (!addedLocations[item.is_location]) {
+                        dropdown.append(`<option value="${item.is_location}">${item.is_location}</option>`);
+                        addedLocations[item.is_location] = true; // Mark as added
                     }
                 }
             },
@@ -204,13 +204,13 @@ $(document).on('click', '.tblEditBtn', function () {
         success: (response) => {
             for (let i = 0; i < response.length; i++) {
                 const data = response[i];
-                if (data.itc_id == subId) {
+                if (data.is_id == subId) {
                     $('#dtlpartNo').val(data.item_no)
                     $('#dtldate').val(data.plan_date)
                     $('#dtllotNo').val(data.lot_no)
                     $('#dtlbox').val(data.box)
-                    $('#dtllocation').val(data.itc_location)
-                    $('#dtlqty').val(data.itc_qty)
+                    $('#dtllocation').val(data.is_location)
+                    $('#dtlqty').val(data.is_qty)
                 }
             }
 

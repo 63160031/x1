@@ -1,4 +1,4 @@
-    $(() => {
+$(() => {
     $('#mdlAdd').on('hidden.bs.modal', function () {
         $('#errMegadd').css('display', 'none');
         $('#errAddempcode').css('display', 'none');
@@ -14,7 +14,7 @@
     shDataTable()
     function shDataTable() {
 
-  // **************************************************************************************// 
+        // **************************************************************************************// 
         $(document).ready(function () {
 
             // URL of the API
@@ -35,25 +35,33 @@
                         <tr>
                             <td><i></i> <strong>${i + 1}</strong></td>
                             
-                            <td><div class="d-flex justify-content-start align-items-center">
-                            <div class="avatar-wrapper"><div class="avatar me-2">
-                            <img src="<?php echo base_url() ?>/assets/img/pf/PF.webp" alt class="w-px-40 h-auto rounded-circle" />
-                            </div>
-                            </div>
-                            <div class="d-flex flex-column">
-                          <span class="emp_name text-truncate">${data[i].sa_firstname} ${data[i].sa_lastname}</span>
-                          <small class="emp_post text-truncate text-muted">${data[i].sa_emp_code}</small>
-                          </div></div></td>
+                            <td>
+                                <div class="d-flex justify-content-start align-items-center">
+                                    <div class="avatar-wrapper">
+                                        <div class="avatar me-2">
+                                            <img src="http://192.168.161.207/tbkk_shopfloor_sys/asset/img_emp/${data[i].sa_emp_code.substring(2)}.jpg" alt="Avatar" class="rounded-circle" onerror="this.onerror=null; this.src='${base_url('assets/img/pf/PF.webp')}';">
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <span class="emp_name text-truncate">${data[i].sa_firstname} ${data[i].sa_lastname}</span>
+                                        <small class="emp_post text-truncate text-muted">${data[i].sa_emp_code}</small>
+                                    </div>
+                                </div>
+                            </td>
+                        
                             <td><i></i> <strong>${data[i].spg_name}</strong></td>
                             <td><i></i>${data[i].sa_email}</td>
                             <td class="" style="">${data[i].sa_created_date}</td>
-
+                        
                             <td>
-                                <button class="badge btnStatus btn ${statusFlag ? 'btn-success' : 'btn-secondary'}" id="btnStatus_ ${data[i].sa_id}" data-sa-id="${data[i].sa_id}" value="${data[i].sa_status_flg}">
-                                ${statusText}
+                                <button class="badge btnStatus btn ${statusFlag ? 'bg-label-success' : 'bg-label-secondary'}" id="btnStatus_${data[i].sa_id}" data-sa-id="${data[i].sa_id}" value="${data[i].sa_status_flg}">
+                                    ${statusText}
                                 </button>
                             </td>
                         </tr>`;
+                        // ...
+                        
+
 
 
                     }

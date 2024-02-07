@@ -8,15 +8,14 @@
     </h5>
 
     <div class="card">
-    <div class="container">
-    <button type="button" class="btnMM" id="btnAddMenuApp" data-bs-toggle="modal"
-            data-bs-target="#mdlAdd">Add Menu <i class="fa fa-plus"></i></button>
-    </div>
+      <div class="container">
+        <button type="button" class="btn btn-labe-success " id="btnAddMenuApp" data-bs-toggle="modal" data-bs-target="#mdlAdd">Add Menu <i class="fa fa-plus"></i></button>
+      </div>
       <div class="card-body">
         <div class="table-responsive text-nowrap">
           <!-- Removed scrollBody -->
           <div class="card-datatable table-responsive pt-0">
-            <table class="table card-table table-striped table-bordered table-hover table-checkable order-column w-100" id="tblManageMenu">
+            <table class="table card-table table-striped table-bordered table-hover table-checkable order-column w-100 table" id="tblManageMenu">
               <thead>
                 <tr>
                   <th class="text-center">No.</th>
@@ -138,3 +137,12 @@
   </div>
 </div>
 <!-- End Edit Modal -->
+td,
+  a {
+    text-align: center;
+  }
+
+  th {
+    text-align: center;
+  }
+</style>

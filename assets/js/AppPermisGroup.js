@@ -128,7 +128,7 @@ $(() => {
                 Swal.fire({
                     icon: 'warning',
                     title: 'Oops...',
-                    text: 'Please enter main menu',
+                    text: 'Please enter Permission Group',
                 });
             } else if (!isThaiLanguage(ManagePersGroup)) {
                 Swal.fire({
@@ -248,7 +248,7 @@ $(() => {
                 Swal.fire({
                     icon: 'warning',
                     title: 'Oops...',
-                    text: 'Please enter Main Menu name',
+                    text: 'Please enter Permission group  name', 
                 });
             } else if (!isThaiLanguage(ManagePergname)) {
                 Swal.fire({
@@ -259,12 +259,12 @@ $(() => {
             } else {
                 Swal.fire({
                     title: 'Are you sure?',
-                    text: "Do you want to add Account",
+                    text: "Do you want to Permission group",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, add account!'
+                    confirmButtonText: 'Yes, Permission group!'
                 }).then((result) => {
                     if (result.isConfirmed) {
                         // ตรวจสอบว่า data_mpg ถูกตั้งค่าแล้วและมี spga_name หรือไม่

@@ -19,8 +19,13 @@
         <!-- User -->
         <li class="nav-item navbar-dropdown dropdown-user dropdown">
           <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-            <div class="avatar avatar-online">
-              <img src="<?php echo base_url() ?>/assets/img/pf/PF.webp" alt class="w-px-40 h-auto rounded-circle" />
+            <div class="avatar me-2">
+              <?php
+              $userName = $this->session->userdata('userName');
+              // ตัด "51" ที่ติดมาด้วย
+              $imgSrc = "http://192.168.161.207/tbkk_shopfloor_sys/asset/img_emp/" . substr($userName, 2) . ".jpg";
+              ?>
+              <img src="<?= $imgSrc ?>" alt="Avatar" class="rounded-circle" onerror="this.onerror=null; this.src='<?= base_url() ?>/assets/img/pf/PF.webp'">
             </div>
           </a>
           <ul class="dropdown-menu dropdown-menu-end">
@@ -28,8 +33,13 @@
               <a class="dropdown-item" href="#">
                 <div class="d-flex">
                   <div class="flex-shrink-0 me-3">
-                    <div class="avatar avatar-online">
-                      <img src="<?php echo base_url() ?>/assets/img/pf/PF.webp" alt class="w-px-40 h-auto rounded-circle" />
+                    <div class="avatar me-2">
+                      <?php
+                      $userName = $this->session->userdata('userName');
+                      // ตัด "51" ที่ติดมาด้วย
+                      $imgSrc = "http://192.168.161.207/tbkk_shopfloor_sys/asset/img_emp/" . substr($userName, 2) . ".jpg";
+                      ?>
+                      <img src="<?= $imgSrc ?>" alt="Avatar" class="rounded-circle" onerror="this.onerror=null; this.src='<?= base_url() ?>/assets/img/pf/PF.webp'">
                     </div>
                   </div>
                   <div class="flex-grow-1">

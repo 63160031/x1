@@ -39,11 +39,11 @@
             <table class="table card-table table-striped table-bordered table-hover table-checkable order-column w-100 table" id="tblMainMenu">
               <thead>
                 <tr>
-                  <th>NO.</th>
-                  <th>ITEM NO</th>
-                  <th>ITEM NAME</th>
-                  <th>STATUS</th>
-                  <th>Action</th>
+                 <th class="text-center">NO.</th>
+                 <th class="text-center">ITEM NO</th>
+                 <th class="text-center">ITEM NAME</th>
+                 <th class="text-center">STATUS</th>
+                 <th class="text-center">Action</th>
                 </tr>
               </thead>
               <tbody id="tbody">

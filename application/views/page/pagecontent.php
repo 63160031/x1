@@ -26,11 +26,21 @@
 	<link rel="stylesheet" href="<?php echo base_url() ?>/assets/css/demo.css" />
 
 	<!-- Vendors CSS -->
+
+	<link rel="stylesheet" href="<?php echo base_url() ?>/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+	<link rel="stylesheet" href="<?php echo base_url() ?>/assets/vendor/libs/highlight/highlight.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+	<!-- Datatable css -->
+	<link rel="stylesheet" href="<?php echo base_url() ?>/assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css" />
+	<link rel="stylesheet" href="<?php echo base_url() ?>/assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css" />
+	<link rel="stylesheet" href="<?php echo base_url() ?>/assets/vendor/libs/datatables-checkboxes-jquery/datatables.checkboxes.css" />
+	<link rel="stylesheet" href="<?php echo base_url() ?>/assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css" />
+
 	<link rel="stylesheet" href="<?php echo base_url() ?>/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
 	<link rel="stylesheet" href="<?php echo base_url() ?>/assets/vendor/libs/apex-charts/apex-charts.css" />
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js">
+	<!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css"> -->
+	<!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"> -->
 
 
 	<!-- Page CSS -->
@@ -253,6 +263,16 @@
 					return Pattern.test(text);
 				}
 			</script>
+			<style>
+				td,
+				a {
+					text-align: center;
+				}
+
+				th {
+					text-align: center;
+				}
+			</style>
 			<!-- Core JS -->
 			<!-- build:js assets/vendor/js/core.js -->
 			<script src="<?php echo base_url() ?>/assets/vendor/libs/jquery/jquery.js"></script>
@@ -262,21 +282,21 @@
 
 			<script src="<?php echo base_url() ?>/assets/vendor/js/menu.js"></script>
 			<!-- endbuild -->
-			<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-			<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+			<!-- <script src="https://code.jquery.com/jquery-3.7.0.js"></script> -->
+
 			<!-- Vendors JS -->
 			<script src="<?php echo base_url() ?>/assets/vendor/libs/apex-charts/apexcharts.js"></script>
 			<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-			<!-- CSSNEW -->
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
-
 			<!-- Main JS -->
 			<script src="<?php echo base_url() ?>/assets/js/main.js"></script>
 			<script src="<?php echo base_url() ?>/assets/js/logout.js"></script>
 			<script src="<?php echo base_url() ?>/assets/js/submenu.js"></script>
 
-
+			<script src="<?php echo base_url() ?>/assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
+			<!-- <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script> -->
+			<!-- Page JS -->
+			<!-- <script src="<?php echo base_url() ?>/assets/js/docs.js"></script> -->
+			<!-- <script src="<?php echo base_url() ?>/assets/js/docs-tables-datatables.js"></script> -->
 
 			<!-- Page JS -->
 			<script src="<?php echo base_url() ?>/assets/js/dashboards-analytics.js"></script>

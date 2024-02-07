@@ -15,7 +15,7 @@
         </select>
       </div>
       <div class="col">
-        <button type="button" class="btn btn-circle btn-primary" id="btnSerchMain">Search</button>
+        <button type="button" class="btn btn-circle btn-dark" id="btnSerchMain">Search</button>
       </div>
     </div>
     <br>
@@ -66,15 +66,15 @@
                 <div class="card-body">
                   <div class="table-responsive text-nowrap">
                     <div class="card-datatable table-responsive pt-0">
-                      <table class="datatables-basic table table-striped table-bordered table-hover table-checkable order-column border-top w-100" id="tblPermis">
+                      <table class="table card-table table-striped table-bordered table-hover table-checkable order-column w-100 table" id="tblPermis">
                         <thead>
                           <tr>
-                            <th>No.</th>
-                            <th>Main Menu</th>
-                            <th>Update Date</th>
-                            <th>Update By</th>
-                            <th>Stasus</th>
-                            <th>Action</th>
+                            <th class="text-center">No.</th>
+                            <th class="text-center">Main Menu</th>
+                            <th class="text-center">Update Date</th>
+                            <th class="text-center">Update By</th>
+                            <th class="text-center">Stasus</th>
+                            <th class="text-center">Action</th>
                           </tr>
                         </thead>
                         <tbody class="table-border-bottom-0" id="tbody">

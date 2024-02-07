@@ -14,7 +14,7 @@
                   </select>
                 </div>
                 <div class="col">
-                  <button type="button" class="btn btn-circle btn-primary" id="btnSerchMain">Search</button>
+                  <button type="button" class="btn btn-circle btn-dark" id="btnSerchMain">Search</button>
                 </div>
               </div>
               <br>
@@ -61,13 +61,13 @@
                                 <table class="table card-table table-striped table-bordered table-hover table-checkable order-column w-100" id="tblSubMenu">
                                   <thead>
                                     <tr>
-                                      <th>No.</th>
-                                      <th>Sub Menu</th>
-                                      <th>Menu Controller</th>
-                                      <th>Update Date</th>
-                                      <th>Update By</th>
-                                      <th>Stasus</th>
-                                      <th>Action</th>
+                                     <th class="text-center">No.</th>
+                                     <th class="text-center">Sub Menu</th>
+                                     <th class="text-center">Menu Controller</th>
+                                     <th class="text-center">Update Date</th>
+                                     <th class="text-center">Update By</th>
+                                     <th class="text-center">Stasus</th>
+                                     <th class="text-center">Action</th>
                                     </tr>
                                   </thead>
                                   <tbody class="table-border-bottom-0" id="tbody">

@@ -20,7 +20,7 @@
                 <div class="row py-2 mt-2" style="display: flex; align-items: center;">
                     <input class="form-Date" type="date" id="selDateStart">
                     <input class="form-Date" type="date" id="selDateEnd">
-                    <button id="tblTransBtn" type="button" class="btnSC btn-success">Search</button>
+                    <button id="tblTransBtn" type="button" class="btnSC btn-dark">Search</button>
                 </div>
             </div>
 
@@ -29,15 +29,15 @@
                     <table class="table card-table table-striped table-bordered table-hover table-checkable order-column w-100" id="tblTransaction">
                         <thead>
                             <tr>
-                                <th>No.</th>
-                                <th>item no</th>
-                                <th>item name</th>
-                                <th>QTY</th>
-                                <th>Location</th>
-                                <th>PLANDATE</th>
-                                <th>Status</th>
+                                <th class="text-center">No.</th>
+                                <th class="text-center">item no</th>
+                                <th class="text-center">item name</th>
+                                <th class="text-center">QTY</th>
+                                <th class="text-center">Location</th>
+                                <th class="text-center">DATE</th>
+                                <th class="text-center">Status</th>
                             </tr>
-                            </thead>
+                        </thead>
                         <tbody class="table-border-bottom-0" id="tbody">
                         </tbody>
                     </table>

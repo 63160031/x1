@@ -1,15 +1,15 @@
-<h5 class="fw-bold py-4 mb-4" style="margin-left: 25px;"><span class="text-muted fw-light">Administrator /</span> Manage Account </h5>
 <style>
-    /* ตัวอย่าง CSS ที่ใช้กับ DataTable */
-    .dataTables_scrollBody {
-        overflow: hidden !important;
-        /* ซ่อน scrollbar */
-    }
+  td,
+  a {
+    text-align: center;
+  }
 
-    .datatable-container {
-        padding: 500px;
-    }
+  th {
+    text-align: center;
+  }
 </style>
+<h5 class="fw-bold py-4 mb-4" style="margin-left: 25px;"><span class="text-muted fw-light">Administrator /</span> Manage Account </h5>
+
 
 <div class="container">
     <div class="row">
@@ -30,7 +30,7 @@
                                         <th>Status</th>
                                     </tr>
                                 </thead>
-                                <tbody class="table-border-bottom-0" id="tbody">
+                                <tbody id="tbody">
                                     <!-- Add rows dynamically here if needed -->
                                 </tbody>
                             </table>

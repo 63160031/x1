@@ -246,7 +246,7 @@ $(() => {
                 Swal.fire({
                     icon: 'warning',
                     title: 'Oops...',
-                    text: 'Please enter main menu',
+                    text: 'Please enter Permission Group',
                 });
             } else if (!isThaiLanguage(ManagePersGroup)) {
                 Swal.fire({

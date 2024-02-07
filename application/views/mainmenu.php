@@ -8,7 +8,7 @@
       <div class="card-body">
         <div class="row py-2 mt-2">
           <span class="fs-5 fw-bold text-primary-emphasis">Register Main Menu</span>
-          <div class="col-md-6 col-sm-10 col-5">
+          <div class="col-md-4 col-sm-2 col-5">
             <div class="row">
               <div class="col-lg-3"></div>
               <div class="col">
@@ -18,50 +18,59 @@
               </div>
             </div>
           </div>
-          <div class="col-md-5 col-sm-2 col-7">
+          <div class="col-md-4 col-sm-2 col-6">
             <div class="row container">
-              <div class="col-lg-5 p-t-20"></div>
               <div class="col-lg-6" style="display: grid; grid-template-columns: auto auto;">
-                <input class="form-control" placeholder="ICON" aria-label="ICON" type="text" id="inpMainMenuIcon" oninput="InputAdd(this)" style="margin-top: -14px; margin-left: -1px;">
-                <span style="margin-left: -30px; margin-top: -5px;" data-bs-toggle="modal" data-bs-target="#mdlIcon">
+                <input class="form-control" placeholder="ICON" aria-label="ICON" type="text" id="inpMainMenuIcon" oninput="InputAdd(this)" >
+                <span  data-bs-toggle="modal" data-bs-target="#mdlIcon">
                   <i class='bx bx-filter'></i>
                 </span>
               </div>
-              <div class="col-md-12 col-sm-3 col-5 text-end">
-                <button type="button" class="btn btn-circle btn-primary btn-sm" id="btnSaveAdd" style=" margin-top: -65px;  ">Submit</button>
+              <div class="col-md-4 col-sm-2 col-12 text-end">
+              <button type="button" class="btn btn-success" id="btnSaveAdd">Success</button>
+
               </div>
             </div>
           </div>
-          <div class="col justify-content-start ms-1">
+          <div class="col justify-content-start ms-2">
             <div id="errMegadd" style="color: red; display: none;">Please enter in English only.</div>
           </div>
         </div>
 
+
+      </div>
+    </div>
+
+    <!--/ Bordered Table -->
+    <div class="card mt-3">
+      <div class="row">
+      </div>
+      <h5 class="card-header">Manage Account Table</h5>
+      <div class="card-body">
         <div class="table-responsive text-nowrap">
+          <!-- Removed scrollBody -->
           <div class="card-datatable table-responsive pt-0">
-            <table class="table card-table table-striped table-bordered table-hover table-checkable order-column w-100" id="tblMainMenu">
+            <table class="table card-table table-striped table-bordered table-hover table-checkable order-column w-100 table" id="tblMainMenu">
               <thead>
                 <tr>
-                  <th>No.</th>
-                  <th>Main Menu Name</th>
-                  <th>Main Menu Icon</th>
-                  <th>Order No.</th>
-                  <th>Update Date</th>
-                  <th>Update By</th>
-                  <th>Status</th>
-                  <th>Action</th>
+                  <th class="text-center">No.</th>
+                  <th class="text-center">Main Menu Name</th>
+                  <th class="text-center">Main Menu Icon</th>
+                  <th class="text-center">Order No.</th>
+                  <th class="text-center">Update Date</th>
+                  <th class="text-center">Update By</th>
+                  <th class="text-center">Status</th>
+                  <th class="text-center">Action</th>
                 </tr>
               </thead>
               <tbody class="table-border-bottom-0" id="tbody">
-                <!-- ถ้าคุณต้องการเพิ่มแถวข้อมูลตารางในนี้ สามารถทำได้ -->
+                <!-- Table body content goes here -->
               </tbody>
             </table>
           </div>
         </div>
       </div>
     </div>
-
-    <!--/ Bordered Table -->
 
 
 

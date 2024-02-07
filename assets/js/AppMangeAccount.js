@@ -128,6 +128,7 @@ $(() => {
                             <span class="emp_name text-truncate"> </span><small class="emp_post text-truncate text-muted">${data[i].swa_employee_code}</small></div></div></td>
                     <td class="text-center"><i></i> <strong>${data[i].spga_name}</strong></td>
                     <td class="text-center"><i></i>${data[i].swa_name}</td>
+                    <td class="text-center"><i></i>${data[i].swa_lastname}</td>
                     <td class="text-center"><i></i> <strong>${data[i].mpc_name}</strong></td>
                     <td class="text-center"><i></i>${data[i].swa_created_date}</td>
                     <td class="text-center" style="">
