@@ -1,13 +1,3 @@
-<style>
-  td,
-  a {
-    text-align: center;
-  }
-
-  th {
-    text-align: center;
-  }
-</style>
 <div class="content-wrapper">
   <!-- Content -->
   <div class="container-xxl flex-grow-1 container-p-y">
@@ -18,8 +8,9 @@
         <div class="row py-2 mt-2">
           <!-- เพิ่มช่องค้นหาสำหรับ Location ที่นี่ -->
           <div class="col">
+          <label for="selLoation" class="form-label">Choose Location <span class="red-text">*</span></label>
             <select class="form-control selLoation form-select" id="selLoation">
-              <option value="">Choose Location</option>
+              <option value="">********Location*********</option>
             </select>
             <br>
             <div class="table-responsive text-nowrap">

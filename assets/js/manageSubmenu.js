@@ -1,4 +1,3 @@
-// Function to show DataTable
 function shDataTable() {
     var mainId = $('#selMainMenu').val();
 
@@ -57,7 +56,6 @@ function shDataTable() {
         });
     }
 }
-
 $(() => {
     $('#staticBackdropEdit').on('hidden.bs.modal', function () {
         $('#errMegedit').css('display', 'none');

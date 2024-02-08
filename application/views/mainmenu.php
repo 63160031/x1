@@ -6,42 +6,27 @@
     <h5 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Administrator /</span> Manage Main menu</h5>
     <div class="card">
       <div class="card-body">
-        <div class="row py-2 mt-2">
-          <span class="fs-5 fw-bold text-primary-emphasis">Register Main Menu</span>
-          <div class="col-md-4 col-sm-2 col-5">
-            <div class="row">
-              <div class="col-lg-3"></div>
-              <div class="col">
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                  <input class="form-control" placeholder="ADD MAINMENU" aria-label="ADD MAINMENU" type="text" id="inpMainMenuName" oninput="InputAdd(this)">
-                </div>
-              </div>
-            </div>
+        <div class="row py-2">
+          <div class="col-12">
+            <span class="fs-5 fw-bold text-primary-emphasis">Register Main Menu</span>
           </div>
-          <div class="col-md-4 col-sm-2 col-6">
-            <div class="row container">
-              <div class="col-lg-6" style="display: grid; grid-template-columns: auto auto;">
-                <input class="form-control" placeholder="ICON" aria-label="ICON" type="text" id="inpMainMenuIcon" oninput="InputAdd(this)" >
-                <span  data-bs-toggle="modal" data-bs-target="#mdlIcon">
-                  <i class='bx bx-filter'></i>
-                </span>
-              </div>
-              <div class="col-md-4 col-sm-2 col-12 text-end">
-              <button type="button" class="btn btn-success" id="btnSaveAdd">Success</button>
-
-              </div>
-            </div>
+          <div class="mb-3 col-md-5">
+            <label for="inpMainMenuName" class="form-label">Main Menu Name <span class="red-text">*</span></label>
+            <input class="form-control" type="text" id="inpMainMenuName" oninput="InputAdd(this)" value="" placeholder="Enter main menu">
           </div>
-          <div class="col justify-content-start ms-2">
-            <div id="errMegadd" style="color: red; display: none;">Please enter in English only.</div>
+          <div class="mb-3 col-md-3">
+            <label for="inpMainMenuIcon" class="form-label">Main Menu Icon <span class="red-text">*</span></label>
+            <input class="form-control mdl-textfield__input" type="text" id="inpMainMenuIcon" oninput="InputAdd(this)" value="" placeholder="Enter menu icon">
+          </div>
+          <div class="col-md-6 col-md-3-main">
+            <button type="button" id="button-addon2" data-bs-toggle="modal" data-bs-target="#mdlIcon" class="btn btn-outline-primary">
+              <span class="tf-icons bx bx-file-find me-1"></span>Icon
+            </button>
+            <button type="button" class="btn btn-circle btn-primary btn-submit" id="btnSaveAdd">Submit</button>
           </div>
         </div>
-
-
       </div>
     </div>
-
-    <!--/ Bordered Table -->
     <div class="card mt-3">
       <div class="row">
       </div>

@@ -12,9 +12,7 @@
                 <h5 class="card-title text-primary">Congratulations John! 🎉</h5>
                 <p class="mb-4">
                   <span class="fw-bold"></span>
-
                 </p>
-
                 <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Badges</a>
               </div>
             </div>
