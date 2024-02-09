@@ -6406,6 +6406,9 @@ label.btn {
 .btn-secondary.disabled, .btn-secondary:disabled {
   box-shadow: none;
 }
+.hidden {
+  display: none !important;
+}
 
 .btn-outline-secondary {
   color: #8592a3;

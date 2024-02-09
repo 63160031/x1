@@ -71,7 +71,12 @@ class Transactioninfo extends CI_Controller
 
     }
     
-    
+    public function callApiFillterDate()
+    {
+        $result = $this->curPostRequest('Transaction_info/show_Transaction_date', array('data' => serialize($_POST)));
+        echo json_encode($result);
+
+    }
     
 
     function curPostRequest($enpoint, $param_data, $is_array = true, $associative = false){
