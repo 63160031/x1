@@ -7,6 +7,7 @@ $(() => {
         $('#errAddpersonal').css('display', 'none');
         $('#inpEmpCode').val('');
         $('#inpName').val('');
+        $('#inpLastName').val('');
         $('#selPermissionAdd').val('');
         $('#selPlantAdd').val('');
     });
@@ -231,9 +232,11 @@ $(() => {
         $('#btnSaveAdd').on('click', function () {
             var arrDataAdd = [];
             var EmpCode = $('#inpEmpCode').val();
-            var Name = $('#inpName').val();
+            var Name = $('#inpFirstName').val();
+            var LastName = $('#inpLastName').val();
             var Permission = $('#selPermissionAdd').val();
             var Plant = $('#selPlantAdd').val();
+
 
             if (EmpCode == '') {
                 Swal.fire({
@@ -242,6 +245,12 @@ $(() => {
                     text: 'Please enter employee code',
                 })
             } else if (Name == '') {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Oops...',
+                    text: 'Please enter FirstName',
+                })
+            } else if (LastName == '') {
                 Swal.fire({
                     icon: 'warning',
                     title: 'Oops...',
@@ -258,18 +267,6 @@ $(() => {
                     icon: 'warning',
                     title: 'Oops...',
                     text: 'Please choose Plant',
-                })
-            } else if ((EmpCode)) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Oops...',
-                    text: 'Please enter Employee Code as (a-z ,A-Z ,0-91) only.',
-                })
-            } else if (!(Name)) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Oops...',
-                    text: 'Please enter Firstname or Lastname as (a-z ,A-Z) only.',
                 })
             } else if (!isThaiLanguage(EmpCode)) {
                 Swal.fire({
@@ -292,6 +289,7 @@ $(() => {
                         const formData = new FormData()
                         formData.append('EmpCode', EmpCode);
                         formData.append('EmpName', Name);
+                        formData.append('EmpLastname', LastName);
                         formData.append('EmpPermission', Permission);
                         formData.append('Plant', Plant);
 
@@ -362,14 +360,15 @@ $(() => {
             },
             dataType: 'json',
             success: (response) => {
-                console.log(response);  // เพิ่มบรรทัดนี้เพื่อดูข้อมูลที่ได้รับกลับมา
-            
+               // เพิ่มบรรทัดนี้เพื่อดูข้อมูลที่ได้รับกลับมา
+
                 data_acc = response.data;
-            
-                $('#edtEmpCode').val(response.data.swa_employee_code);
-                $('#edtName').val(response.data.swa_name);
-                $('#edtPermission').val(response.data.spga_id);
-                $('#edtPlantEdit').val(response.data.mpc_id);
+                console.log(data_acc.swa_name);  
+                $('#edtEmpCode').val(data_acc.swa_employee_code);
+                $('#edtName').val(data_acc.swa_name);
+                $('#edtLastName').val(data_acc.swa_lastname);
+                $('#edtPermission').val(data_acc.spga_id);
+                $('#edtPlantEdit').val(data_acc.mpc_id);
             }
         });
     })
@@ -379,18 +378,21 @@ $(() => {
     //-------------------------- Save Edit ----------------------------------
     $(document).ready(function () {
         $('#btnSaveEdit').on('click', function () {
+
             var arrDataAdd = [];
             var EmpCode = $('#edtEmpCode').val();
             var Name = $('#edtName').val();
+            var LastName = $('#edtLastName').val();
             var Permission = $('#edtPermission').val();
             var Plant = $('#edtPlantEdit').val();
 
 
             if (
                 data_acc &&
-                data_acc.swa_employee_code &&
+                data_acc.swa_employee_code == EmpCode &&
                 data_acc.spga_id == Permission &&
                 data_acc.swa_name == Name &&
+                data_acc.swa_lastname == LastName &&
                 data_acc.mpc_id == Plant
             ) {
                 Swal.fire({
@@ -427,13 +429,6 @@ $(() => {
                     title: 'Oops...',
                     text: 'Please enter Employee Code as (a-z ,A-Z ,0-9) only.',
                 })
-            } else if ((Name)) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Oops...',
-                    text: 'Please enter Firstname or Lastname as (a-z ,A-Z) only.',
-                })
-
             } else {
 
                 Swal.fire({
@@ -450,6 +445,7 @@ $(() => {
                         const formData = new FormData()
                         formData.append('EmpCode', EmpCode);
                         formData.append('EmpFirstName', Name);
+                        formData.append('EmpLastName', LastName);
                         formData.append('EmpPermission', Permission);
                         formData.append('EmpPlantCode', Plant);
 
@@ -490,12 +486,15 @@ $(() => {
                                         html: 'A system error has occurred.',
                                     });
                                 }
+
                             }
                         });
+
                     }
                 });
             }
         });
     });
+
 
 })

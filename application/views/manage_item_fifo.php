@@ -53,21 +53,21 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel1">Add Item</h5>
+            <h5 class="modal-title " id="exampleModalLabel1">Add Item</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <form action="" id="add">
               <div class="row g-2">
                 <div class="col mb-3">
-                  <label class="form-label">Item no.</label>
-                  <input type="text" id="inpItemNo" class="form-control" placeholder="">
+                  <label for="inpItemNo" class="form-label">Item no.</label>
+                  <input type="text" class="form-control" id="inpItemNo" placeholder="Enter Item no.">
                 </div>
               </div>
               <div class="row g-2">
                 <div class="col mb-3">
-                  <label class="form-label">Item name.</label>
-                  <input type="text" id="inpItemName" class="form-control" placeholder="">
+                  <label for="inpItemName" class="form-label">Item name.</label>
+                  <input type="text" class="form-control" id="inpItemName" placeholder="Item name." readonly>
                 </div>
               </div>
               <div class="row g-2">
@@ -94,36 +94,40 @@
 
     <!-- End Modal Add-->
     <!-- Modal Edit-->
-    <div class="modal fade" id="mdlEdit" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="mdlAdd" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel1">edit Item</h5>
+            <h5 class="modal-title" id="exampleModalLabel1">Add Item</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form action="" id="add">
+            <form id="add">
               <div class="row g-2">
                 <div class="col mb-3">
                   <label class="form-label">Item no.</label>
-                  <input type="text" id="edtItemno" class="form-control" placeholder="">
+                  <select id="inpItemNo" class="form-select">
+                    <!-- Dropdown options will be populated dynamically -->
+                  </select>
                 </div>
               </div>
               <div class="row g-2">
                 <div class="col mb-3">
                   <label class="form-label">Item name.</label>
-                  <input type="text" id="edtItemname" class="form-control" placeholder="">
+                  <select id="inpItemName" class="form-select">
+                    <!-- Dropdown options will be populated dynamically -->
+                  </select>
                 </div>
               </div>
               <div class="row g-2">
                 <div class="col mb-3">
-                  <input type="checkbox" id="edtItemfifo" name="FIFO" value="1">
-                  <label for="ckFifo">FIFO </label><br>
+                  <input type="checkbox" id="ckFifo" name="FIFO" value="1">
+                  <label for="ckFifo">FIFO</label><br>
                 </div>
               </div>
               <div class="row g-2">
                 <div class="col mb-3">
-                  <input type="checkbox" id="edtItemckd" name="CKN" value="1">
+                  <input type="checkbox" id="ckCKN" name="CKN" value="1">
                   <label for="ckCKN">CKD</label><br>
                 </div>
               </div>
@@ -131,11 +135,12 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal" id="btnBack">Back</button>
-            <button type="button" class="btn btn-primary" id="btnSaveEdit">Save</button>
+            <button type="button" class="btn btn-primary" id="btnSaveAdd">Save</button>
           </div>
         </div>
       </div>
     </div>
+
     <!-- End Edit Modal -->
     <!--/ Bordered Table -->
   </div>

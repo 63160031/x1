@@ -8,8 +8,8 @@
         <div class="row py-2 mt-2">
           <!-- เพิ่มช่องค้นหาสำหรับ Location ที่นี่ -->
           <div class="col">
-          <label for="selLoation" class="form-label">Choose Location <span class="red-text">*</span></label>
-            <select class="form-control selLoation form-select" id="selLoation">
+            <label for="selLoation" class="form-label">Choose Location <span class="red-text">*</span></label>
+            <select class="form-control selLoation form-select" id="selLocation">
               <option value="">********Location*********</option>
             </select>
             <br>
@@ -36,49 +36,49 @@
       </div>
     </div>
     <!-- Detail Modal -->
-</a>
+    </a>
 
-<!-- Modal -->
-<div class="modal fade" id="mdlDetail" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="mdlDetailLabel">Detail </h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="row mb-3">
-          <div class="col-4">
-            <label for="partNo" class="form-label">Part No</label>
-            <input  id="dtlpartNo"  class="form-control" readonly type="text">
+    <!-- Modal -->
+    <div class="modal fade" id="mdlDetail" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="mdlDetailLabel">Detail </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="col-4">
-            <label for="date" class="form-label">pDate</label>
-            <input  id="dtldate"  class="form-control" readonly type="text">
+          <div class="modal-body">
+            <div class="row mb-3">
+              <div class="col-4">
+                <label for="partNo" class="form-label">Part No</label>
+                <input id="dtlpartNo" class="form-control" readonly type="text">
+              </div>
+              <div class="col-4">
+                <label for="date" class="form-label">pDate</label>
+                <input id="dtldate" class="form-control" readonly type="text">
+              </div>
+              <div class="col-4">
+                <label for="lotNo" class="form-label">Lot No</label>
+                <input id="dtllotNo" class="form-control" readonly type="text">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-4">
+                <label for="box" class="form-label">Box</label>
+                <input id="dtlbox" class="form-control" readonly type="text">
+              </div>
+              <div class="col-4">
+                <label for="location" class="form-label">Location</label>
+                <input id="dtllocation" class="form-control" readonly type="text">
+              </div>
+              <div class="col-4">
+                <label for="qty" class="form-label">QTY</label>
+                <input id="dtlqty" class="form-control" readonly type="text">
+              </div>
+            </div>
           </div>
-          <div class="col-4">
-            <label for="lotNo" class="form-label">Lot No</label>
-            <input  id="dtllotNo"  class="form-control" readonly type="text">
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           </div>
         </div>
-        <div class="row mb-3">
-          <div class="col-4">
-            <label for="box" class="form-label">Box</label>
-            <input  id="dtlbox"  class="form-control" readonly type="text">
-          </div>
-          <div class="col-4">
-            <label for="location" class="form-label">Location</label>
-            <input  id="dtllocation"  class="form-control" readonly type="text">
-          </div>
-          <div class="col-4">
-            <label for="qty" class="form-label">QTY</label>
-            <input  id="dtlqty"  class="form-control" readonly type="text">
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
-  </div>
-</div>

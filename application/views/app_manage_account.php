@@ -52,13 +52,19 @@
                 <div class="row g-2">
                   <div class="col mb-3">
                     <label class="form-label">Employee Code</label>
-                    <input type="text" id="inpEmpCode" class="form-control" placeholder="Emp Code" oninput="InputAddpersonal(this)">
+                    <input type="text" id="inpEmpCode" class="form-control" placeholder="Emp Code" oninput="InputAddEmpcode(this)">
                   </div>
                 </div>
                 <div class="row g-2">
                   <div class="col mb-3">
                     <label class="form-label">Name</label>
-                    <input type="text" id="inpFirstName" class="form-control" placeholder="FirstName-LastName" oninput="InputAddpersonal(this)">
+                    <input type="text" id="inpFirstName" class="form-control" placeholder="FirstName" oninput="InputAddpersonal(this)">
+                  </div>
+                </div>
+                <div class="row g-2">
+                  <div class="col mb-0">
+                    <label class="form-label">Last Name</label>
+                    <input type="text" id="inpLastName" class="form-control" placeholder="LastName" oninput="InputAddpersonal(this)">
                   </div>
                 </div>
                 <div class="row mb-3">
@@ -98,20 +104,26 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel1">Add Account</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <h5 class="modal-title" id="exampleModalLabel1">Edit Account</h5>
+              <button type="button" class="btn-close" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <div class="row g-2">
                 <div class="col mb-0">
                   <label class="form-label">Employee Code</label>
-                  <input type="text" id="edtEmpCode" class="form-control" placeholder="Emp Code" oninput="InputAddEmpcode(this)" readonly>
+                  <input type="text" id="edtEmpCode" class="form-control" value="" oninput="InputAddEmpcode(this)" readonly>
                 </div>
               </div>
               <div class="row g-2">
                 <div class="col mb-0">
-                  <label class="form-label">Name</label>
-                  <input type="text" id="edtName" class="form-control" placeholder="FirstName-LastName" oninput="InputAddpersonal(this)">
+                  <label class="form-label">First Name</label>
+                  <input type="text" id="edtName" class="form-control" value="" oninput="InputAddpersonal(this)">
+                </div>
+              </div>
+              <div class="row g-2">
+                <div class="col mb-0">
+                  <label class="form-label">Last Name</label>
+                  <input type="text" id="edtLastName" class="form-control" value="" oninput="InputAddpersonal(this)">
                 </div>
               </div>
               <div class="row">
@@ -119,25 +131,25 @@
                   <label class="form-label">Permission group</label>
                   <select id="edtPermission" class="edtPermission select2 form-select" data-allow-clear="true">
                     <option value="">Choose Permission Group</option>
+                    <!-- ตัวเลือกจะถูกเติมโดย JavaScript -->
                   </select>
                 </div>
               </div>
-
               <div class="row">
                 <div class="col mb-3">
                   <label class="form-label">Plant</label>
                   <select id="edtPlantEdit" class="edtPlantEdit select2 form-select" data-allow-clear="true">
                     <option value="">Choose Plant</option>
+                    <!-- ตัวเลือกจะถูกเติมโดย JavaScript -->
                   </select>
                 </div>
               </div>
-
             </div>
             <div class="modal-footer">
               <div class="container col justify-content-start">
-                <div id="errMegadd" style="display: none; color: red; ">Please enter in English only.</div>
-                <div id="errAddempcode" style="display: none; color: red; ">Please enter Employee Code as (a-z ,A-Z ,0-9) only.</div>
-                <div id="errAddpersonal" style="display: none; color: red; ">Please enter Firstname or Lastname as (a-z ,A-Z) only.</div>
+                <div id="errMegadd" style="display: none; color: red;">Please enter in English only.</div>
+                <div id="errAddempcode" style="display: none; color: red;">Please enter Employee Code as (a-z ,A-Z ,0-9) only.</div>
+                <div id="errAddpersonal" style="display: none; color: red;">Please enter Firstname or Lastname as (a-z ,A-Z) only.</div>
               </div>
               <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal" id="btnBack">Back</button>
               <button type="button" class="btn btn-primary" id="btnSaveEdit">Save</button>
@@ -145,4 +157,5 @@
           </div>
         </div>
       </div>
+
       <!-- End Edit Modal -->

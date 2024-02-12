@@ -36,6 +36,7 @@
 	<link rel="stylesheet" href="<?php echo base_url() ?>/assets/vendor/libs/datatables-checkboxes-jquery/datatables.checkboxes.css" />
 	<link rel="stylesheet" href="<?php echo base_url() ?>/assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css" />
 
+
 	<link rel="stylesheet" href="<?php echo base_url() ?>/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
 	<link rel="stylesheet" href="<?php echo base_url() ?>/assets/vendor/libs/apex-charts/apex-charts.css" />
@@ -279,7 +280,8 @@
 			<script src="<?php echo base_url() ?>/assets/vendor/libs/popper/popper.js"></script>
 			<script src="<?php echo base_url() ?>/assets/vendor/js/bootstrap.js"></script>
 			<script src="<?php echo base_url() ?>/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-
+			<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.3/typeahead.jquery.js"></script> -->
+			<script src="<?php echo base_url() ?>/assets/js/bootstrap-typeahead.js"></script>
 			<script src="<?php echo base_url() ?>/assets/vendor/js/menu.js"></script>
 			<!-- endbuild -->
 			<!-- <script src="https://code.jquery.com/jquery-3.7.0.js"></script> -->
@@ -297,11 +299,8 @@
 			<!-- Page JS -->
 			<!-- <script src="<?php echo base_url() ?>/assets/js/docs.js"></script> -->
 			<!-- <script src="<?php echo base_url() ?>/assets/js/docs-tables-datatables.js"></script> -->
-
 			<!-- Page JS -->
 			<script src="<?php echo base_url() ?>/assets/js/dashboards-analytics.js"></script>
-
-
 			<!-- Place this tag in your head or just before your close body tag. -->
 			<script async defer src="https://buttons.github.io/buttons.js"></script>
 			{another_js}

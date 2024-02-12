@@ -47,7 +47,7 @@
             </div>
             <div class="col-lg">
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                <select class="form-control selSubMenuName form-select" id="selSubMenuName">
+                <select class="form-control selSubMenuName form-select" id="selSubMenuName" >
                   <option value="">Choose Sub Menu</option>
                 </select>
               </div>

@@ -4,7 +4,7 @@ $(() => {
     function shDataTable() {
         $(document).ready(function () {
             const apiUrl = 'http://127.0.0.1/api/Manage_item_fifo/show_tablel';
-    
+
             $.ajax({
                 url: apiUrl,
                 type: 'GET',
@@ -41,7 +41,7 @@ $(() => {
 
 
 
-    //     //-------------------------- add Menu ----------------------------------
+    //     //-------------------------- add item in ----------------------------------
 
     $(document).ready(function () {
         $('#btnSaveAdd').on('click', function () {
@@ -64,7 +64,7 @@ $(() => {
                     title: 'Oops...',
                     text: 'Please enter Item No.',
                 });
-            
+
             } else if (!isThaiLanguage(itemname)) {
                 Swal.fire({
                     icon: 'warning',
@@ -218,10 +218,10 @@ $(document).on('click', '.tblEditBtn', function () {
         dataType: 'json',
         success: (response) => {
             item = response.data;
-        
+
             $('#edtItemno').val(response.data.itf_item_no);
             $('#edtItemname').val(response.data.itf_item_name);
-        
+
             // Set checkbox states based on the response data
             $checkboxFifo.prop('checked', response.data.itf_fifo_flg == '1');
             $checkboxCkd.prop('checked', response.data.itf_ckd_flg == '1');
@@ -313,8 +313,28 @@ $(document).ready(function () {
                     });
                 }
             });
+
         }
     });
 });
-
-
+$(document).ready(function () {
+    // Load data from API and populate dropdowns
+    $.ajax({
+        type: "get",
+        url: "http://192.168.161.77/apiSystem/exp/getItemMaster?plant=51",
+        success: function (data) {
+            console.log(data);
+            $('#inpItemNo').typeahead({
+                source: data,
+                displayField: 'ITEM_CD',
+                valueField: 'ITEM_NAME',
+                onSelect:function(item) {
+                    $('#inpItemName').val(item.value)
+                }
+            })
+        },
+        error: function(data){
+            alert('Ajax failed');
+        }
+    });
+});
