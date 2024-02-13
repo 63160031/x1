@@ -4,31 +4,37 @@
 
   <div class="container-xxl flex-grow-1 container-p-y">
     <!-- Bordered Table -->
-    <h5 class="fw-bold py-3 mb-4" align="left"><span class="text-muted fw-light">Administrator /</span>App Manage Permission Group</h5>
-
-    <div class="card">
+    <h4 class="fw-bold py-3 mb-4" align="left"><span class="text-muted fw-light">Administrator / </span> Manage App Permission Group</h4>
+    <div class="card mb-4">
       <div class="card-body">
-        <div class="row py-2 mt-2">
-
-
-          <span class="fs-5 fw-bold text-primary-emphasis">Add Permission group</span>
-          <div class="row">
-            <div class="mb-3 col-md-5">
-              <span>Permission Group Name</span><span class="red-text">*</span>
-              <input class="form-control" type="text" id="inpPermisGroup" oninput="InputAdd(this)">
-            </div>
-
-            <div class="col-md col-sm-2 col-2 p-t-20">
-              <button type="button" class="btn btn-circle btn-primary" id="btnSaveAdd">Submit</button>
+        <div class="row py-2">
+          <div class="col-md-12">
+            <div class="head-label text-left" style="padding: 1px 0px 10px 7px;">
+              <i class="bx bxs-select-multiple mb-2" style="margin-top: 1px;color: #2c3a4a;"></i>
+              <span style="font-size: 17px;font-weight: 700;color: #0f1f31;margin-left: 5px;">Register App Permission Group</span>
             </div>
           </div>
-
-
-          <div class="col justify-content-start ms-1">
-            <div id="errMegadd" style="color: red; display: none;">Please enter in English only.</div>
+          <div class="row">
+            <div class="col-4">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                <input class="form-control" type="text" id="inpPermisGroup" oninput="InputAdd(this)">
+                <div id="errMegadd" style="color: red; display: none;">Please enter in English only.</div>
+              </div>
+            </div>
+            <div class="col-4">
+              <button type="button" class="btn btn-circle btn-primary" style="letter-spacing: 2px;" id="btnSaveAdd">Register</button>
+            </div>
           </div>
         </div>
-        <h5 class="card-header">Permission Group</h5>
+
+      </div>
+    </div>
+    <div class="card">
+      <div class="head-label text-left" style="padding: 35px 0px 0px 35px;">
+        <i class="bx bx bx-table me-2" style="margin-top:-4px;color: #2c3a4a;"></i>
+        <span style="font-size: 17px;font-weight: 700;color: #0f1f31;">List App Permission Group</span>
+      </div>
+      <div class="card-body">
         <div class="table-responsive text-nowrap">
           <div class="card-datatable table-responsive pt-0">
             <table class="table card-table table-striped table-bordered table-hover table-checkable order-column w-100 table" id="tblPermisGP">
@@ -43,20 +49,7 @@
                 </tr>
               </thead>
               <tbody class="table-border-bottom-0" id="tbody">
-                <!-- <tr>
-                  <td><i></i> <strong>1</strong></td>
-                  <td><i></i> <strong>Dash</strong></td>
-
-                  <td class="">02/13/2021</td>
-                  <td class="">SD525</td>
-                  <td><span class="badge bg-label-success me-1">Enable</span></td>
-                  <td class="">
-                    </li>
-                    </ul>
-          </div><a href="" class="btn btn-sm btn-icon item-edit" data-bs-toggle="modal" data-bs-target="#basicModal">
-            <i class="bx bxs-edit"></i>
-          </a></td>
-          </tr> -->
+               
               </tbody>
             </table>
           </div>
@@ -77,13 +70,13 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel1">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel1">Edit App Permission Group</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div class="row">
           <div class="col mb-3">
-            <label for="edtGroup" class="form-label">Permission Group Name</label>
+            <label for="edtGroup" class="form-label">App Permission Group Name</label>
             <input type="text" id="edtGroup" class="form-control" placeholder="Enter Permission Group Name">
           </div>
         </div>

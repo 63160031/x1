@@ -22,7 +22,7 @@ $(() => {
                                 <td><i></i> <strong>${i + 1}</strong></td>
                                 <td><i></i> <strong>${data[i].spg_name}</strong></td>
                                 <td class="">${data[i].spg_updated_date}</td>
-                                <td class="">${data[i].spg_updated_by}</td>
+                                <td class="">${data[i].FullName}</td>
                                 <td>
                                     <button class="btnStatus btn badge bg-label-${data[i].spg_status_flg == 1 ? 'success' : 'danger'} me-1" id="flgStatus" data-sa-id="${data[i].spg_id}" value="${data[i].spg_status_flg}">
                                         ${data[i].spg_status_flg == 1 ? 'Enable' : 'Disable'}
@@ -130,18 +130,11 @@ $(() => {
             },
             dataType: 'json',
             success: (response) => {
-                if (response.data && response.data.spg_name) {
-                    data_mpg = response.data;
-                    $('#edtGroup').val(response.data.spg_name);
-                } else {
-                    console.error("Invalid response format or missing data property.");
-                    // Handle invalid response format or missing data property
-                }
+                console.log(response);
+                $('#edtGroup').val(response[0].spg_name);
+                $('#edtspgid').val(response[0].spg_id);
             },
-            error: (error) => {
-                console.error("Error fetching data:", error);
-                // Handle error fetching data
-            }
+
         });
     });
 
@@ -151,7 +144,7 @@ $(() => {
         $('#btnSaveEdit').on('click', function () {
             var arrDataAdd = [];
             var ManagePergname = $('#edtGroup').val();
-
+            var edtspgid = $('#edtspgid').val();
             if (data_mpg && data_mpg.spg_name && data_mpg.spg_name == ManagePergname) {
                 Swal.fire({
                     icon: 'success',
@@ -177,12 +170,12 @@ $(() => {
             } else {
                 Swal.fire({
                     title: 'Are you sure?',
-                    text: "Do you want to add Account",
+                    text: "Do you want to edit permission group?",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, add account!'
+                    confirmButtonText: 'Yes, edit it!'
                 }).then((result) => {
                     if (result.isConfirmed) {
                         // ตรวจสอบว่า data_mpg ถูกตั้งค่าแล้วและมี spg_name หรือไม่
@@ -190,7 +183,7 @@ $(() => {
                         var url = API_URL + 'Manage_permis_group/update_mpg_name';
                         const formData = new FormData();
                         formData.append('ManagePergname', ManagePergname);
-                        formData.append('mgpId', mgpId);
+                        formData.append('mgpId', edtspgid);
 
                         $.ajax({
                             url: base_url('PermisionGroup/callApiSaveEdit'),
@@ -201,8 +194,7 @@ $(() => {
                             cache: false,
                             dataType: 'json',
                             success: function (res) {
-                                console.log("sssssjd=>>", res);
-                                if (res.result == 1) {
+                                if (res == 1) {
                                     Swal.fire({
                                         icon: 'success',
                                         title: 'Success !',
@@ -212,7 +204,7 @@ $(() => {
                                         $('#mdlEdit').modal('hide');
                                         shDataTable();
                                     });
-                                } else if (res.result == 9) {
+                                } else if (res == 9) {
                                     Swal.fire({
                                         icon: 'success',
                                         title: 'Success!',

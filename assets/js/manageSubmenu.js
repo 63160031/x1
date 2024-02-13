@@ -9,8 +9,12 @@ function shDataTable() {
         });
     } else {
         var x = document.getElementById("content");
+        var y = document.getElementById("inpSubmenu");
+        
         if (x.style.display === "none") {
             x.style.display = "block";
+            y.style.display = "block";
+
         }
         var url = API_URL + "Manage_submenu/show_submenu?mainId=" + mainId;
         $.ajax({
@@ -29,7 +33,7 @@ function shDataTable() {
                           <td><strong>${data[i].ssm_name}</strong></td>
                           <td><strong>${data[i].ssm_controller}</strong></td>
                           <td class="">${data[i].ssm_updated_date}</td>
-                          <td class="">${data[i].ssm_updated_by}</td>
+                          <td class="">${data[i].FullName}</td>
                           <td>
                               <button class="btnStatus btn badge bg-label-${data[i].ssm_status_flg == 1 ? 'success' : 'danger'} me-1" id="flgStatus" data-sa-id="${data[i].ssm_id}" value="${data[i].ssm_status_flg}">${data[i].ssm_status_flg == 1 ? 'Enable' : 'Disable'}</button>
                           </td>

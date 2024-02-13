@@ -48,8 +48,10 @@ function shDataTable() {
         });
     } else {
         var x = document.getElementById("content");
+        var y = document.getElementById("inpPermissionDetail");
         if (x.style.display === "none") {
             x.style.display = "block";
+            y.style.display = "block";
         }
         var url = API_URL + "Manage_permis_detail/show_tb?permisId=" + permisId;
         $.ajax({
@@ -68,16 +70,11 @@ function shDataTable() {
   <td class="text-center"><strong>${data[i].smm_name}</strong></td>
   <td class="text-center"><strong>${data[i].ssm_name}</strong></td>
   <td class="text-center">${data[i].spd_updated_date}</td>
-  <td class="text-center">${data[i].spd_updated_by}</td>
+  <td class="text-center">${data[i].FullName}</td>
   <td class="text-center">
     <button class="btnStatus btn badge bg-label-${data[i].spd_status_flg == 1 ? 'success' : 'danger'} me-1" id="flgStatus" data-sa-id="${data[i].spd_id}" value="${data[i].spd_status_flg}">
       ${data[i].spd_status_flg == 1 ? 'Enable' : 'Disable'}
     </button>
-  </td>
-  <td class="text-center">
-    <a href="" class="tblEditBtn btn btn-sm btn-icon item-edit" data-bs-toggle="modal" data-bs-target="#mdlEdit" id="btnEdit" data-id="${data[i].spd_id}">
-      <i class="bx bxs-edit"></i>
-    </a>
   </td>
 </tr>
 
@@ -201,7 +198,7 @@ $(document).on('click', '.btnStatus', function () {
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
+        confirmButtonText: 'Yes, edit it!'
     }).then((result) => {
         if (result.isConfirmed) {
             var url = API_URL + "Manage_permis_detail/update_flg";
@@ -243,15 +240,34 @@ $(document).on('click', '.btnStatus', function () {
 
 
 //-------------------------- add Permiss ----------------------------------
-
+// var dropdown1 = $("#selSubMenuName");
+$('#selMenuGroupName').on('change', function () {
+    var mainId = $("#selMenuGroupName").val();
+    $.ajax({
+        url: "http://127.0.0.1/api/Manage_permis_detail/getSubMenu",
+        type: 'POST',
+        data: {
+            mainId: mainId,
+        },
+        dataType: 'json',
+        success: (response) => {
+            console.log(response); // ดูข้อมูลที่ได้รับจาก API ใน Console Log
+            var row = '';
+                row = '<option value="" selected disabled>Choose Sub Menu</option>';
+            for (let i = 0; i < response.length; i++) {
+                const menu = response[i];
+                row += '<option value="'+ response[i].ssm_id +'">'+ response[i].ssm_name +'</option>';
+                $("#selSubMenuName").html(row);
+            }
+        },
+    });
+});
 $(document).ready(function () {
     $('#btnSaveAddPer').on('click', function () {
         var arrDataAdd = [];
         var PermisID = $('#selGroup').val();
         var MenuGroup = $('#selMenuGroupName').val();
-        var SubMenu = $('#selSubMenuName').val();
-
-
+        var SubMenu =   $('#selSubMenuName').val();
         if (MenuGroup == '') {
             Swal.fire({
                 icon: 'warning',
@@ -280,18 +296,18 @@ $(document).ready(function () {
                     formData.append('PermisID', PermisID);
                     formData.append('MenuGroup', MenuGroup);
                     formData.append('SubMenu', SubMenu);
-
-                    
+              
                     $.ajax({
                         url: base_url('ManagePermission/callApiAddPermiss'),
                         type: 'POST',
                         data: formData,
                         processData: false,
- contentType: false,
-    cache: false,
+                         contentType: false,
+                         cache: false,
                         dataType: 'json',
                         success: function(res) {
-                            if (res.result == 1) {
+                            console.log(res);
+                            if (res == 1) {
                                 Swal.fire({
                                     icon: 'success',
                                     title: 'Success !',
@@ -299,17 +315,20 @@ $(document).ready(function () {
                                     timer: 2500,
                                 }).then(() => {
                                     // $('#btnBack').trigger('click');
+                                    $('#selMenuGroupName').val('');
+                                    $('#selSubMenuName').val('');
                                     shDataTable()
                                     
                                 });
-                            } else if (res.result == 9) {
+                            } else if (res == 9) {
                                 Swal.fire({
             
                                     icon: 'warning',
                                     title: 'Ooops...',
                                     html: 'This permission already exists.',
                                 }).then(() => {
-                                    
+                                    $('#selMenuGroupName').val('');
+                                    $('#selSubMenuName').val('');
                                 });
                             } else {
                                 Swal.fire({
@@ -317,6 +336,8 @@ $(document).ready(function () {
                                     title: 'Ooops...',
                                     html: 'A system error has occurred.',
                                 });
+                                $('#selMenuGroupName').val('');
+                                $('#selSubMenuName').val('');
                             }
                         }
                     });

@@ -8,21 +8,24 @@
         <div class="row py-2 mt-2">
           <!-- เพิ่มช่องค้นหาสำหรับ Location ที่นี่ -->
           <div class="col">
-            <label for="selLoation" class="form-label">Choose Location <span class="red-text">*</span></label>
-            <select class="form-control selLoation form-select" id="selLocation">
-              <option value="">********Location*********</option>
-            </select>
+            <label for="selLoation" class="form-label ">Choose Location <span class="red-text">*</span></label>
+            <div class="text-center">
+              <select class="form-control selLoation form-selectSI " id="selLocation">
+                <option value="">********Location*********</option>
+              </select>
+            </div>
+
             <br>
             <div class="table-responsive text-nowrap">
               <div class="card-datatable table-responsive pt-0">
                 <table class="table card-table table-striped table-bordered table-hover table-checkable order-column w-100" id="tblMainMenu">
                   <thead>
                     <tr>
-                      <th>No.</th>
-                      <th>item no</th>
-                      <th>item name</th>
-                      <th>location</th>
-                      <th>DETAIL</th>
+                      <th class="text-center">No.</th>
+                      <th class="text-center">item no</th>
+                      <th class="text-center">item name</th>
+                      <th class="text-center">location</th>
+                      <th class="text-center">DETAIL</th>
                     </tr>
                   </thead>
                   <tbody class="table-border-bottom-0" id="tbody">

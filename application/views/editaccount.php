@@ -1,6 +1,6 @@
 <div class="container-xxl flex-grow-1 container-p-y">
 
-  <h5 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Account Settings /</span>Edit Account</h5>
+  <h5 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Account Settings /</span> Edit Account</h5>
 
   <div class="card mb-4">
     <h5 class="card-header text-center">Profile Details</h5>
@@ -30,7 +30,7 @@
           </div>
           <div class="mb-3 col-md-6">
             <label for="edtPass" class="form-label">Password</label>
-            <input type="password" class="form-control" id="edtPass" name="edtPass" value="" placeholder=" •••••••• " />
+            <input type="password" class="form-control" id="edtPass" name="edtPass" value="" placeholder=" •••••••• "  readonly/>
           </div>
 
           <div class="mb-3 col-md-6">
@@ -47,7 +47,7 @@
           </div>
 
           <div class="mt-2">
-            <button type="submit" class="btn btn-ET me-2" id="btnSaveEdit"> Save </button>
+            <button type="submit" class="btn btn-primary me-2" id="btnSaveEdit"> Save </button>
             <button type="reset" class="btn btn-outline-secondary">Cancel</button>
           </div>
       </form>

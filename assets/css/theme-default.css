@@ -65,7 +65,7 @@
 .bg-menu-theme .menu-sub>.menu-item>.menu-link:before {
   content: "";
   position: absolute;
-  left: 1.4375rem;
+  left: 0.9375rem ;
   width: 0.375rem;
   height: 0.375rem;
   border-radius: 50%;
@@ -80,7 +80,7 @@
 }
 
 .bg-menu-theme .menu-sub>.menu-item.active>.menu-link:not(.menu-toggle):before {
-  left: 1.1875rem;
+  left: 0.7875rem;
   width: 0.875rem;
   height: 0.875rem;
 }
@@ -794,11 +794,13 @@ a:hover {
   background-color: #233446 !important;
   color: #697a8d;
 }
-
+.bg-menu-theme .menu-item.open:not(.menu-item-closing)>.menu-toggle, .bg-menu-theme .menu-item.active>.menu-link {
+  color: #020d30 !important;
+}
 .bg-menu-theme .menu-link,
 .bg-menu-theme .menu-horizontal-prev,
 .bg-menu-theme .menu-horizontal-next {
-  color: #697a8d;
+  color: #dbdbdb;
 }
 
 .bg-menu-theme .menu-link:hover,
@@ -906,7 +908,8 @@ html:not(.layout-menu-collapsed) .bg-menu-theme .menu-inner .menu-item.open>.men
 .layout-menu-hover.layout-menu-collapsed .bg-menu-theme .menu-inner .menu-item.open>.menu-link,
 html:not(.layout-menu-collapsed) .bg-menu-theme .menu-inner .menu-item .menu-link:not(.active):hover,
 .layout-menu-hover.layout-menu-collapsed .bg-menu-theme .menu-inner .menu-item .menu-link:not(.active):hover {
-  background-color: rgba(67, 89, 113, 0.04);
+  background-color: rgb(210 214 217);
+  font-weight: 600;
 }
 
 .bg-menu-theme .menu-inner .menu-sub>.menu-item.active>.menu-link.menu-toggle {

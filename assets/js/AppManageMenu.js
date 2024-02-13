@@ -22,7 +22,7 @@ $(() => {
                     <td class="text-center"><i></i> <strong>${i + 1}</strong></td>
                     <td class="text-center"><i></i> <strong>${data[i].sma_name}</strong></td>
                     <td class="text-center"><i></i>${data[i].sma_created_date}</td>
-                    <td class="text-center"><i></i>${data[i].sma_created_by}</td>
+                    <td class="text-center"><i></i>${data[i].FullName}</td>
                     
                     <td class="text-center">
                       <button class="btnStatus btn badge bg-label-${data[i].sma_status_flg == 1 ? 'success' : 'danger'} me-1" id="flgStatus" data-sa-id="${data[i].sma_id}" value="${data[i].sma_status_flg}">

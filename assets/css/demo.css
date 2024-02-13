@@ -4,8 +4,9 @@
 ******************************************************************************/
 
 .menu .app-brand.demo {
-  height: 85;
+  height: 85px;
   margin-top: 15px;
+  border-bottom: 1px solid #ffffff24;
 }
 
 .app-brand-logo.demo svg {

@@ -12,7 +12,7 @@ $(() => {
             for (let key in data) {
                 // alert(data);
                 // console.log(key);
-                html += '<option value="">********Location*********</option>';
+                html += '<option class="text-center" value="">********Location*********</option>';
                 $("#selLocation").html(html);
             }
             $("#selLocation").html(html);

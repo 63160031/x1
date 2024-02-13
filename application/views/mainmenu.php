@@ -3,26 +3,31 @@
 
   <div class="container-xxl flex-grow-1 container-p-y">
     <!-- Bordered Table -->
-    <h5 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Administrator /</span> Manage Main menu</h5>
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Administrator /</span> Manage Main Menu</h4>
     <div class="card">
       <div class="card-body">
         <div class="row py-2">
           <div class="col-12">
-            <span class="fs-5 fw-bold text-primary-emphasis">Register Main Menu</span>
+            <div class="head-label text-left" style="padding: 1px 0px 10px 7px;">
+              <i class="bx bxs-select-multiple mb-2" style="margin-top: 1px;color: #2c3a4a;"></i>
+              <span style="font-size: 17px;font-weight: 700;color: #0f1f31;margin-left: 5px;">Register Main Menu</span>
+              <!-- <div class="d-flex justify-content-end mt-2 pr-2"> -->
+              <!-- </div> -->
+            </div>
           </div>
-          <div class="mb-3 col-md-5">
+          <div class="col-md-4">
             <label for="inpMainMenuName" class="form-label">Main Menu Name <span class="red-text">*</span></label>
             <input class="form-control" type="text" id="inpMainMenuName" oninput="InputAdd(this)" value="" placeholder="Enter main menu">
           </div>
-          <div class="mb-3 col-md-3">
+          <div class="col-md-4">
             <label for="inpMainMenuIcon" class="form-label">Main Menu Icon <span class="red-text">*</span></label>
             <input class="form-control mdl-textfield__input" type="text" id="inpMainMenuIcon" oninput="InputAdd(this)" value="" placeholder="Enter menu icon">
           </div>
-          <div class="col-md-6 col-md-3-main">
+          <div class="col-md-4" style="margin-top: 29px;">
+            <button type="button" class="btn btn-circle btn-primary btn-submit" id="btnSaveAdd">Submit</button>&nbsp;&nbsp;&nbsp;
             <button type="button" id="button-addon2" data-bs-toggle="modal" data-bs-target="#mdlIcon" class="btn btn-outline-primary">
               <span class="tf-icons bx bx-file-find me-1"></span>Icon
             </button>
-            <button type="button" class="btn btn-circle btn-primary btn-submit" id="btnSaveAdd">Submit</button>
           </div>
         </div>
       </div>
@@ -30,7 +35,12 @@
     <div class="card mt-3">
       <div class="row">
       </div>
-      <h5 class="card-header">Manage Account Table</h5>
+      <div class="head-label text-left" style="padding: 35px 0px 0px 35px;">
+        <i class="bx bx bx-table me-2" style="margin-top:-4px;color: #2c3a4a;"></i>
+        <span style="font-size: 17px;font-weight: 700;color: #0f1f31;">List Main Menu</span>
+        <!-- <div class="d-flex justify-content-end mt-2 pr-2"> -->
+        <!-- </div> -->
+      </div>
       <div class="card-body">
         <div class="table-responsive text-nowrap">
           <!-- Removed scrollBody -->
@@ -66,14 +76,15 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel1">Main Menu</h5>
+            <h5 class="modal-title" id="exampleModalLabel1">Edit Main Menu</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <div class="row">
               <div class="col mb-3">
-                <label for="edtMainMenu" class="form-label">Main Menu</label>
+                <label for="edtMainMenu" class="form-label">Main Menu name</label>
                 <input type="text" id="edtMainMenu" class="form-control" placeholder="Enter Main Menu">
+                <input type="text" id="smmId" class="form-control" hidden>
               </div>
             </div>
             <div class="row">

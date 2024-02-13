@@ -317,6 +317,7 @@ $(document).ready(function () {
         }
     });
 });
+
 $(document).ready(function () {
     // Load data from API and populate dropdowns
     $.ajax({

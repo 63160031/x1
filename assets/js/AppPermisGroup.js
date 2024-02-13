@@ -22,18 +22,14 @@ $(() => {
                                 <td class="text-center"><i></i> <strong>${i + 1}</strong></td>
                                 <td class="text-center"><i></i> <strong>${data[i].spga_name}</strong></td>
                                 <td class="text-center">${data[i].spga_created_date}</td>
-                                <td class="text-center">${data[i].spga_created_by}</td>
+                                <td class="text-center">${data[i].FullName}</td>
                                 <td class="text-center">
                                     <button class="btnStatus btn badge bg-label-${data[i].spga_status_flg == 1 ? 'success' : 'danger'} me-1" id="flgStatus" data-sa-id="${data[i].spga_id}" value="${data[i].spga_status_flg}">
                                         ${data[i].spga_status_flg == 1 ? 'Enable' : 'Disable'}
                                     </button>
                                 </td>
                                 <td class="text-center">
-                                    <div>
-                                        <ul>
-                                            <!-- ตรงนี้เป็นส่วนของ List Item -->
-                                        </ul>
-                                    </div>
+    
                                     <a href="" class="tblEditBtn btn btn-sm btn-icon item-edit" data-bs-toggle="modal" data-bs-target="#mdlEdit" id="btnEdit" data-id="${data[i].spga_id}">
                                         <i class="bx bxs-edit"></i>
                                     </a>
@@ -248,7 +244,7 @@ $(() => {
                 Swal.fire({
                     icon: 'warning',
                     title: 'Oops...',
-                    text: 'Please enter Permission group  name', 
+                    text: 'Please enter Permission group  name',
                 });
             } else if (!isThaiLanguage(ManagePergname)) {
                 Swal.fire({
@@ -284,7 +280,7 @@ $(() => {
                             dataType: 'json',
                             success: function (res) {
                                 console.log("sssssjd=>>", res);
-                                if (res.result == 1) {
+                                if (res == 1) {
                                     Swal.fire({
                                         icon: 'success',
                                         title: 'Success !',
@@ -294,7 +290,7 @@ $(() => {
                                         $('#mdlEdit').modal('hide');
                                         shDataTable();
                                     });
-                                } else if (res.result == 9) {
+                                } else if (res == 9) {
                                     Swal.fire({
                                         icon: 'success',
                                         title: 'Success!',
