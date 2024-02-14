@@ -109,7 +109,6 @@ $(() => {
         $(document).ready(function () {
             // URL of the API
             var apiUrl = 'http://127.0.0.1/api/App_Manage_account/show_user';
-
             // Perform Ajax request
             $.ajax({
                 url: apiUrl,
@@ -117,8 +116,6 @@ $(() => {
                 dataType: 'json',
                 success: function (data) {
                     // Get the menu container
-
-
                     var html = "";
                     // Loop through the data and append menu items
                     for (var i = 0; i < data.length; i++) {
@@ -360,10 +357,10 @@ $(() => {
             },
             dataType: 'json',
             success: (response) => {
-               // เพิ่มบรรทัดนี้เพื่อดูข้อมูลที่ได้รับกลับมา
+                // เพิ่มบรรทัดนี้เพื่อดูข้อมูลที่ได้รับกลับมา
 
                 data_acc = response.data;
-                console.log(data_acc.swa_name);  
+                console.log(data_acc.swa_name);
                 $('#edtEmpCode').val(data_acc.swa_employee_code);
                 $('#edtName').val(data_acc.swa_name);
                 $('#edtLastName').val(data_acc.swa_lastname);

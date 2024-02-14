@@ -2,20 +2,40 @@
   <!-- Content -->
   <div class="container-xxl flex-grow-1 container-p-y">
     <!-- Bordered Table -->
-    <h5 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Administrator /</span> Stock Info</h5>
-    <div class="card">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Administrator /</span> Stock Info</h4>
+    <div class="card" style=" margin-bottom: 15px;">
+      <div class="card-body">
+        <div class="row py-2">
+          <div class="col-12">
+            <div class="head-label text-left" style="padding: 1px 0px 10px 7px;">
+              <i class="bx bxs-select-multiple mb-2" style="margin-top: 1px;color: #2c3a4a;"></i>
+              <span style="font-size: 17px;font-weight: 700;color: #0f1f31;margin-left: 5px;">Select From Location</span>
+              <!-- <div class="d-flex justify-content-end mt-2 pr-2"> -->
+              <!-- </div> -->
+            </div>
+            <div class="row ">
+              <label for="selLoation" class="form-label ">Choose Location <span class="red-text">*</span></label>
+              <div class="text-center">
+                <select class="form-control selLoation form-selectSI " id="selLocation" onchange="showStock()">
+
+                  <!-- <option value="" selected disabled>Choose Location</option> -->
+                </select>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card" style="display: none;" id="ifstock">
+      <div class="head-label text-left" style="padding: 35px 0px 0px 35px;">
+        <i class="bx bx bx-table me-2" style="margin-top:-4px;color: #2c3a4a;"></i>
+        <span style="font-size: 17px;font-weight: 700;color: #0f1f31;">List Stock Info</span>
+      </div>
       <div class="card-body">
         <div class="row py-2 mt-2">
           <!-- เพิ่มช่องค้นหาสำหรับ Location ที่นี่ -->
           <div class="col">
-            <label for="selLoation" class="form-label ">Choose Location <span class="red-text">*</span></label>
-            <div class="text-center">
-              <select class="form-control selLoation form-selectSI " id="selLocation">
-                <option value="">********Location*********</option>
-              </select>
-            </div>
-
-            <br>
             <div class="table-responsive text-nowrap">
               <div class="card-datatable table-responsive pt-0">
                 <table class="table card-table table-striped table-bordered table-hover table-checkable order-column w-100" id="tblMainMenu">
@@ -24,6 +44,8 @@
                       <th class="text-center">No.</th>
                       <th class="text-center">item no</th>
                       <th class="text-center">item name</th>
+                      <th class="text-center">model</th>
+                      <th class="text-center">STOCK QTY</th>
                       <th class="text-center">location</th>
                       <th class="text-center">DETAIL</th>
                     </tr>

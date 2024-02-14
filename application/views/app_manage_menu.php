@@ -6,7 +6,7 @@
         <div class="head-label text-left" style="padding: 35px 0px 0px 35px;">
           <i class="bx bx bx-table me-2" style="margin-top:-4px;color: #2c3a4a;"></i>
           <span style="font-size: 17px;font-weight: 700;color: #0f1f31;">List App Menu </span>
-          <button type="button" class="btn btn-primary" id="btnAddMenuApp"style="letter-spacing: 2px; margin: 0px 40px;float: right;" data-bs-target="#mdlAdd" data-bs-toggle="modal">Register New App Menu</button>
+          <button type="button" class="btn btn-primary" id="btnAddMenuApp"style="letter-spacing: 2px; margin: 0px 40px;float: right;" data-bs-target="#mdlAdd" data-bs-toggle="modal"><span class="tf-icons bx bx-add-to-queue me-1"></span> Register New App Menu</button>
         </div>
         <div class="card-body">
           <div class="table-responsive text-nowrap">

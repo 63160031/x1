@@ -16,7 +16,7 @@
         <span style="color: red;font-size: 13px; font-weight: 600;">* Please Select Permission Group</span>
       </div>
       <div class="col">
-        <button type="button" class="btn  btn-primary" style="letter-spacing: 2px;" id="btnSerchMain">Search</button>
+        <button type="button" class="btn  btn-primary" style="letter-spacing: 2px;" id="btnSerchMain"><span class="tf-icons bx bx-search me-1"></span>Search</button>
       </div>
     </div>
     <div class="card" style="display: none;" id="inpPermissionDetail">
@@ -59,7 +59,7 @@
                 </div>
               </div>
               <div class="col-md-4">
-                <button type="button" class="btn btn-primary btn-py " style="letter-spacing: 2px;" id="btnSaveAddPer">Register</button>
+                <button type="button" class="btn btn-primary btn-py " style="letter-spacing: 2px;" id="btnSaveAddPer"><span class="tf-icons bx bx-add-to-queue me-1"></span>Register</button>
               </div>
             </div>
             <div class="col-12 col-sm-12 justify-content-start">
@@ -85,7 +85,7 @@
                 <div class="card-body">
                   <div class="table-responsive text-nowrap">
                     <div class="card-datatable table-responsive pt-0">
-                    <table class="table table-bordered card-table table-striped table-bordered table-hover table-checkable order-column w-100 table" id="tblPermis"> 
+                      <table class="table table-bordered card-table table-striped table-bordered table-hover table-checkable order-column w-100 table" id="tblPermis">
                         <thead>
                           <tr>
                             <th class="text-center">No.</th>

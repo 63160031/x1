@@ -84,8 +84,22 @@ class AppPermissionDetail extends CI_Controller {
     {
         $result = $this->curPostRequest('App_Manage_permis_detail/drop_menu', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
         echo json_encode($result);
-
+       
     }
+    public function callApiupdate_flg()
+    {
+        $result = $this->curPostRequest('App_Manage_permis_detail/update_flg', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
+        echo json_encode($result);
+        
+    }
+    public function callApiRegisterAppMenu()
+    {
+        $result = $this->curPostRequest('App_Manage_permis_detail/RegisterAppMenu', array('data' => serialize($_POST),'session' => serialize($this->session->userdata('userName'))));
+        echo json_encode($result);
+        
+    }
+
+
 
 
 

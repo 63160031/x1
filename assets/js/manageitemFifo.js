@@ -4,7 +4,6 @@ $(() => {
     function shDataTable() {
         $(document).ready(function () {
             const apiUrl = 'http://127.0.0.1/api/Manage_item_fifo/show_tablel';
-
             $.ajax({
                 url: apiUrl,
                 type: 'GET',
@@ -17,7 +16,7 @@ $(() => {
                             <td><i></i>${data[i].itf_item_no}</td>
                             <td><i></i>${data[i].itf_item_name}</td>
                             <td><button class="btnStatus btn badge bg-label-${data[i].itf_status_flg == 1 ? 'success' : 'danger'} me-1" id="flgStatus" data-sa-id="${data[i].itf_id}" value="${data[i].itf_status_flg}">${data[i].itf_status_flg == 1 ? 'Enable' : 'Disable'}</button></td> 
-                            <td class=""></li></ul></div><a href="" class="tblEditBtn btn btn-sm btn-icon item-edit" data-bs-toggle="modal" data-bs-target="#mdlEdit" id="btnEdit" data-id="${data[i].itf_id}"><i class="bx bxs-edit"></i></a></td>
+                            <td class=""></li></ul></div><a href="" class="tblEditBtn btn btn-sm btn-icon item-edit" data-bs-toggle="modal" data-bs-target="#mdledit" id="btnEdit" data-id="${data[i].itf_id}"><i class="bx bxs-edit"></i></a></td>
                         </tr>`;
                     }
                     $('#tblMainMenu').dataTable().fnDestroy();
@@ -258,7 +257,7 @@ $(document).ready(function () {
         } else {
             Swal.fire({
                 title: 'Are you sure?',
-                text: "Do you want to edit the item?",
+                text: "Do you want to Register this item?",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',

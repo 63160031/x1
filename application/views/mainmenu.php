@@ -17,15 +17,15 @@
           </div>
           <div class="col-md-4">
             <label for="inpMainMenuName" class="form-label">Main Menu Name <span class="red-text">*</span></label>
-            <input class="form-control" type="text" id="inpMainMenuName" oninput="InputAdd(this)" value="" placeholder="Enter main menu">
+            <input class="form-control" type="text" id="inpMainMenuName" oninput="InputAdd(this)" value="" placeholder="Enter main menu name">
           </div>
           <div class="col-md-4">
             <label for="inpMainMenuIcon" class="form-label">Main Menu Icon <span class="red-text">*</span></label>
             <input class="form-control mdl-textfield__input" type="text" id="inpMainMenuIcon" oninput="InputAdd(this)" value="" placeholder="Enter menu icon">
           </div>
           <div class="col-md-4" style="margin-top: 29px;">
-            <button type="button" class="btn btn-circle btn-primary btn-submit" id="btnSaveAdd">Submit</button>&nbsp;&nbsp;&nbsp;
-            <button type="button" id="button-addon2" data-bs-toggle="modal" data-bs-target="#mdlIcon" class="btn btn-outline-primary">
+            <button type="button" class="btn btn-circle btn-primary btn-submit" style="letter-spacing: 2px;"  id="btnSaveAdd"><span class="tf-icons bx bx-add-to-queue me-1"></span>Register Main menu</button>&nbsp;&nbsp;&nbsp;
+            <button type="button" id="button-addon2" data-bs-toggle="modal" data-bs-target="#mdlIcon"  style="letter-spacing: 2px;" class="btn btn-outline-primary">
               <span class="tf-icons bx bx-file-find me-1"></span>Icon
             </button>
           </div>
@@ -38,8 +38,6 @@
       <div class="head-label text-left" style="padding: 35px 0px 0px 35px;">
         <i class="bx bx bx-table me-2" style="margin-top:-4px;color: #2c3a4a;"></i>
         <span style="font-size: 17px;font-weight: 700;color: #0f1f31;">List Main Menu</span>
-        <!-- <div class="d-flex justify-content-end mt-2 pr-2"> -->
-        <!-- </div> -->
       </div>
       <div class="card-body">
         <div class="table-responsive text-nowrap">

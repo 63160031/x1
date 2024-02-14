@@ -13,10 +13,10 @@
                     <option value="" selected disabled>Choose main menu</option>
 
                   </select>
-                  <span style="color: red;font-size: 13px; font-weight: 600;">* Please select main menu</span>
+                  <span style="color: red;font-size: 13px; font-weight: 600;">* Please Select Main Menu</span>
                 </div>
                 <div class="col">
-                  <button type="button" class="btn btn-circle btn-primary" style="letter-spacing: 2px;" id="btnSerchMain">Search</button>
+                  <button type="button" class="btn btn-circle btn-primary" style="letter-spacing: 2px;" id="btnSerchMain"><span class="tf-icons bx bx-search me-1"></span>Search</button>
                 </div>
               </div>
               <br>
@@ -56,7 +56,7 @@
                           </div>
                         </div>
                         <div class="col-md-4">
-                          <button type="button" class="btn btn-primary btn-py " style="letter-spacing: 2px;" id="btnSaveAdd">Register</button>
+                          <button type="button" class="btn btn-primary btn-py " style="letter-spacing: 2px;" id="btnSaveAdd"><span class="tf-icons bx bx-add-to-queue me-1"></span>Register</button>
                         </div>
                       </div>
                       <div class="col-12 col-sm-12 justify-content-start">
@@ -76,8 +76,6 @@
                           <div class="head-label text-left" style="padding: 35px 0px 0px 35px;">
                             <i class="bx bx bx-table me-2" style="margin-top:-4px;color: #2c3a4a;"></i>
                             <span style="font-size: 17px;font-weight: 700;color: #0f1f31;">List Sub Menu</span>
-                            <!-- <div class="d-flex justify-content-end mt-2 pr-2"> -->
-                            <!-- </div> -->
                           </div>
                           <div class="card-body">
                             <div class="table-responsive text-nowrap">

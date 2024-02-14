@@ -6,11 +6,10 @@
       <div class="head-label text-left" style="padding: 35px 0px 0px 35px;">
         <i class="bx bx bx-table me-2" style="margin-top:-4px;color: #2c3a4a;"></i>
         <span style="font-size: 17px;font-weight: 700;color: #0f1f31;">List App Account</span>
-        <button type="button" class="btn btn btn-primary" style="letter-spacing: 2px; margin: 0px 40px;float: right;" id="callmodelAdd" data-bs-toggle="modal" data-bs-target="#mdlAdd">Register New Account </button>
+        <button type="button" class="btn btn btn-primary" style="letter-spacing: 2px; margin: 0px 40px;float: right;" id="callmodelAdd" data-bs-toggle="modal" data-bs-target="#mdlAdd"><span class="tf-icons bx bx-add-to-queue me-1"></span>Register New App Account </button>
       </div>
       <div class="card-body">
         <div class="table-responsive text-nowrap">
-          <!-- Removed scrollBody -->
           <div class="card-datatable table-responsive pt-0">
             <table class="table card-table table-striped table-bordered table-hover table-checkable order-column w-100 table" id="tblManageAccount">
               <thead>

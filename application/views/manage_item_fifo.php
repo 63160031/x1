@@ -2,31 +2,15 @@
   <!-- Content -->
   <div class="container-xxl flex-grow-1 container-p-y">
     <!-- Bordered Table -->
-    <h5 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Administrator /</span> Manage Item Fifo</h5>
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Administrator /</span> Manage Item Fifo</h4>
     <div class="card">
       <div class="card-body">
         <div class="row py-2 mt-2">
-          <span class="fs-5 fw-bold text-primary-emphasis">Manage Item Fifo</span>
-          <div class="col-md-6 col-sm-10 col-5">
-            <div class="row">
-              <div class="col-lg-3"></div>
-              <div class="col">
-              </div>
-            </div>
+          <div class="head-label text-left" style="padding: 0px 0px 0px 35px;">
+            <i class="bx bx bx-table me-2" style="margin-top:-4px;color: #2c3a4a;"></i>
+            <span style="font-size: 17px;font-weight: 700;color: #0f1f31;">List Item Fifo</span>
+            <button type="button" class="btn btn btn-primary" style="letter-spacing: 2px; margin: 0px 28px;float: right;" id="btnAddItem" data-bs-toggle="modal" data-bs-target="#mdlAdd">Register Item Fifo </button>
           </div>
-          <div class="col-md-5 col-sm-2 col-7">
-            <div class="row container">
-              <div class="col-lg-5 p-t-20"></div>
-              <div class="col-lg-6" style="display: grid; grid-template-columns: auto auto;">
-              </div>
-            </div>
-          </div>
-          <div class="col justify-content-start ms-1">
-            <div id="errMegadd" style="color: red; display: none;">Please enter in English only.</div>
-          </div>
-        </div>
-        <div class="d-flex justify-content-end mt-2 pr-2">
-          <button type="button" class="btn btn-circle btn-primary" id="btnAddItem" data-bs-toggle="modal" data-bs-target="#mdlAdd" style="margin-right: 27px; margin-top: 14px;">Add Item<i class="fa fa-plus"></i></button>
         </div>
         <br>
         <div class="table-responsive text-nowrap">
@@ -53,7 +37,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title " id="exampleModalLabel1">Add Item</h5>
+            <h5 class="modal-title " id="exampleModalLabel1">Register Item Fifo</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
@@ -71,15 +55,13 @@
                 </div>
               </div>
               <div class="row g-2">
-                <div class="col mb-3">
-                  <input type="checkbox" id="ckFifo" name="FIFO" value="1">
-                  <label for="ckFifo">FIFO </label><br>
-                </div>
-              </div>
-              <div class="row g-2">
-                <div class="col mb-3">
-                  <input type="checkbox" id="ckCKN" name="CKN" value="1">
-                  <label for="ckCKN">CKD</label><br>
+                <label for="inpItemName" class="form-label">Condition</label>
+                <div class="col mb-12">
+                  <!-- <div class="col mb-6"> -->
+                  <input style="margin-left: 5px;" type="checkbox" id="ckFifo" name="FIFO" value="1">
+                  <label style="margin-left: 5px;" for="ckFifo">FIFO </label>
+                  <input style="margin-left: 5px;" type="checkbox" id="ckCKN" name="CKN" value="1">
+                  <label style="margin-left: 5px;" for="ckCKN">CKD</label>
                 </div>
               </div>
             </form>
@@ -91,57 +73,42 @@
         </div>
       </div>
     </div>
-
-    <!-- End Modal Add-->
-    <!-- Modal Edit-->
-    <div class="modal fade" id="mdlAdd" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="mdledit" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel1">Add Item</h5>
+            <h5 class="modal-title" id="exampleModalLabel1">Edit Item Fifo</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <form id="add">
               <div class="row g-2">
                 <div class="col mb-3">
-                  <label class="form-label">Item no.</label>
-                  <select id="inpItemNo" class="form-select">
-                    <!-- Dropdown options will be populated dynamically -->
-                  </select>
+                  <label for="edtItemno" class="form-label">Item no.</label>
+                  <input type="text" class="form-control" id="edtItemno" placeholder="Enter Item no.">
                 </div>
               </div>
               <div class="row g-2">
                 <div class="col mb-3">
-                  <label class="form-label">Item name.</label>
-                  <select id="inpItemName" class="form-select">
-                    <!-- Dropdown options will be populated dynamically -->
-                  </select>
+                  <label for="edtItemname" class="form-label">Item name.</label>
+                  <input type="text" class="form-control" id="edtItemname" placeholder="Item name." readonly>
                 </div>
               </div>
-              <div class="row g-2">
-                <div class="col mb-3">
-                  <input type="checkbox" id="ckFifo" name="FIFO" value="1">
-                  <label for="ckFifo">FIFO</label><br>
-                </div>
-              </div>
-              <div class="row g-2">
-                <div class="col mb-3">
-                  <input type="checkbox" id="ckCKN" name="CKN" value="1">
-                  <label for="ckCKN">CKD</label><br>
-                </div>
+              <label for="inpItemName" class="form-label">Condition</label>
+              <div class="col mb-12">
+                <input style="margin-left: 5px;" type="checkbox" id="edtItemfifo" name="FIFO" value="1">
+                <label style="margin-left: 5px;" for="edtItemfifo">FIFO </label>
+                <input style="margin-left: 5px;" type="checkbox" id="edtItemckd" name="CKN" value="1">
+                <label style="margin-left: 5px;" for="edtItemckd">CKD</label>
               </div>
             </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal" id="btnBack">Back</button>
-            <button type="button" class="btn btn-primary" id="btnSaveAdd">Save</button>
+            <button type="button" class="btn btn-primary" id="btnSaveEdit">Save</button>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- End Edit Modal -->
-    <!--/ Bordered Table -->
   </div>
 </div>

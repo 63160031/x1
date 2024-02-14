@@ -36,7 +36,6 @@
 	<link rel="stylesheet" href="<?php echo base_url() ?>/assets/vendor/libs/datatables-checkboxes-jquery/datatables.checkboxes.css" />
 	<link rel="stylesheet" href="<?php echo base_url() ?>/assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css" />
 
-
 	<link rel="stylesheet" href="<?php echo base_url() ?>/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
 	<link rel="stylesheet" href="<?php echo base_url() ?>/assets/vendor/libs/apex-charts/apex-charts.css" />

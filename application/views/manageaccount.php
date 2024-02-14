@@ -5,7 +5,7 @@
             <div class="card">
                 <div class="head-label text-left" style="padding: 35px 0px 0px 35px;">
                     <i class="bx bx bx-table me-2" style="margin-top:-4px;color: #2c3a4a;"></i>
-                    <span style="font-size: 17px;font-weight: 700;color: #0f1f31;">LIST ACCOUNT</span>
+                    <span style="font-size: 17px;font-weight: 700;color: #0f1f31;">List Account</span>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive text-nowrap">
