@@ -8,6 +8,17 @@ $(() => {
                 url: apiUrl,
                 type: 'GET',
                 dataType: 'json',
+                success: function(data) {
+                    $("#loadingPage").attr("style", "display: inline;");
+                  },
+                  error: function(xhr, status, error) {
+                    // เกิดข้อผิดพลาดในการโหลดข้อมูล
+                    console.error('Error:', error);
+                  },
+                  complete: function() {
+                    $("#loadingPage").attr("style", "display: none;");
+                  },
+                
                 success: function (data) {
                     let html = "";
                     for (let i = 0; i < data.length; i++) {
@@ -16,7 +27,7 @@ $(() => {
                             <td><i></i>${data[i].itf_item_no}</td>
                             <td><i></i>${data[i].itf_item_name}</td>
                             <td><button class="btnStatus btn badge bg-label-${data[i].itf_status_flg == 1 ? 'success' : 'danger'} me-1" id="flgStatus" data-sa-id="${data[i].itf_id}" value="${data[i].itf_status_flg}">${data[i].itf_status_flg == 1 ? 'Enable' : 'Disable'}</button></td> 
-                            <td class=""></li></ul></div><a href="" class="tblEditBtn btn btn-sm btn-icon item-edit" data-bs-toggle="modal" data-bs-target="#mdledit" id="btnEdit" data-id="${data[i].itf_id}"><i class="bx bxs-edit"></i></a></td>
+                            <td class=""></li></ul></div><a href="" class="tblEditBtn btn btn-warning btn-icon item-edit" data-bs-toggle="modal" data-bs-target="#mdledit" id="btnEdit" data-id="${data[i].itf_id}"><i class="bx bxs-edit"></i></a></td>
                         </tr>`;
                     }
                     $('#tblMainMenu').dataTable().fnDestroy();

@@ -56,7 +56,7 @@
                           </div>
                         </div>
                         <div class="col-md-4">
-                          <button type="button" class="btn btn-primary btn-py " style="letter-spacing: 2px;" id="btnSaveAdd"><span class="tf-icons bx bx-add-to-queue me-1"></span>Register</button>
+                          <button type="button" class="btn btn-primary btn-py " style="letter-spacing: 2px;" id="btnSaveAdd"><span class="tf-icons bx bx-add-to-queue me-1"></span>Register Sub Menu</button>
                         </div>
                       </div>
                       <div class="col-12 col-sm-12 justify-content-start">
@@ -105,7 +105,7 @@
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropEdit">Edit Mainmenu</h5>
+                                <h5 class="modal-title" id="staticBackdropEdit">Edit Sub Menu</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                               </div>
                               <div class="modal-body">

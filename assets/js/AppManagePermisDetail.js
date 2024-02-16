@@ -128,6 +128,15 @@ function shDataTable() {
                 permisId: permisId,
             },
             dataType: 'Json',
+            success: function(data) {
+                $("#loadingPage").attr("style", "display: inline;");
+              },
+              error: function(xhr, status, error) {
+                // เกิดข้อผิดพลาดในการโหลดข้อมูล
+                console.error('Error:', error);
+              },
+              complete: function() {
+              },
             success: (data) => {
                 var html = "";
                 for (let i = 0; i < data.length; i++) {
@@ -255,4 +264,7 @@ $(document).on('click', '#flgStatus', function () {
             });
         }
     });
+});
+$(document).ready(function () {
+    $("#loadingPage").attr("style", "display: none;");
 });

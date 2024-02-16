@@ -1,9 +1,9 @@
 <div class="container-xxl flex-grow-1 container-p-y">
 
-  <h5 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Account Settings /</span> Edit Account</h5>
+  <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Account Settings /</span> Edit Account</h4>
 
   <div class="card mb-4">
-    <h5 class="card-header text-center">Profile Details</h5>
+    <h5 class="card-header text-center">PROFILE DETAILS</h5>
 
     <!-- Account -->
     <div class="card-body d-flex justify-content-center">
@@ -47,7 +47,7 @@
           </div>
 
           <div class="mt-2">
-            <button type="submit" class="btn btn-primary me-2" id="btnSaveEdit"> Save </button>
+            <button type="submit" class="btn btn-primary me-2" id="btnSaveEdit" style="letter-spacing: 2px;"><span class="tf-icons bx bx-search me-1"></span> Save </button>
             <button type="reset" class="btn btn-outline-secondary">Cancel</button>
           </div>
       </form>

@@ -1,24 +1,31 @@
 $(document).ready(function () {
   // URL of the API
+  $("#loadingPage").attr("style", "display: block; z-index: 9999999999999; position: fixed;background: #000000c7;width: 100%;height: 1900px;");
   var url = API_URL + "Api_Controller/show_Menu";
-
   // Perform Ajax request
   $.ajax({
     url: base_url("Login/callApiPermis?url=" + url),
     type: 'GET',
     dataType: 'json',
+    success: function(data) {
+     
+    },
+    error: function(xhr, status, error) {
+      // เกิดข้อผิดพลาดในการโหลดข้อมูล
+      console.error('Error:', error);
+    },
+    complete: function() {
+   
+    },
     success: function (data) {
       // Group data by smm_name and order by ssm_order_no
       var groupedData = groupAndSortBy(data, 'smm_name', 'ssm_order_no');
-
       // Get the menu container
       var menuContainer = $('#sideBar_menu');
-
       // Loop through the grouped data
       Object.keys(groupedData).forEach(function (smm_name) {
         // Get the items for the current smm_name and order by ssm_order_no
         var items = groupedData[smm_name].sort((a, b) => a.ssm_order_no - b.ssm_order_no);
-
         // Create HTML for the menu items
         var menuItemsHtml = `
             <li class="menu-item">
@@ -28,7 +35,6 @@ $(document).ready(function () {
                 </a>
                 <ul class="menu-sub">
         `;
-
         // Append sub-menu items to the main menu
         items.forEach(function (menuItem) {
           menuItemsHtml += `
@@ -71,11 +77,6 @@ $(document).ready(function () {
     }, {});
   }
 });
-
-
-
-
-
 var permis = []
 var plant = []
 var url = API_URL + "Api_Controller/show_Menu";
@@ -99,5 +100,6 @@ $.ajax({
         }
     }
 });
+$("#loadingPage").attr("style", "display: none;");
 
 

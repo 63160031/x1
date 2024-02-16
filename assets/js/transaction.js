@@ -35,14 +35,6 @@ $(document).on('click', '#tblTransBtn', function () {
             html: 'Please choose begin and end date',
         });
     } else {
-        var x = document.getElementById("content");
-        if (x.style.display === "none") {
-            // alert(beginDate);
-            x.style.display = "block";
-            
-            showDataTable(beginDate, endDate);
-        } 
-        else {
             // destroy: true,
             $("#tblTransaction").DataTable().destroy();
             if (itemCd == '') {
@@ -53,7 +45,6 @@ $(document).on('click', '#tblTransBtn', function () {
             // alert(itemCd);
             showDataTable(beginDate, endDate,itemCd);
         }
-    }
 });
 // function initializeDataTable() {
 //     $("#tblTransaction").DataTable({
@@ -61,8 +52,15 @@ $(document).on('click', '#tblTransBtn', function () {
 //     });
 // }
 function showDataTable(beginDate, endDate, itemCd) {
+    // $("#loadingPage").attr("style", "display: inline;");
+    $("#loadingPage").attr("style", "display: block; z-index: 9999999999999; position: fixed;background: #000000c7;width: 100%;height: 1900px;");
+    // $("#loadingPage").attr("style", "z-index: 9999999999999;");
+    // $("#loadingPage").attr("style", "position: fixed;");
+    // $("#loadingPage").attr("style", "background: #000000c7;");
+    // $("#loadingPage").attr("style", "width: 100%;");
+    // $("#loadingPage").attr("style", "height: 1900px;");
+    // z-index: 9999999999999;position: fixed;background: #000000c7;width: 100%;height: 1900px;
     // const apiUrl = 'http://127.0.0.1/api/Transaction_info/show_Transaction_date';
-    
     $.ajax({
         url: base_url('Transactioninfo/callApiFillterDate'),
         type: 'POST',
@@ -72,6 +70,17 @@ function showDataTable(beginDate, endDate, itemCd) {
             itemCd: itemCd
         },
         dataType: 'json',
+        success: function() {
+            // $("#loadingPage").attr("style", "display: block; z-index: 9999999999999; position: fixed;background: #000000c7;width: 100%;height: 1900px;");
+          },
+          error: function(xhr, status, error) {
+            // เกิดข้อผิดพลาดในการโหลดข้อมูล
+            console.error('Error:', error);
+          },
+          complete: function() {
+            $("#loadingPage").attr("style", "display: none;");
+          },
+        
         success: function (data) {
             var html = "";
             for (var i = 0; i < data.length; i++) {

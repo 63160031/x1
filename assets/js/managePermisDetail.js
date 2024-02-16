@@ -9,6 +9,7 @@ $(() => {
             url: base_url("ManagePermission/callApiShowData?url=" + url),
             dataType: 'Json',
 
+
             success: (response) => {
                 for (let i = 0; i < response.length; i++) {
                     const data = response[i];
@@ -61,24 +62,34 @@ function shDataTable() {
                 permisId: permisId,
             },
             dataType: 'Json',
+            success: function(data) {
+                $("#loadingPage").attr("style", "display: inline;");
+              },
+              error: function(xhr, status, error) {
+                // เกิดข้อผิดพลาดในการโหลดข้อมูล
+                console.error('Error:', error);
+              },
+              complete: function() {
+            
+              },
             success: (data) => {
                 var html = "";
                 for (let i = 0; i < data.length; i++) {
                     html += `
-                    <tr>
-  <td class="text-center"><strong>${i + 1}</strong></td>
-  <td class="text-center"><strong>${data[i].smm_name}</strong></td>
-  <td class="text-center"><strong>${data[i].ssm_name}</strong></td>
-  <td class="text-center">${data[i].spd_updated_date}</td>
-  <td class="text-center">${data[i].FullName}</td>
-  <td class="text-center">
-    <button class="btnStatus btn badge bg-label-${data[i].spd_status_flg == 1 ? 'success' : 'danger'} me-1" id="flgStatus" data-sa-id="${data[i].spd_id}" value="${data[i].spd_status_flg}">
-      ${data[i].spd_status_flg == 1 ? 'Enable' : 'Disable'}
-    </button>
-  </td>
-</tr>
+                                    <tr>
+                <td class="text-center"><strong>${i + 1}</strong></td>
+                <td class="text-center"><strong>${data[i].smm_name}</strong></td>
+                <td class="text-center"><strong>${data[i].ssm_name}</strong></td>
+                <td class="text-center">${data[i].spd_updated_date}</td>
+                <td class="text-center">${data[i].FullName}</td>
+                <td class="text-center">
+                    <button class="btnStatus btn badge bg-label-${data[i].spd_status_flg == 1 ? 'success' : 'danger'} me-1" id="flgStatus" data-sa-id="${data[i].spd_id}" value="${data[i].spd_status_flg}">
+                    ${data[i].spd_status_flg == 1 ? 'Enable' : 'Disable'}
+                    </button>
+                </td>
+                </tr>
 
-                  `;
+                    `;
                 }
                 $('#tblPermis').dataTable().fnDestroy();
                 $("#tbody")
@@ -117,7 +128,7 @@ function MainmenuDropdown() {
                 const menu = response[i];
                 dropdown.append(`<option value="${menu.smm_id}">${menu.smm_name}</option>`);
             }
-            
+
         },
         error: (err) => {
             console.log(err);
@@ -156,28 +167,28 @@ function SubmenuDropdown() {
 
 var dropdown = $('.edtMainmenu');
 
-    // เรียก API
-    $.ajax({
-        method: "get",
-        url: "http://127.0.0.1/api/Manage_permis_detail/drop_main",
-        dataType: 'json',
-        success: (response) => {
-            console.log(response); // ดูข้อมูลที่ได้รับจาก API ใน Console Log
+// เรียก API
+$.ajax({
+    method: "get",
+    url: "http://127.0.0.1/api/Manage_permis_detail/drop_main",
+    dataType: 'json',
+    success: (response) => {
+        console.log(response); // ดูข้อมูลที่ได้รับจาก API ใน Console Log
 
-            // ล้างค่าเดิมทั้งหมดใน dropdown ก่อน
+        // ล้างค่าเดิมทั้งหมดใน dropdown ก่อน
 
 
-            // วนลูปเพื่อเพิ่ม options เข้าไปใน dropdown
-            for (let i = 0; i < response.length; i++) {
-                const menu = response[i];
-                dropdown.append(`<option value="${menu.smm_id}">${menu.smm_name}</option>`);
-            }
-            
-        },
-        error: (err) => {
-            console.log(err);
-        },
-    });
+        // วนลูปเพื่อเพิ่ม options เข้าไปใน dropdown
+        for (let i = 0; i < response.length; i++) {
+            const menu = response[i];
+            dropdown.append(`<option value="${menu.smm_id}">${menu.smm_name}</option>`);
+        }
+
+    },
+    error: (err) => {
+        console.log(err);
+    },
+});
 
 //-------------------------- Update flg status ----------------------------------
 
@@ -253,26 +264,27 @@ $('#selMenuGroupName').on('change', function () {
         success: (response) => {
             console.log(response); // ดูข้อมูลที่ได้รับจาก API ใน Console Log
             var row = '';
-                row = '<option value="" selected disabled>Choose Sub Menu</option>';
+            row = '<option value="" selected disabled>Choose Sub Menu</option>';
             for (let i = 0; i < response.length; i++) {
                 const menu = response[i];
-                row += '<option value="'+ response[i].ssm_id +'">'+ response[i].ssm_name +'</option>';
+                row += '<option value="' + response[i].ssm_id + '">' + response[i].ssm_name + '</option>';
                 $("#selSubMenuName").html(row);
             }
         },
     });
 });
 $(document).ready(function () {
+    $("#loadingPage").attr("style", "display: none;");
     $('#btnSaveAddPer').on('click', function () {
         var arrDataAdd = [];
         var PermisID = $('#selGroup').val();
         var MenuGroup = $('#selMenuGroupName').val();
-        var SubMenu =   $('#selSubMenuName').val();
+        var SubMenu = $('#selSubMenuName').val();
         if (MenuGroup == '') {
             Swal.fire({
                 icon: 'warning',
                 title: 'Oops...',
-                text: 'Please choose MenuGroup code',
+                text: 'Please choose Menu Group code',
             })
         } else if (SubMenu == '') {
             Swal.fire({
@@ -280,10 +292,10 @@ $(document).ready(function () {
                 title: 'Oops...',
                 text: 'Please choose SubMenu',
             })
-        }  else {
+        } else {
             Swal.fire({
                 title: 'Are you sure?',
-                text: "Do you want to add Permission",
+                text: "Do you want to add it",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
@@ -296,16 +308,16 @@ $(document).ready(function () {
                     formData.append('PermisID', PermisID);
                     formData.append('MenuGroup', MenuGroup);
                     formData.append('SubMenu', SubMenu);
-              
+
                     $.ajax({
                         url: base_url('ManagePermission/callApiAddPermiss'),
                         type: 'POST',
                         data: formData,
                         processData: false,
-                         contentType: false,
-                         cache: false,
+                        contentType: false,
+                        cache: false,
                         dataType: 'json',
-                        success: function(res) {
+                        success: function (res) {
                             console.log(res);
                             if (res == 1) {
                                 Swal.fire({
@@ -318,11 +330,11 @@ $(document).ready(function () {
                                     $('#selMenuGroupName').val('');
                                     $('#selSubMenuName').val('');
                                     shDataTable()
-                                    
+
                                 });
                             } else if (res == 9) {
                                 Swal.fire({
-            
+
                                     icon: 'warning',
                                     title: 'Ooops...',
                                     html: 'This permission already exists.',
@@ -348,39 +360,39 @@ $(document).ready(function () {
 });
 
 
-    //-------------------------- Update Account ----------------------------------
-    var data_mmn;
-    var mmnId;
+//-------------------------- Update Account ----------------------------------
+var data_mmn;
+var mmnId;
 
-    $(document).on('click', '.tblEditBtn', function () {
+$(document).on('click', '.tblEditBtn', function () {
 
 
-let id = $(this).attr('data-id');
-mmnId = id
-var url = API_URL + "Manage_permis_detail/show_show_edit";
-$.ajax({
-    // url: base_url('ManageAccount/callApiEditAccount'),
-    url: API_URL + "Manage_permis_detail/show_show_edit",
-    type: 'POST',
-    data: {
-        id: id,
-    },
-    dataType: 'json',
-    success: (response) => {
+    let id = $(this).attr('data-id');
+    mmnId = id
+    var url = API_URL + "Manage_permis_detail/show_show_edit";
+    $.ajax({
+        // url: base_url('ManageAccount/callApiEditAccount'),
+        url: API_URL + "Manage_permis_detail/show_show_edit",
+        type: 'POST',
+        data: {
+            id: id,
+        },
+        dataType: 'json',
+        success: (response) => {
 
-       
-        data_mmn = response.data
-       
-        // accId = response
-        // for (let i = 0; i < response.length; i++) {
-        //     const data = response[i];
-        
+
+            data_mmn = response.data
+
+            // accId = response
+            // for (let i = 0; i < response.length; i++) {
+            //     const data = response[i];
+
             $('#edtMainmenu').val(response.data.smm_name)
-           
+
             $('#edtSubEdit').val(response.data.ssm_name)
 
 
-        // }
-    }
-});
+            // }
+        }
+    });
 });

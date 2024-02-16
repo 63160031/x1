@@ -4,7 +4,7 @@
     
     <!-- Menu -->
 
-    <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+    <aside id="layout-menu" style="background-image: linear-gradient(rgb(0 16 49), rgb(3 24 36 / 92%)), url(http://127.0.0.1/SysIMS/assets/img/sidebar/sideB.jpg);background-size: cover;background-repeat: no-repeat;" class="layout-menu menu-vertical menu bg-menu-theme">
       <div class="app-brand demo">
         <a href="index.html" class="app-brand-link">
         <img src="<?php echo base_url() ?>/assets/img/logo/Lo1.png" alt="Your Image" class="app-brand-image" width="125" height="70" /></a>
@@ -14,8 +14,10 @@
       </div>
 
       <div class="menu-inner-shadow"></div>
-
+    
       <ul class="menu-inner py-1" id="sideBar_menu">
+
+
         <!-- Dashboard -->
         <!-- <li class="menu-item active">
           <a href="http://127.0.0.1/SysIMS/Dashboard/dashboard" class="menu-link">
@@ -56,10 +58,9 @@
             </li>
           </ul>
         </li> -->
-
-
-
         <!-- Misc -->
+
+
       </ul>
     </aside>
     <!-- / Menu -->

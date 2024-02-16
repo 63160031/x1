@@ -11,6 +11,16 @@ $(() => {
                 url: apiUrl,
                 type: 'GET',
                 dataType: 'json',
+                success: function(data) {
+                    $("#loadingPage").attr("style", "display: inline;");
+                  },
+                  error: function(xhr, status, error) {
+                    // เกิดข้อผิดพลาดในการโหลดข้อมูล
+                    console.error('Error:', error);
+                  },
+                  complete: function() {
+                    $("#loadingPage").attr("style", "display: none;");
+                  },
                 success: function (data) {
                     // Get the menu container
                     var html = "";
@@ -32,7 +42,7 @@ $(() => {
                                     </li>
                                 </ul>
                                 </div>
-                                <a href="" class="tblEditBtn btn btn-sm btn-icon item-edit" data-bs-toggle="modal" data-bs-target="#mdlEdit" id="btnEdit" data-id="${data[i].spg_id}">
+                                <a href="" class="tblEditBtn btn btn-warning btn-icon item-edit" data-bs-toggle="modal" data-bs-target="#mdlEdit" id="btnEdit" data-id="${data[i].spg_id}">
                                     <i class="bx bxs-edit"></i>
                                 </a>
                                 </td>`;
@@ -159,7 +169,7 @@ $(() => {
                 Swal.fire({
                     icon: 'warning',
                     title: 'Oops...',
-                    text: 'Please enter Main Menu name',
+                    text: 'Please enter Permission Group ',
                 });
             } else if (!isThaiLanguage(ManagePergname)) {
                 Swal.fire({

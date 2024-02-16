@@ -45,8 +45,8 @@ class AppPermissionGroup extends CI_Controller {
     }
 	
 	public function appPermisGroup() {
-        $this->another_js = "<script src='" . base_url() . "assets/js/AppPermisGroup.js'></script>";
-        $this->render_view('app_manage_permission_G');
+        $this->another_js = "<script src='".base_url() ."assets/js/AppManagePermisGroup.js'></script>";
+        $this->render_view('view_app_manage_permission_G.php');
 
     }
 

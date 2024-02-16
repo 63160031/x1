@@ -24,8 +24,8 @@
             <input class="form-control mdl-textfield__input" type="text" id="inpMainMenuIcon" oninput="InputAdd(this)" value="" placeholder="Enter menu icon">
           </div>
           <div class="col-md-4" style="margin-top: 29px;">
-            <button type="button" class="btn btn-circle btn-primary btn-submit" style="letter-spacing: 2px;"  id="btnSaveAdd"><span class="tf-icons bx bx-add-to-queue me-1"></span>Register Main menu</button>&nbsp;&nbsp;&nbsp;
-            <button type="button" id="button-addon2" data-bs-toggle="modal" data-bs-target="#mdlIcon"  style="letter-spacing: 2px;" class="btn btn-outline-primary">
+            <button type="button" class="btn  btn-primary" style="letter-spacing: 2px;"  id="btnSaveAdd"><span class="tf-icons bx bx-add-to-queue me-1"></span>Register Main menu</button>&nbsp;&nbsp;&nbsp;
+            <button type="button" id="button-addon2" data-bs-toggle="modal" data-bs-target="#mdlIcon"  style="letter-spacing: 2px;" class="btn btn-dark">
               <span class="tf-icons bx bx-file-find me-1"></span>Icon
             </button>
           </div>

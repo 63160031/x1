@@ -19,6 +19,7 @@
         <button type="button" class="btn btn-circle btn-primary" style="letter-spacing: 2px;" id="btnSerchMain"><span class="tf-icons bx bx-search me-1"></span>Search</button>
       </div>
     </div>
+  </div>
 
     <div class="card" style="display: none;margin-top: 15px; margin-bottom: 15px;" id="inpAppPermissionDetail">
       <div class="card-body">
@@ -44,7 +45,7 @@
                 </div>
               </div>
               <div class="col-md-4">
-                <button type="button" class="btn btn-primary btn-py " style="letter-spacing: 2px;" id="btnSaveAddPer"><span class="tf-icons bx bx-add-to-queue me-1"></span>Register</button>
+                <button type="button" class="btn btn-primary btn-py " style="letter-spacing: 2px;" id="btnSaveAddPer"><span class="tf-icons bx bx-add-to-queue me-1"></span>Register App Permission Detail</button>
               </div>
             </div>
             <div class="col-12 col-sm-12 justify-content-start">

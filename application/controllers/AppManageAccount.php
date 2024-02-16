@@ -46,7 +46,7 @@ class AppManageAccount extends CI_Controller {
 	
 	public function mngAppAccount() {
         $this->another_js = "<script src='" . base_url() . "assets/js/AppMangeAccount.js'></script>";
-        $this->render_view('app_manage_account');
+        $this->render_view('view_app_manage_account');
 
     }
 

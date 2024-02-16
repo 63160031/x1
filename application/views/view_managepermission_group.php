@@ -23,7 +23,7 @@
               </div>
             </div>
             <div class="col-4">
-              <button type="button" class="btn btn-circle btn-primary" style="letter-spacing: 2px;" id="btnSaveAdd"><span class="tf-icons bx bx-add-to-queue me-1"></span>Register</button>
+              <button type="button" class="btn btn-circle btn-primary" style="letter-spacing: 2px;" id="btnSaveAdd"><span class="tf-icons bx bx-add-to-queue me-1"></span>Register Permission Group</button>
             </div>
           </div>
         </div>

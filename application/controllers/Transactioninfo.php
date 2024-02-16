@@ -46,7 +46,7 @@ class Transactioninfo extends CI_Controller
     public function transaction()
     {
         $this->another_js = "<script src='" . base_url() . "assets/js/transaction.js'></script>";
-        $this->render_view('transactioninfo');
+        $this->render_view('view_transactioninfo');
     }
 
     public function callApi()

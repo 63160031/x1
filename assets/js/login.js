@@ -36,7 +36,7 @@ $(document).ready(function () {
                     } else {
                         Swal.fire({
                             icon: 'error',
-                            title: 'Error!',
+                            title: 'Check your Employee Code and Password!',
                             html: response ? response.message : 'Unexpected response format'
 
                         });

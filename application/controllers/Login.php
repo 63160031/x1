@@ -21,7 +21,7 @@ class Login extends CI_Controller
     public function login()
     {
         $this->another_js = "<script src='" . base_url() . "assets/js/login.js'></script>";
-        $this->parser->parse('login', $this->data);
+        $this->parser->parse('view_login.php', $this->data);
     }
 
 

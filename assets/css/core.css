@@ -224,7 +224,7 @@ sup {
 }
 
 a {
-  color: #696cff;
+  color: #07201fd7;
   text-decoration: none;
 }
 a:hover {
@@ -7134,6 +7134,7 @@ button:focus {
 }
 
 .dropdown-menu {
+  padding: 15px;
   margin: 0.125rem 0;
   box-shadow: 0 0.25rem 1rem rgba(161, 172, 184, 0.45);
   -webkit-animation: dropdownAnimation 0.1s;

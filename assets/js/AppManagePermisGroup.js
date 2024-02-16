@@ -12,6 +12,16 @@ $(() => {
                 type: 'GET',
                 dataType: 'json',
                 success: function (data) {
+                    $("#loadingPage").attr("style", "display: inline;");
+                },
+                error: function (xhr, status, error) {
+                    // เกิดข้อผิดพลาดในการโหลดข้อมูล
+                    console.error('Error:', error);
+                },
+                complete: function () {
+                    $("#loadingPage").attr("style", "display: none;");
+                },
+                success: function (data) {
                     // Get the menu container
                     var html = "";
 
@@ -30,7 +40,7 @@ $(() => {
                                 </td>
                                 <td class="text-center">
     
-                                    <a href="" class="tblEditBtn btn btn-sm btn-icon item-edit" data-bs-toggle="modal" data-bs-target="#mdlEdit" id="btnEdit" data-id="${data[i].spga_id}">
+                                    <a href="" class="tblEditBtn btn btn-warning btn-icon item-edit" data-bs-toggle="modal" data-bs-target="#mdlEdit" id="btnEdit" data-id="${data[i].spga_id}">
                                         <i class="bx bxs-edit"></i>
                                     </a>
                                 </td>
@@ -192,43 +202,34 @@ $(() => {
     });
 
     //-------------------------- Show Update Account ----------------------------------
-    var data_mpg;
-    var mgpId;
 
+    var data_mpg;
+    var mpgId;
     $(document).on('click', '.tblEditBtn', function () {
         let id = $(this).attr('data-id');
-        mgpId = id;
+        mpgId = id;
         var url = API_URL + "App_Manage_permis_group/show_show_mpg";
-
         $.ajax({
-            url: url,
+            url: url, // แก้ไขตรงนี้เป็น "url:" และเพิ่ม API_URL ให้เป็นตัวแปร url
             type: 'POST',
             data: {
                 id: id,
             },
             dataType: 'json',
             success: (response) => {
-                if (response.data && response.data.spga_name) {
-                    data_mpg = response.data;
-                    $('#edtGroup').val(response.data.spga_name);
-                } else {
-                    console.error("Invalid response format or missing data property.");
-                    // Handle invalid response format or missing data property
-                }
-            },
-            error: (error) => {
-                console.error("Error fetching data:", error);
-                // Handle error fetching data
+                data_mpg = response.data;
+                $('#inpnameGroup').val(data_mpg.spga_name);
             }
         });
     });
+
 
     //-------------------------- Save Edit ----------------------------------
 
     $(document).ready(function () {
         $('#btnSaveEdit').on('click', function () {
             var arrDataAdd = [];
-            var ManagePergname = $('#edtGroup').val();
+            var ManagePergname = $('#inpnameGroup').val();
 
             if (data_mpg && data_mpg.spga_name && data_mpg.spga_name == ManagePergname) {
                 Swal.fire({

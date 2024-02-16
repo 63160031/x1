@@ -25,6 +25,16 @@ $(() => {
                 type: 'GET',
                 dataType: 'json',
                 success: function (data) {
+                    $("#loadingPage").attr("style", "display: inline;");
+                },
+                error: function (xhr, status, error) {
+                    // เกิดข้อผิดพลาดในการโหลดข้อมูล
+                    console.error('Error:', error);
+                },
+                complete: function () {
+                    $("#loadingPage").attr("style", "display: none;");
+                },
+                success: function (data) {
                     // Get the menu container
                     var html = "";
                     for (var i = 0; i < data.length; i++) {
@@ -44,7 +54,7 @@ $(() => {
                                     </div>
                                     <div class="d-flex flex-column">
                                         <span class="emp_name text-truncate">${data[i].sa_firstname} ${data[i].sa_lastname}</span>
-                                        <small class="emp_post text-truncate text-muted">${data[i].sa_emp_code}</small>
+                                        <small style="    text-align: left;"class="emp_post text-truncate text-muted">${data[i].sa_emp_code}</small>
                                     </div>
                                 </div>
                             </td>
@@ -59,11 +69,6 @@ $(() => {
                                 </button>
                             </td>
                         </tr>`;
-                        // ...
-
-
-
-
                     }
                     $('#tblManageAccount').dataTable().fnDestroy()
                     $("#tbody")
@@ -95,7 +100,7 @@ $(() => {
         }
         Swal.fire({
             title: 'sure?',
-            text: "you want to update your status?!",
+            text: "You want to change your status?",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -116,7 +121,7 @@ $(() => {
                         if (response == true) {
                             Swal.fire(
                                 'UPDATE!',
-                                'The update is complete..',
+                                'Update Completed.',
                                 'success'
                             ).then(() => {
                                 shDataTable()
@@ -124,7 +129,7 @@ $(() => {
                         } else if (response == false) {
                             Swal.fire(
                                 'UPDATE!!FAIL!!',
-                                'The update failed..',
+                                'Update Failed..',
                                 'Error'
                             )
                         }

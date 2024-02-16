@@ -46,7 +46,7 @@ class ManageItemFifo extends CI_Controller {
 	
 	public function ManageMenuitemfifo() {
         $this->another_js = "<script src='" . base_url() . "assets/js/manageitemFifo.js'></script>";
-        $this->render_view('manage_item_fifo');
+        $this->render_view('view_manage_item_fifo');
 
     }
     public function callApiAddAccount()

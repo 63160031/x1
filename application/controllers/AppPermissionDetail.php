@@ -46,7 +46,7 @@ class AppPermissionDetail extends CI_Controller {
 	
 	public function appPermisDetail() {
         $this->another_js = "<script src='" . base_url() . "assets/js/AppManagePermisDetail.js'></script>";
-        $this->render_view('app_manage_permission_D');
+        $this->render_view('view_app_manage_permission_D');
 
     }
 

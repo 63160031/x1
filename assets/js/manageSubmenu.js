@@ -24,6 +24,16 @@ function shDataTable() {
                 mainId: mainId,
             },
             dataType: 'Json',
+            success: function(data) {
+                $("#loadingPage").attr("style", "display: inline;");
+              },
+              error: function(xhr, status, error) {
+                // เกิดข้อผิดพลาดในการโหลดข้อมูล
+                console.error('Error:', error);
+              },
+              complete: function() {
+                // $("#loadingPage").attr("style", "display: none;");
+              },
             success: (data) => {
                 var html = "";
                 for (let i = 0; i < data.length; i++) {
@@ -38,7 +48,7 @@ function shDataTable() {
                               <button class="btnStatus btn badge bg-label-${data[i].ssm_status_flg == 1 ? 'success' : 'danger'} me-1" id="flgStatus" data-sa-id="${data[i].ssm_id}" value="${data[i].ssm_status_flg}">${data[i].ssm_status_flg == 1 ? 'Enable' : 'Disable'}</button>
                           </td>
                           <td class="">
-                              <a href="" class="tblEditBtn btn btn-sm btn-icon item-edit" data-bs-toggle="modal" data-bs-target="#mdlEdit" id="btnEdit" data-id="${data[i].ssm_id}">
+                              <a href="" class="tblEditBtn btn btn-warning btn-icon item-edit" data-bs-toggle="modal" data-bs-target="#mdlEdit" id="btnEdit" data-id="${data[i].ssm_id}">
                                   <i class="bx bxs-edit"></i>
                               </a>
                           </td>
@@ -89,6 +99,9 @@ $(() => {
 
     // Event handler for clicking the search button
     $(document).on('click', '#btnSerchMain', function () {
+
+           
+ 
         shDataTable();
     });
 
@@ -137,7 +150,7 @@ $(() => {
                             Swal.fire({
                                 icon: 'warning',
                                 title: 'Warning!',
-                                html: 'Change status Fail',
+                                html: 'Changed status Fail',
                                 timer: 2500,
                             });
                         }
@@ -165,7 +178,7 @@ $(document).ready(function () {
             Swal.fire({
                 icon: 'warning',
                 title: 'Oops...',
-                text: 'Please enter main menu',
+                text: 'Please enter sub menu name',
             })
         } else if (SubMenuCon == '') {
             Swal.fire({
@@ -276,6 +289,7 @@ $(document).on('click', '.tblEditBtn', function () {
 //-------------------------- Save Edit ----------------------------------
 
 $(document).ready(function () {
+    $("#loadingPage").attr("style", "display: none;");
     $('#btnSaveEdit').on('click', function () {
         var SubName = $('#edtSubMenu').val();
         var SubCon = $('#edtController').val();

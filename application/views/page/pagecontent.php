@@ -39,10 +39,6 @@
 	<link rel="stylesheet" href="<?php echo base_url() ?>/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
 	<link rel="stylesheet" href="<?php echo base_url() ?>/assets/vendor/libs/apex-charts/apex-charts.css" />
-	<!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css"> -->
-	<!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"> -->
-
-
 	<!-- Page CSS -->
 
 	<!-- Helpers -->
@@ -55,8 +51,87 @@
 
 </head>
 
-<body>
 
+<body>
+	<style>
+		.loader {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.wrapper {
+			margin-top: 47%;
+			width: 220px;
+			height: 60px;
+			position: fixed;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			z-index: 2;
+		}
+
+
+		.text {
+			z-index: 3;
+			font-family: Whitney, -apple-system, Helvetica;
+			letter-spacing: 1px;
+			font-weight: 700;
+			font-size: 20px;
+			color: white;
+			filter: drop-shadow(2px 2px 0px #4d1e91e3);
+		}
+
+		.box {
+			width: 100%;
+			height: 100%;
+			background-color: #051729a1;
+			position: absolute;
+			z-index: 2;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			animation: loading ease-in-out 0.9s infinite alternate-reverse;
+		}
+
+		@keyframes loading {
+			0% {
+				transform: translateX(-20px);
+			}
+
+			100% {
+				transform: translateX(20px);
+			}
+		}
+
+		.box::before {
+			content: "";
+			width: 20px;
+			height: 170%;
+			background-color: #fe1a1a;
+			position: absolute;
+			z-index: 1;
+			animation: loading2 ease-in-out 0.9s infinite alternate-reverse;
+		}
+
+		@keyframes loading2 {
+			0% {
+				transform: translateX(-50px);
+			}
+
+			100% {
+				transform: translateX(50px);
+			}
+		}
+	</style>
+	<div id="loadingPage" style="    z-index: 9999999999999;position: fixed;background: #000000c7;width: 100%;height: 1900px;">
+		<div class="loader">
+			<div class="wrapper">
+				<div class="text">LOADING</div>
+				<div class="box"></div>
+			</div>
+		</div>
+	</div>
 	{left_sidebar}
 	{topbar}
 	<div class="content-wrapper">
@@ -69,12 +144,10 @@
 					return '<?php echo $base_url; ?>' + url;
 				}
 			</script>
-
-
 			<script>
 				const API_URL = 'http://127.0.0.1/api/';
 
-				// function convert to md5
+				// function convert to md5/*  */
 				var MD5 = function(d) {
 					var r = M(V(Y(X(d), 8 * d.length)));
 					return r.toLowerCase()
@@ -274,35 +347,34 @@
 				}
 			</style>
 			<!-- Core JS -->
+
 			<!-- build:js assets/vendor/js/core.js -->
 			<script src="<?php echo base_url() ?>/assets/vendor/libs/jquery/jquery.js"></script>
 			<script src="<?php echo base_url() ?>/assets/vendor/libs/popper/popper.js"></script>
 			<script src="<?php echo base_url() ?>/assets/vendor/js/bootstrap.js"></script>
 			<script src="<?php echo base_url() ?>/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-			<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.3/typeahead.jquery.js"></script> -->
 			<script src="<?php echo base_url() ?>/assets/js/bootstrap-typeahead.js"></script>
 			<script src="<?php echo base_url() ?>/assets/vendor/js/menu.js"></script>
 			<!-- endbuild -->
-			<!-- <script src="https://code.jquery.com/jquery-3.7.0.js"></script> -->
+
 
 			<!-- Vendors JS -->
 			<script src="<?php echo base_url() ?>/assets/vendor/libs/apex-charts/apexcharts.js"></script>
 			<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 			<!-- Main JS -->
 			<script src="<?php echo base_url() ?>/assets/js/main.js"></script>
 			<script src="<?php echo base_url() ?>/assets/js/logout.js"></script>
 			<script src="<?php echo base_url() ?>/assets/js/submenu.js"></script>
 
 			<script src="<?php echo base_url() ?>/assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
-			<!-- <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script> -->
-			<!-- Page JS -->
-			<!-- <script src="<?php echo base_url() ?>/assets/js/docs.js"></script> -->
-			<!-- <script src="<?php echo base_url() ?>/assets/js/docs-tables-datatables.js"></script> -->
-			<!-- Page JS -->
 			<script src="<?php echo base_url() ?>/assets/js/dashboards-analytics.js"></script>
+
+
 			<!-- Place this tag in your head or just before your close body tag. -->
 			<script async defer src="https://buttons.github.io/buttons.js"></script>
 			{another_js}
 </body>
+
 
 </html>

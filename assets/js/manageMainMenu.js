@@ -12,6 +12,16 @@ $(() => {
                 type: 'GET',
                 dataType: 'json',
                 success: function (data) {
+                    $("#loadingPage").attr("style", "display: inline;");
+                },
+                error: function (xhr, status, error) {
+                    // เกิดข้อผิดพลาดในการโหลดข้อมูล
+                    console.error('Error:', error);
+                },
+                complete: function () {
+                    $("#loadingPage").attr("style", "display: none;");
+                },
+                success: function (data) {
                     // Get the menu container
 
 
@@ -34,7 +44,7 @@ $(() => {
                             <td class="">
                             </li>
                             </ul>
-                    </div><a href="" class="tblEditBtn btn btn-sm btn-icon item-edit" data-bs-toggle="modal" onclick = "editDataMainMenu(${data[i].smm_id})" data-bs-target="#mdlEdit" id="btnEdit" data-id="${data[i].smm_id}">
+                    </div><a href="" class="tblEditBtn btn btn-warning btn-icon item-edit" data-bs-toggle="modal" onclick = "editDataMainMenu(${data[i].smm_id})" data-bs-target="#mdlEdit" id="btnEdit" data-id="${data[i].smm_id}">
                     <i class="bx bxs-edit"></i>
                     </a></td>
                     </tr>`;
@@ -60,32 +70,32 @@ $(() => {
 
     //-------------------------- icon ----------------------------------
 
-    const iconsContainer = document.getElementById('icons-container');
+    // const iconsContainer = document.getElementById('icons-container');
 
-    // ใช้ fetch API เพื่อดึงข้อมูล icons จากไฟล์ JSON
-    fetch('http://127.0.0.1/SysIMS/assets/vendor/fonts/boxicon.json')
-        .then(response => response.json())
-        .then(data => {
-            const icons = data.icon;
+    // // ใช้ fetch API เพื่อดึงข้อมูล icons จากไฟล์ JSON
+    // fetch('http://127.0.0.1/SysIMS/assets/vendor/fonts/boxicon.json')
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         const icons = data.icon;
 
-            // สร้าง HTML สำหรับแต่ละ icon และแทรกลงใน #icons-container
-            icons.forEach(iconClass => {
-                const iconHTML = `
-              <div class="col">
-                <div class="card icon-card cursor-pointer text-center mb-4">
-                  <div class="card-body">
-                    <i class='bx ${iconClass} mb-2'></i>
-                    <p class="icon-name text-truncate mb-0">${iconClass}</p>
-                  </div>
-                </div>
-              </div>
-            `;
+    //         // สร้าง HTML สำหรับแต่ละ icon และแทรกลงใน #icons-container
+    //         icons.forEach(iconClass => {
+    //             const iconHTML = `
+    //           <div class="col">
+    //             <div class="card icon-card cursor-pointer text-center mb-4">
+    //               <div class="card-body">
+    //                 <i class='bx ${iconClass} mb-2'></i>
+    //                 <p class="icon-name text-truncate mb-0">${iconClass}</p>
+    //               </div>
+    //             </div>
+    //           </div>
+    //         `;
 
-                // แทรก HTML ลงใน #icons-container
-                iconsContainer.innerHTML += iconHTML;
-            });
-        })
-        .catch(error => console.error('Error fetching icons:', error));
+    //             // แทรก HTML ลงใน #icons-container
+    //             iconsContainer.innerHTML += iconHTML;
+    //         });
+    //     })
+    //     .catch(error => console.error('Error fetching icons:', error));
 
 
 
@@ -102,7 +112,7 @@ $(() => {
                 Swal.fire({
                     icon: 'warning',
                     title: 'Oops...',
-                    text: 'Plese enter main menu',
+                    text: 'Plese enter main menu name',
                 })
             } else if (MainMenuIcon == '') {
                 Swal.fire({
@@ -140,6 +150,16 @@ $(() => {
                             contentType: false,
                             cache: false,
                             dataType: 'json',
+                            success: function (data) {
+                                $("#loadingPage").attr("style", "display: inline;");
+                            },
+                            error: function (xhr, status, error) {
+                                // เกิดข้อผิดพลาดในการโหลดข้อมูล
+                                console.error('Error:', error);
+                            },
+                            complete: function () {
+                                $("#loadingPage").attr("style", "display: none;");
+                            },
                             success: function (res) {
                                 console.log('Response from server:', res);
                                 if (res.result == 1) {
@@ -215,6 +235,16 @@ $(() => {
                         newStatus: newStatus,
                     },
                     dataType: 'json',
+                    success: function (data) {
+                        $("#loadingPage").attr("style", "display: inline;");
+                    },
+                    error: function (xhr, status, error) {
+                        // เกิดข้อผิดพลาดในการโหลดข้อมูล
+                        console.error('Error:', error);
+                    },
+                    complete: function () {
+                        $("#loadingPage").attr("style", "display: none;");
+                    },
                     success: function (response) {
                         if (response == true) {
                             Swal.fire({
@@ -252,18 +282,8 @@ $(() => {
             var MainMenuIcon = $('#edtMainIcon').val();
             var OrderNo = $('#edtOrderNo').val();
             var smmId = $('#smmId').val();
-    
-            if (data_mmn && data_mmn.smm_name && data_mmn.smm_icon == MainMenuIcon && data_mmn.smm_order_no == OrderNo) {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Not changed!',
-                    html: 'The information has not changed.',
-                    timer: 2500,
-                }).then(() => {
-                    $('#mdlEdit').modal('hide');
-                    $('#btnBack').trigger('click');
-                });
-            } else if (MainMenuName == '' || MainMenuIcon == '' || OrderNo == '') {
+
+            if (MainMenuName == '' || MainMenuIcon == '' || OrderNo == '') {
                 Swal.fire({
                     icon: 'warning',
                     title: 'Oops...',
@@ -292,7 +312,7 @@ $(() => {
                         formData.append('MainMenuIcon', MainMenuIcon);
                         formData.append('OrderNo', OrderNo);
                         formData.append('mmnId', smmId);
-    
+
                         $.ajax({
                             url: base_url('MainMenu/callApiSaveEdit'),
                             type: 'POST',
@@ -301,6 +321,16 @@ $(() => {
                             contentType: false,
                             cache: false,
                             dataType: 'json',
+                            success: function (data) {
+                                $("#loadingPage").attr("style", "display: inline;");
+                            },
+                            error: function (xhr, status, error) {
+                                // เกิดข้อผิดพลาดในการโหลดข้อมูล
+                                console.error('Error:', error);
+                            },
+                            complete: function () {
+                                $("#loadingPage").attr("style", "display: none;");
+                            },
                             success: function (res) {
                                 // console.log("sssssjd=>>", res);
                                 if (res.result == 1) {
@@ -344,17 +374,17 @@ function editDataMainMenu(smm_id) {
         },
         dataType: 'json',
         success: (response) => {
-          
+
 
             data_mmn = response[0];
             // console.log(response[0].smm_name);
             // accId = response
 
 
-                $('#smmId').val(response[0].smm_id);
-                $('#edtMainMenu').val(response[0].smm_name);
-                $('#edtMainIcon').val(response[0].smm_icon);
-                $('#edtOrderNo').val(response[0].smm_order_no);
+            $('#smmId').val(response[0].smm_id);
+            $('#edtMainMenu').val(response[0].smm_name);
+            $('#edtMainIcon').val(response[0].smm_icon);
+            $('#edtOrderNo').val(response[0].smm_order_no);
 
 
         }

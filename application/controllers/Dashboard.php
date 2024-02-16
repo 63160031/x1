@@ -38,21 +38,19 @@ class Dashboard extends CI_Controller {
 
         }
 	}
-
-
 	protected function render_view($path)
     {
+		$this->data['left_sidebar'] = $this->parser->parse('page/left_sidebar', $this->left_sidebar_data, TRUE);
         $this->data['another_css'] = $this->another_css;
         $this->data['another_js'] = $this->another_js;
 		$this->data['topbar'] = $this->parser->parse('page/top_navbar', $this->top_navbar_data, TRUE);
-		$this->data['left_sidebar'] = $this->parser->parse('page/left_sidebar', $this->left_sidebar_data, TRUE);
 		$this->data['footer'] = $this->parser->parse('page/footer', $this->footer_data, TRUE);
         $this->data['page_content'] = $this->parser->parse($path, $this->data, TRUE);
         $this->parser->parse('page/pagecontent', $this->data);
     }
-	
-	public function dashboard() {
 
+	public function dashboard() {
+        $this->another_js = "<script src='" . base_url() . "assets\js\Dashboard.js'></script>";
         $this->render_view('dashboard');
 
     }

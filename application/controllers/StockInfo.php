@@ -40,8 +40,8 @@ class StockInfo extends CI_Controller
     }
     public function STOCK()
     {
-        $this->another_js = "<script src='" . base_url() . "assets/js/stockinfo.js'></script>";
-        $this->render_view('stockinfo');
+        $this->another_js = "<script src='" . base_url() . "assets/js/managestockinfo.js'></script>";
+        $this->render_view('view_stockinfo');
     }
 
     public function callApi()

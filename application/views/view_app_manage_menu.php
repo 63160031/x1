@@ -63,13 +63,13 @@
               <div class="row">
                 <div class="col mb-3">
                   <label for="addMenuPart" class="form-label">App Menu Part</label>
-                  <input type="text" id="addMenuPart" class="form-control" placeholder="">
+                  <input type="text" id="addMenuPart" class="form-control" placeholder=" Enter Menu Part">
                 </div>
               </div>
               <div class="row">
                 <div class="col mb-3">
                   <label for="addMenuBtn" class="form-label">App Menu Button Name</label>
-                  <input type="text" id="addMenuBtn" class="form-control" placeholder="">
+                  <input type="text" id="addMenuBtn" class="form-control" placeholder="Enter Menu Button Name ">
                 </div>
               </div>
             </div>

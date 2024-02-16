@@ -11,6 +11,17 @@ $(() => {
                 url: apiUrl,
                 type: 'GET',
                 dataType: 'json',
+                success: function(data) {
+                    $("#loadingPage").attr("style", "display: inline;");
+                  },
+                  error: function(xhr, status, error) {
+                    // เกิดข้อผิดพลาดในการโหลดข้อมูล
+                    console.error('Error:', error);
+                  },
+                  complete: function() {
+                    $("#loadingPage").attr("style", "display: none;");
+                  },
+                
                 success: function (data) {
                     // Get the menu container
 
@@ -30,7 +41,7 @@ $(() => {
                       </button>
                     </td>
                     <td class="text-center" style="">
-                      <a href="" class="tblEditBtn btn btn-sm btn-icon item-edit" data-bs-toggle="modal" data-bs-target="#mdlEdit" id="btnEdit" data-id="${data[i].sma_id}">
+                      <a href="" class="tblEditBtn btn btn-warning btn-icon item-edit" data-bs-toggle="modal" data-bs-target="#mdlEdit" id="btnEdit" data-id="${data[i].sma_id}">
                         <i class="bx bxs-edit"></i>
                       </a>
                     </td>
@@ -243,10 +254,6 @@ $(() => {
 
 
                 data_acc = response.data
-
-                // accId = response
-                // for (let i = 0; i < response.length; i++) {
-                //     const data = response[i];
                 $('#edtMenuName').val(response.data.sma_name)
                 $('#edtMenuPic').val(response.data.sma_pic)
 
